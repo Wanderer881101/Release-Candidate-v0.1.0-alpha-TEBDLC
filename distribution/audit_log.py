@@ -21,50 +21,6 @@ def _entry_hash(entry_without_hash: dict[str, Any]) -> str:
     return hashlib.sha256(_canonical(entry_without_hash)).hexdigest()
 
 
-def append_event(path: str | os.PathLike[str], event: dict[str, Any], *, now: datetime | None = None) -> dict[str, Any]:
-    """Append one audit event and return the stored chained entry.
-
-    The caller-provided event is embedded as data. Raw secrets/tokens must never be passed.
-    """
-    if not isinstance(event, dict):
-        raise ValueError("event must be an object")
-    forbidden = {"presented_secret", "password", "secret", "token", "raw_token", "private_key"}
-    if forbidden.intersection(event.keys()):
-        raise ValueError("event contains forbidden secret-bearing field")
-
-    p = Path(path)
-    p.parent.mkdir(parents=True, exist_ok=True)
-    prev_hash = GENESIS
-    sequence = 1
-
-    if p.exists():
-        lines = [line for line in p.read_text(encoding="utf-8").splitlines() if line.strip()]
-        if lines:
-            last = json.loads(lines[-1])
-            if not isinstance(last, dict) or not isinstance(last.get("entry_hash"), str):
-                raise ValueError("existing audit log tail is malformed")
-            prev_hash = last["entry_hash"]
-            sequence = int(last.get("sequence", 0)) + 1
-
-    timestamp = (now or datetime.now(timezone.utc)).astimezone(timezone.utc).isoformat()
-    body = {
-        "audit_version": AUDIT_VERSION,
-        "sequence": sequence,
-        "timestamp": timestamp,
-        "previous_hash": prev_hash,
-        "event": event,
-    }
-    stored = dict(body)
-    stored["entry_hash"] = _entry_hash(body)
-
-    # Append exactly one canonical JSON line and fsync for best-effort persistence.
-    with p.open("a", encoding="utf-8", newline="\n") as fh:
-        fh.write(json.dumps(stored, sort_keys=True, separators=(",", ":"), ensure_ascii=False) + "\n")
-        fh.flush()
-        os.fsync(fh.fileno())
-    return stored
-
-
 def verify_chain(path: str | os.PathLike[str]) -> dict[str, Any]:
     p = Path(path)
     if not p.exists():
@@ -82,6 +38,9 @@ def verify_chain(path: str | os.PathLike[str]) -> dict[str, Any]:
             return {"valid": False, "reason": "MALFORMED_JSON", "entries": count}
         if not isinstance(entry, dict):
             return {"valid": False, "reason": "MALFORMED_ENTRY", "entries": count}
+        expected_keys = {"audit_version", "sequence", "timestamp", "previous_hash", "event", "entry_hash"}
+        if set(entry.keys()) != expected_keys:
+            return {"valid": False, "reason": "UNEXPECTED_ENTRY_FIELDS", "entries": count}
         if entry.get("audit_version") != AUDIT_VERSION:
             return {"valid": False, "reason": "AUDIT_VERSION_MISMATCH", "entries": count}
         if entry.get("sequence") != expected_sequence:
@@ -91,7 +50,13 @@ def verify_chain(path: str | os.PathLike[str]) -> dict[str, Any]:
         stored_hash = entry.get("entry_hash")
         if not isinstance(stored_hash, str) or len(stored_hash) != 64:
             return {"valid": False, "reason": "ENTRY_HASH_INVALID", "entries": count}
-        body = {k: entry[k] for k in ("audit_version", "sequence", "timestamp", "previous_hash", "event") if k in entry}
+        body = {
+            "audit_version": entry["audit_version"],
+            "sequence": entry["sequence"],
+            "timestamp": entry["timestamp"],
+            "previous_hash": entry["previous_hash"],
+            "event": entry["event"],
+        }
         calculated = _entry_hash(body)
         if calculated != stored_hash:
             return {"valid": False, "reason": "ENTRY_HASH_MISMATCH", "entries": count}
@@ -100,3 +65,38 @@ def verify_chain(path: str | os.PathLike[str]) -> dict[str, Any]:
         count += 1
 
     return {"valid": True, "entries": count, "head_hash": previous}
+
+
+def append_event(path: str | os.PathLike[str], event: dict[str, Any], *, now: datetime | None = None) -> dict[str, Any]:
+    """Append one audit event only if the entire existing chain is valid."""
+    if not isinstance(event, dict):
+        raise ValueError("event must be an object")
+    forbidden = {"presented_secret", "password", "secret", "token", "raw_token", "private_key"}
+    if forbidden.intersection(event.keys()):
+        raise ValueError("event contains forbidden secret-bearing field")
+
+    p = Path(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+
+    chain = verify_chain(p)
+    if not chain.get("valid"):
+        raise ValueError(f"existing audit chain invalid: {chain.get('reason', 'UNKNOWN')}")
+
+    prev_hash = str(chain.get("head_hash", GENESIS))
+    sequence = int(chain.get("entries", 0)) + 1
+    timestamp = (now or datetime.now(timezone.utc)).astimezone(timezone.utc).isoformat()
+    body = {
+        "audit_version": AUDIT_VERSION,
+        "sequence": sequence,
+        "timestamp": timestamp,
+        "previous_hash": prev_hash,
+        "event": event,
+    }
+    stored = dict(body)
+    stored["entry_hash"] = _entry_hash(body)
+
+    with p.open("a", encoding="utf-8", newline="\n") as fh:
+        fh.write(json.dumps(stored, sort_keys=True, separators=(",", ":"), ensure_ascii=False) + "\n")
+        fh.flush()
+        os.fsync(fh.fileno())
+    return stored
