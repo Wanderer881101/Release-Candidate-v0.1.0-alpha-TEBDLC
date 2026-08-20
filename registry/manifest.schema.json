@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Wanderer881101/Release-Candidate-v0.1.0-alpha-TEBDLC/blob/falsification-registry/registry/manifest.schema.json",
+  "title": "TEBDLC Falsification Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "falsification_id",
+    "status",
+    "tebdlc_target",
+    "tebdlc_ip",
+    "falsifier",
+    "falsification_version",
+    "claim_attacked",
+    "scope",
+    "provenance",
+    "rights",
+    "evidence"
+  ],
+  "properties": {
+    "falsification_id": {"type": "string", "pattern": "^FALS-[0-9]{6}$"},
+    "status": {
+      "enum": ["SUBMITTED", "REPRODUCED", "ACCEPTED_AS_VALID_FALSIFICATION", "INCORPORATED", "SUPERSEDED", "REJECTED"]
+    },
+    "tebdlc_target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "commit_sha", "repository"],
+      "properties": {
+        "version": {"type": "string", "minLength": 1},
+        "commit_sha": {"type": "string", "pattern": "^[0-9a-fA-F]{40}$"},
+        "repository": {"type": "string", "minLength": 1}
+      }
+    },
+    "tebdlc_ip": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["declared_author", "project"],
+      "properties": {
+        "declared_author": {"type": "string", "minLength": 1},
+        "project": {"const": "TEBDLC"},
+        "location": {"type": "string"}
+      }
+    },
+    "falsifier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["declared_name_or_pseudonym"],
+      "properties": {
+        "declared_name_or_pseudonym": {"type": "string", "minLength": 1},
+        "github": {"type": ["string", "null"]},
+        "declared_ip_owner": {"type": ["string", "null"]}
+      }
+    },
+    "falsification_version": {"type": "string", "minLength": 1},
+    "parent_falsification": {"type": ["string", "null"], "pattern": "^FALS-[0-9]{6}$"},
+    "claim_attacked": {"type": "string", "minLength": 1},
+    "scope": {"type": "string", "minLength": 1},
+    "result": {"type": ["string", "null"]},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_files", "modified_files", "transformations"],
+      "properties": {
+        "source_files": {"type": "array", "items": {"type": "string"}},
+        "modified_files": {"type": "array", "items": {"type": "string"}},
+        "transformations": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "rights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contributor_declaration", "license_or_terms"],
+      "properties": {
+        "contributor_declaration": {"type": "string", "minLength": 1},
+        "license_or_terms": {"type": "string", "minLength": 1}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tests", "artifacts", "source_hashes", "evidence_hashes"],
+      "properties": {
+        "tests": {"type": "array", "items": {"type": "string"}},
+        "artifacts": {"type": "array", "items": {"type": "string"}},
+        "source_hashes": {"type": "array", "items": {"type": "string"}},
+        "evidence_hashes": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
