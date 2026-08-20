@@ -1,11 +1,11 @@
 {
-  "commit": "1deb6c10fe2265835e3fc4b3944c09e70df98166",
+  "commit": "6caf478717d983718c403605e36084fe50112d85",
   "compile": {
     "returncode": 0,
     "stderr": "",
     "stdout": ""
   },
-  "executed_at_utc": "2026-08-20T18:47:29.127074+00:00",
+  "executed_at_utc": "2026-08-20T19:59:56.638451+00:00",
   "expected_total_controls": 85,
   "normalization": "python-version-and-unittest-wallclock-v0.2",
   "normalized_output_sha256": "66b8e73171d66b753b5c0d5e1ed288999ea597f7026bba7c68ba4ac176e7b96e",
@@ -30,7 +30,7 @@
       "ok": true,
       "path": "distribution/test_resolve_territory.py",
       "returncode": 0,
-      "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.002s\n\nOK\n",
+      "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.003s\n\nOK\n",
       "stdout": ""
     },
     {
