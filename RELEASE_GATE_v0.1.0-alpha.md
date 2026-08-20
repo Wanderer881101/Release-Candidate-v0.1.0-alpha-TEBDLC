@@ -21,11 +21,13 @@ This gate prevents accidental publication of the complete territorially controll
 - [x] Release-manifest format specified and schema added.
 - [x] Stdlib-only fail-closed record validator added.
 - [x] Validator tests cover privileged allow, neutral allow, neutral falsification denial, restricted denial, malformed hash and manifest inconsistency.
+- [x] Deterministic Caribbean geographic annex added with NEUTRAL semantics and Florida override preserved.
+- [x] Deterministic Middle East/restricted annex added from explicitly approved restricted territories.
+- [x] Deterministic territorial resolver added with narrow-rule precedence and fail-closed default.
+- [x] Territorial resolver tests cover Québec, Ottawa, France, Florida, New York, Caribbean neutral states, restricted states and unresolved territories.
 
 ## Blocking before controlled source distribution
 
-- [ ] Deterministic Caribbean geographic annex (NEUTRAL).
-- [ ] Deterministic Middle East/restricted geographic annex.
 - [ ] Recipient authentication implementation and credential lifecycle.
 - [ ] Controlled delivery implementation outside globally public GitHub.
 - [ ] End-to-end bypass/adversarial testing of territorial decision logic and delivery path.
