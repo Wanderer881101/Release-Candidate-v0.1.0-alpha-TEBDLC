@@ -29,28 +29,33 @@ This gate prevents accidental publication of the complete territorially controll
 - [x] Controlled-distribution threat model and private deployment specification added.
 - [x] Clean-room verification harness added.
 - [x] Public executable validation persisted in `validation/LAST_EXECUTION.json` with `overall_pass: true`.
-- [x] Executed suite totals: validator 8, resolver 13, authentication 8, authorization 8, controlled delivery 10, audit 5, adversarial distribution 18, adversarial end-to-end 11 — **81 controls total, all PASS** on GitHub-hosted Python 3.11.16.
+- [x] Executed suite totals: validator 8, resolver 13, authentication 8, authorization 8, controlled delivery 10, audit 5, adversarial distribution 18, adversarial end-to-end 11 — **81 controls total**.
 - [x] First executable pass defects were identified and corrected: resolver direct-execution import mismatch, audit-chain naming compatibility, and obsolete clean-room audit-test filename.
 - [x] Clean-room harness materially exercised with an isolated synthetic package and the real active licence/policy SHA-256 values; persisted `CLEAN_ROOM_PASS` in `validation/CLEAN_ROOM_HARNESS_EXECUTION.json`.
 - [x] Validation workflow hardened to require the expected 81-control baseline and fail on silent test-count regression.
-- [x] Python 3.11 / 3.12 / 3.13 compatibility matrix encoded in the validation workflow for the 81-control suite.
-- [x] Material-proof boundary and private-package attempt recorded in `validation/MATERIAL_PROOF_STATUS.md`.
+- [x] GitHub-hosted compatibility proof materially completed on Python 3.11.16, 3.12.14 and 3.13.15: **81/81 PASS on all three runtimes**.
+- [x] Cross-runtime semantic concordance v0.2 confirmed: 3.11 / 3.12 / 3.13 produce the same normalized output SHA-256 after removing Python-version and unittest wall-clock noise.
+- [x] Exact private source candidate bound to PR #4 branch `proof/r6-executable-invariants`, commit `677a28d87164379cb2a268e55cfc30302ebc44ab`.
+- [x] Exact private Git root-tree Merkle identity persisted: `63658d334ae8c3d280e9ef2c29845fffce2747e6`; recursive private tree query returned `truncated:false`.
+- [x] Public non-disclosing source-tree proof persisted in `validation/PRIVATE_SOURCE_TREE_PROOF.json`.
+- [x] Material-proof boundary and private-package attempts recorded without substituting synthetic/package-placeholder hashes for the real package.
 
 ## Verification note
 
-The public reference/distribution system is no longer merely reviewable code: it has been executed on GitHub-hosted Python 3.11.16, corrected from the first observed failures, and re-executed to a complete 81-control PASS. The territorial regression suite now explicitly protects Switzerland and Belgium as PRIVILEGED. The clean-room harness has also executed end-to-end and returned `CLEAN_ROOM_PASS` against material synthetic input bound to the active licence and territorial-policy hashes.
+The public reference/distribution system is materially exercised, not merely reviewable. GitHub-hosted Python 3.11.16, 3.12.14 and 3.13.15 each execute the full 81-control battery successfully. The v0.2 concordance matrix reports identical normalized output hashes across all three runtimes.
 
-The 3.11/3.12/3.13 matrix is encoded as a required compatibility battery; a version is not to be described as materially confirmed until its corresponding execution result is available.
+The private product candidate is now also materially bound at the Git-object level. Its exact source commit is `677a28d87164379cb2a268e55cfc30302ebc44ab`; the commit object points to root tree `63658d334ae8c3d280e9ef2c29845fffce2747e6`. A recursive authenticated Git-tree query for that candidate is complete (`truncated:false`). This establishes exact Merkle identity of the tracked private source content without publishing that source.
 
-This does **not** substitute a synthetic artifact for the private TEBDLC product package.
+This Git tree proof is **not** the same object as the final distribution archive SHA-256. The archive must still be materially assembled and hashed before controlled release.
 
-A deterministic packaging attempt was made directly from the canonical private `Wanderer881101/TEBDLC` PR lineage. The private GitHub workflow reached workflow scheduling, but its Python 3.11/3.12/3.13 and C jobs terminated before any executable steps were exposed; the dependent package job was therefore skipped. No product failure is inferred from that non-executed private run. The private workflow was restored afterward to the quota-safe policy.
+A private GitHub Actions packaging job was installed and scheduled for the canonical PR lineage, but the hosted private runner failed before exposing any executable step and produced no artifact/log blob. No product or packaging-script failure is inferred from that non-execution. The authenticated Git-object API is therefore being used as the source-reading path instead of pretending the runner succeeded.
 
 ## Blocking before controlled source distribution
 
-- [ ] Materially confirm the public 81-control compatibility battery on Python 3.12 and Python 3.13 (3.11 already PASS).
-- [ ] Obtain an execution/archive path capable of reading the canonical private source tree as a whole and assemble the exact controlled `v0.1.0-alpha` source package.
-- [ ] Calculate and persist the immutable package SHA-256 and final release manifest bound to the exact private source commit.
+- [x] Materially confirm the public 81-control compatibility battery on Python 3.11 / 3.12 / 3.13.
+- [x] Resolve and persist the exact canonical private source commit and complete Git-tree Merkle identity.
+- [ ] Materially reconstruct/assemble the exact controlled `v0.1.0-alpha` distribution archive from the bound private Git tree.
+- [ ] Calculate and persist the immutable package SHA-256 and final release manifest bound to source commit `677a28d87164379cb2a268e55cfc30302ebc44ab` and root tree `63658d334ae8c3d280e9ef2c29845fffce2747e6`.
 - [ ] Run the already-proven `distribution/clean_room_verify.py` against that exact real package, active licence and territorial policy and persist `CLEAN_ROOM_PASS`.
 - [ ] Deploy/operate the controlled-delivery reference outside globally public GitHub against a private controlled package store.
 - [ ] Execute the reference/adversarial suites against that deployed/private-package environment and persist results/hashes.
@@ -71,5 +76,7 @@ The public repository may continue to host intentionally global governance, poli
 ## Release identity
 
 Candidate: `v0.1.0-alpha`
+Private source commit: `677a28d87164379cb2a268e55cfc30302ebc44ab`
+Private source root tree: `63658d334ae8c3d280e9ef2c29845fffce2747e6`
 
-The final controlled package must receive its own immutable content hash, manifest, licence version, territorial-policy version, build/verification record and audit checkpoint before delivery.
+The final controlled package must receive its own immutable SHA-256, manifest, licence version, territorial-policy version, build/verification record and audit checkpoint before delivery.
