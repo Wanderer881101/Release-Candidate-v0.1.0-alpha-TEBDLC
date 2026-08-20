@@ -39,6 +39,38 @@ Unless separately authorized in writing, this licence does **not** grant any rec
 
 Visibility or possession of source does not create these rights by implication.
 
+## Assumption of risk
+
+TEBDLC is provided for use only by recipients who knowingly accept the risks associated with obtaining, compiling, executing, testing, modifying, integrating, configuring, or otherwise using the technology.
+
+To the maximum extent permitted by applicable law, the recipient assumes the risks arising from their use of TEBDLC, including risks that are known, unknown, foreseeable, unforeseeable, documented, undocumented, emergent, or produced through interaction with other software, hardware, networks, data, configurations, environments, modifications, or systems.
+
+The recipient is responsible for determining whether TEBDLC is appropriate for the environment, purpose, system, data, and circumstances in which the recipient chooses to use it. The recipient is responsible for appropriate isolation, backups, testing, validation, authorization, supervision, operational controls, and recovery measures relevant to that use.
+
+## User conduct and responsibility
+
+The recipient and user remain responsible for their own conduct, decisions, configurations, modifications, integrations, deployments, commands, inputs, outputs, targets, systems, data, and uses of TEBDLC.
+
+Access to, possession of, or authorization to use TEBDLC does not constitute approval, direction, sponsorship, authorization, endorsement, or participation by the TEBDLC author(s) or rightsholder(s) in an act performed by a user.
+
+The user is responsible for obtaining any permission, consent, authority, licence, or other authorization required for the systems, data, networks, devices, services, or environments on which the user chooses to act.
+
+To the maximum extent permitted by applicable law, the TEBDLC author(s), rightsholder(s), and recorded contributor(s) are not responsible merely by reason of authorship, ownership, contribution, publication, or authorized distribution for independent acts, misuse, unauthorized acts, unlawful acts, modifications, combinations, deployments, or decisions made by a recipient or third party.
+
+No provision of this section grants permission to perform an act that is otherwise prohibited by this licence or by applicable law.
+
+## No warranty
+
+To the maximum extent permitted by applicable law, TEBDLC is provided **AS IS** and **AS AVAILABLE**, without warranties or representations, express or implied, including warranties of merchantability, fitness for a particular purpose, non-infringement, uninterrupted operation, absence of defects, correctness of results, security, compatibility, or absence of harmful or unexpected effects.
+
+No documentation, test result, benchmark, proof artifact, validation record, release designation, or successful prior execution constitutes a guarantee that another use, environment, configuration, modification, or future execution will produce the same result or be free of harmful effects.
+
+## Limitation of liability
+
+To the maximum extent permitted by applicable law, the TEBDLC author(s), rightsholder(s), and recorded contributor(s) shall not be liable solely by reason of their authorship, ownership, contribution, publication, or authorized distribution for indirect, incidental, special, consequential, exemplary, or similar damages arising from a recipient's or third party's use, misuse, configuration, modification, integration, deployment, or independent conduct involving TEBDLC.
+
+Nothing in this licence excludes or limits liability that cannot lawfully be excluded or limited under mandatory applicable law.
+
 ## Falsification and attribution
 
 Only a recipient classified `PRIVILEGED` may exercise the TEBDLC licence-granted falsification right.
