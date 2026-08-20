@@ -39,7 +39,10 @@ This gate prevents accidental publication of the complete territorially controll
 - [x] Audit append now verifies the entire existing chain before adding a new event.
 - [x] Audited delivery wrapper persists both ALLOW and DENY outcomes without persisting the presented raw credential secret.
 - [x] Adversarial end-to-end suite added for wrong-secret, restricted-territory, neutral/privileged mismatch, acceptance-identity substitution, release substitution, package tamper, licence/policy substitution, audit tampering and secret-field injection.
+- [x] Extended 18-scenario adversarial suite added for source symlinks, source/destination collapse, missing manifest/acceptance fields, duplicate subject records, audit deletion and other bypass/integrity cases.
 - [x] Controlled-distribution threat model v0.1 added with explicit in-scope and residual/out-of-scope risks.
+- [x] Private deployment specification v0.1 added, separating public governance, authorization, private package vault and delivery trust zones.
+- [x] Clean-room verification harness added to bind exact package, active licence and territorial-policy hashes and execute all reference/adversarial suites.
 
 ## Verification note
 
@@ -48,10 +51,11 @@ The reference test code and adversarial suites are present and reviewable. A com
 ## Blocking before controlled source distribution
 
 - [ ] Deploy/operate the controlled-delivery reference outside globally public GitHub against a private controlled package store.
-- [ ] Execute the complete adversarial suite against that deployed/private-package environment and persist results/hashes.
+- [ ] Execute the complete reference and adversarial suites against that deployed/private-package environment and persist results/hashes; code presence alone is not a PASS.
 - [ ] Add production operational controls appropriate to the selected hosting environment (TLS, secret/KMS handling, service isolation, ACLs, rate limiting, monitoring and backup/recovery as applicable).
-- [ ] Applicable mandatory-law/export/sanctions review.
-- [ ] Final clean-room release verification against the exact controlled package SHA.
+- [ ] Applicable mandatory-law/export/sanctions review and any required operational adjustment.
+- [ ] Assemble the exact controlled `v0.1.0-alpha` package and create its immutable release manifest and package SHA-256.
+- [ ] Run `distribution/clean_room_verify.py` against that exact package, active licence and territorial policy and persist a passing verification record.
 - [ ] Persist immutable release manifest, verification record, policy/licence hashes and final audit checkpoint for the delivered candidate.
 
 ## External legal status
