@@ -1,19 +1,19 @@
 {
-  "commit": "82980e1134a7056cff9c123177593a7f3fc199be",
+  "commit": "1deb6c10fe2265835e3fc4b3944c09e70df98166",
   "compile": {
     "returncode": 0,
     "stderr": "",
     "stdout": ""
   },
-  "executed_at_utc": "2026-08-20T18:46:56.026837+00:00",
-  "expected_total_controls": 81,
+  "executed_at_utc": "2026-08-20T18:47:35.280582+00:00",
+  "expected_total_controls": 85,
   "normalization": "python-version-and-unittest-wallclock-v0.2",
-  "normalized_output_sha256": "fd2d3a88cb07316cf30535dbcf428c5b7908bf1dbe41f8a78f20cd093214a534",
-  "observed_total_controls": 81,
+  "normalized_output_sha256": "66b8e73171d66b753b5c0d5e1ed288999ea597f7026bba7c68ba4ac176e7b96e",
+  "observed_total_controls": 85,
   "overall_pass": true,
   "python": "3.13.15 (main, Aug  6 2026, 02:15:18) [GCC 13.3.0]",
   "requested_runtime": "3.13",
-  "schema": "tebdlc-runtime-proof/0.2",
+  "schema": "tebdlc-runtime-proof/0.3",
   "suites": [
     {
       "expected_count": 8,
@@ -86,6 +86,15 @@
       "returncode": 0,
       "stderr": "",
       "stdout": "adversarial end-to-end tests: PASS (11)\n"
+    },
+    {
+      "expected_count": 4,
+      "observed_count": 4,
+      "ok": true,
+      "path": "distribution/test_clean_room_tree.py",
+      "returncode": 0,
+      "stderr": "test_duplicate_path_rejected (__main__.CleanRoomTreeTests.test_duplicate_path_rejected) ... ok\ntest_known_git_tree_vector (__main__.CleanRoomTreeTests.test_known_git_tree_vector) ... ok\ntest_single_byte_mutation_changes_tree (__main__.CleanRoomTreeTests.test_single_byte_mutation_changes_tree) ... ok\ntest_unsafe_parent_path_rejected (__main__.CleanRoomTreeTests.test_unsafe_parent_path_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.010s\n\nOK\n",
+      "stdout": ""
     }
   ]
 }
