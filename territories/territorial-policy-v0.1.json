@@ -2,26 +2,38 @@
   "schema": "tebdlc-territorial-policy/0.1",
   "policy_version": "0.1",
   "status": "DRAFT_PRE_RELEASE",
-  "model": "ALLOWLIST_WITH_EXPLICIT_EXCLUSIONS",
+  "model": "THREE_STATE_TERRITORIAL_CLASSIFICATION",
+  "states": ["PRIVILEGED", "NEUTRAL", "RESTRICTED"],
   "default_distribution_status": "RESTRICTED",
   "privileged": [
     {"type": "subdivision", "country": "CA", "name": "Québec"},
     {"type": "country", "code": "FR", "name": "France"},
     {"type": "country", "code": "CH", "name": "Switzerland"},
     {"type": "country", "code": "BE", "name": "Belgium"},
-    {"type": "region_class", "id": "CARIBBEAN_ALL", "name": "Caribbean — all territories", "requires_enumerated_annex": true},
     {"type": "subdivision", "country": "US", "code": "FL", "name": "Florida"}
+  ],
+  "neutral": [
+    {
+      "type": "region_class",
+      "id": "CARIBBEAN_ALL",
+      "name": "Caribbean — all territories",
+      "requires_enumerated_annex": true,
+      "meaning": "NO_TERRITORIAL_PRIVILEGE_AND_NO_TERRITORIAL_RESTRICTION"
+    }
   ],
   "explicitly_restricted": [
     {"type": "city", "country": "CA", "subdivision": "Ontario", "name": "Ottawa"}
   ],
   "rules": {
-    "narrow_explicit_restriction_precedence": true,
+    "neutral_is_not_privileged": true,
+    "neutral_is_not_restricted": true,
+    "narrow_explicit_rule_precedence": true,
     "ip_geolocation_alone_is_sufficient": false,
     "public_github_is_controlled_distribution_endpoint": false,
     "policy_version_must_be_logged": true,
     "release_commit_must_be_logged": true,
     "licence_version_must_be_logged": true,
+    "territorial_state_must_be_logged": true,
     "authorship_and_provenance_survive_policy_changes": true
   },
   "activation_blockers": [
