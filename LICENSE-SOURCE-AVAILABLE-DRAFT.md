@@ -1,52 +1,81 @@
-# TEBDLC Sovereign Source-Available Licence — DRAFT v0.1
+# TEBDLC Sovereign Source-Available Licence — v0.1
 
-Status: **DRAFT / NOT ACTIVATED / REQUIRES LEGAL REVIEW**
+Status: **ACTIVE PROJECT LICENCE v0.1**
 
-Copyright and original TEBDLC intellectual property remain with their respective recorded owner(s). Nothing in this draft transfers authorship or ownership by implication.
+Copyright and original TEBDLC intellectual property remain with their respective recorded owner(s). Nothing in this licence transfers authorship or ownership by implication.
 
-## Purpose
-
-This draft defines the intended framework for controlled access to TEBDLC source code. It is not an OSI open-source licence and must not be represented as one.
+This is a source-available territorial licence and is not represented as an OSI open-source licence. Mandatory applicable law prevails where it requires otherwise.
 
 ## Territorial classification
 
-Access and rights are governed by the versioned `TERRITORIAL_DISTRIBUTION_POLICY.md` and its machine-readable annexes. The territorial policy distinguishes PRIVILEGED, NEUTRAL, and RESTRICTED classifications. Mandatory applicable law always prevails.
+Access and rights are governed by the versioned `TERRITORIAL_DISTRIBUTION_POLICY.md` and its machine-readable annexes. The territorial policy distinguishes `PRIVILEGED`, `NEUTRAL`, and `RESTRICTED` classifications.
 
-## Rights model to be finalized
+## Rights matrix
 
-A production licence must state separately whether an authorized recipient may:
+Subject to this licence, the applicable territorial policy, attribution/provenance requirements, and mandatory law:
 
-1. inspect/read source;
-2. compile/build;
-3. execute;
-4. test and benchmark;
-5. falsify claims and submit reproducible counterexamples;
-6. modify for private evaluation;
-7. publish modifications;
-8. redistribute source or binaries;
-9. commercialize derivatives or integrations.
+| Right | PRIVILEGED | NEUTRAL | RESTRICTED |
+|---|---:|---:|---:|
+| Inspect/read authorized source | YES | YES | NO |
+| Compile/build | YES | YES | NO |
+| Execute | YES | YES | NO |
+| Test and benchmark | YES | YES | NO |
+| Falsify TEBDLC claims / submit falsification records | YES | **NO** | NO |
+| Modify for private evaluation | YES | YES | NO |
 
-No right in items 6–9 is granted merely because source is visible. Final grants require explicit licence language and legal review.
+**The sole TEBDLC project-right difference between `PRIVILEGED` and `NEUTRAL` under licence v0.1 is falsification:** privileged recipients may perform and submit TEBDLC falsification work under the falsification regime; neutral recipients may not exercise that licence-granted falsification right.
+
+Ordinary testing, benchmarking, debugging, compatibility testing, and private evaluation by a NEUTRAL recipient remain permitted provided they are not represented, submitted, registered, or exercised as a TEBDLC falsification under the project's falsification regime.
+
+## Rights not granted by v0.1
+
+Unless separately authorized in writing, this licence does **not** grant any recipient, including PRIVILEGED recipients, the right to:
+
+- redistribute the controlled TEBDLC source package;
+- redistribute controlled TEBDLC binaries as a substitute distribution;
+- publish controlled-source modifications;
+- sublicense TEBDLC;
+- sell, license, or commercialize a derivative or integration incorporating controlled TEBDLC source.
+
+Visibility or possession of source does not create these rights by implication.
 
 ## Falsification and attribution
 
-Authorized falsification is intended to remain possible. Falsification records must preserve the TEBDLC version and commit being tested, the falsifier/contributor identity or declared attribution, contribution version, provenance, evidence hashes, and applicable licence/policy versions.
+Only a recipient classified `PRIVILEGED` may exercise the TEBDLC licence-granted falsification right.
 
-TEBDLC-originated IP and contributor-originated IP must not be silently merged into a single authorship claim. See `FALSIFICATION_POLICY.md` and the isolated `falsification-registry` branch.
+An authorized falsification must preserve at minimum:
 
-## No public-source implication
+- TEBDLC version and exact commit/hash being tested;
+- TEBDLC-originated intellectual-property attribution;
+- falsifier/contributor identity or declared attribution;
+- falsifier/contribution version;
+- provenance of submitted material;
+- evidence hashes;
+- applicable licence version;
+- applicable territorial-policy version.
 
-Material published in the public Release Candidate repository is globally readable and must be deliberately designated for global publication. Publication of governance metadata or documentation does not imply authorization to receive the controlled complete source package.
+TEBDLC-originated IP and falsifier/contributor-originated IP must not be silently merged into a single authorship claim. Historical falsification records must remain attributable and versioned even when a later TEBDLC release incorporates a correction or gain derived from them. See `FALSIFICATION_POLICY.md` and the isolated `falsification-registry` branch.
 
-## Activation conditions
+A `NEUTRAL` recipient receives no licence-granted right to register, submit, publish, or participate in TEBDLC falsification as defined by that regime.
 
-This draft must not be treated as the active distribution licence until at least:
+## Territorial neutrality
 
-- specialist legal review is completed;
-- territorial annexes are deterministic;
-- rights for each territorial state are finalized;
-- recipient authorization and licence acceptance are implemented;
-- distribution/audit records are implemented;
-- applicable export-control, sanctions, consumer, privacy, and other mandatory legal obligations are reviewed.
+`NEUTRAL` means neither territorially privileged nor territorially restricted. It does not mean unrestricted rights. Neutral recipients receive the same v0.1 source-use rights as privileged recipients **except for the falsification right**, which is reserved to PRIVILEGED recipients.
 
-Until then, the complete TEBDLC source remains governed by its existing rights notices and must not be copied into this public repository merely because this draft exists.
+## Restricted territories
+
+A `RESTRICTED` classification grants no right under this licence to receive or use the controlled complete TEBDLC source package. Public material deliberately published outside the controlled package remains governed by the notices applicable to that public material and by mandatory law.
+
+## Public repository boundary
+
+Material published in the public Release Candidate repository is globally readable and must be deliberately designated for global publication. Publication of governance metadata or documentation does not itself authorize receipt of the controlled complete source package.
+
+The public GitHub repository is not the controlled distribution endpoint for territorially governed TEBDLC source.
+
+## Versioning and provenance
+
+Every controlled distribution should record at minimum the TEBDLC version/commit, licence version, territorial-policy version, territorial classification, authorization event, and timestamp. A later licence or territorial-policy revision must not silently rewrite the recorded terms associated with an earlier distribution event.
+
+## Mandatory-law reservation
+
+This document states the project's active licence policy. It does not claim certification, governmental approval, or a judicial determination of enforceability. Where mandatory applicable law requires a different result, that mandatory law prevails and the project policy may be revised prospectively while preserving historical provenance.
