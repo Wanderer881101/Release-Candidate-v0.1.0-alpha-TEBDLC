@@ -1,11 +1,11 @@
 {
-  "commit": "4107045182da02058878da3fa8b96084a606557e",
+  "commit": "db4be5c3663820e7cd3b6480a2cdaae56fbb5998",
   "compile": {
     "returncode": 0,
     "stderr": "",
     "stdout": ""
   },
-  "executed_at_utc": "2026-08-20T20:00:41.776971+00:00",
+  "executed_at_utc": "2026-08-20T20:01:20.827429+00:00",
   "expected_total_controls": 85,
   "normalization": "python-version-and-unittest-wallclock-v0.2",
   "normalized_output_sha256": "66b8e73171d66b753b5c0d5e1ed288999ea597f7026bba7c68ba4ac176e7b96e",
@@ -93,7 +93,7 @@
       "ok": true,
       "path": "distribution/test_clean_room_tree.py",
       "returncode": 0,
-      "stderr": "test_duplicate_path_rejected (__main__.CleanRoomTreeTests.test_duplicate_path_rejected) ... ok\ntest_known_git_tree_vector (__main__.CleanRoomTreeTests.test_known_git_tree_vector) ... ok\ntest_single_byte_mutation_changes_tree (__main__.CleanRoomTreeTests.test_single_byte_mutation_changes_tree) ... ok\ntest_unsafe_parent_path_rejected (__main__.CleanRoomTreeTests.test_unsafe_parent_path_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.012s\n\nOK\n",
+      "stderr": "test_duplicate_path_rejected (__main__.CleanRoomTreeTests.test_duplicate_path_rejected) ... ok\ntest_known_git_tree_vector (__main__.CleanRoomTreeTests.test_known_git_tree_vector) ... ok\ntest_single_byte_mutation_changes_tree (__main__.CleanRoomTreeTests.test_single_byte_mutation_changes_tree) ... ok\ntest_unsafe_parent_path_rejected (__main__.CleanRoomTreeTests.test_unsafe_parent_path_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.046s\n\nOK\n",
       "stdout": ""
     }
   ]
