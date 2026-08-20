@@ -1,0 +1,34 @@
+name: RC Validation
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile distribution code
+        run: python -m compileall -q distribution territories
+      - name: Execute record validation tests
+        run: python distribution/test_validate_records.py
+      - name: Execute territorial resolver tests
+        run: python distribution/test_resolve_territory.py
+      - name: Execute authentication tests
+        run: python distribution/test_authentication.py
+      - name: Execute authorization tests
+        run: python distribution/test_authorize_request.py
+      - name: Execute controlled delivery tests
+        run: python distribution/test_controlled_delivery.py
+      - name: Execute audit log tests
+        run: python distribution/test_audit_log.py
+      - name: Execute adversarial distribution tests
+        run: python distribution/test_adversarial_distribution.py
+      - name: Execute adversarial end-to-end tests
+        run: python distribution/test_adversarial_end_to_end.py
