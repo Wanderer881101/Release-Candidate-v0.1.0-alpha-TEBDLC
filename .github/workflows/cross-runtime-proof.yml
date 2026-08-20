@@ -1,0 +1,122 @@
+name: Cross Runtime Proof
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'validation/GITHUB_RUNTIME_MATRIX.json'
+      - 'validation/GITHUB_RUNTIME_3.11.json'
+      - 'validation/GITHUB_RUNTIME_3.12.json'
+      - 'validation/GITHUB_RUNTIME_3.13.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  prove:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Define exact 81-control runner
+        shell: bash
+        run: |
+          mkdir -p validation
+          cat > /tmp/run_tebdlc_runtime.py <<'PY'
+          import datetime, hashlib, json, pathlib, re, subprocess, sys
+          suites = [
+              ('distribution/test_validate_records.py', 8),
+              ('distribution/test_resolve_territory.py', 13),
+              ('distribution/test_authentication.py', 8),
+              ('distribution/test_authorize_request.py', 8),
+              ('distribution/test_controlled_delivery.py', 10),
+              ('distribution/test_audit_log.py', 5),
+              ('distribution/test_adversarial_distribution.py', 18),
+              ('distribution/test_adversarial_end_to_end.py', 11),
+          ]
+          version = f'{sys.version_info.major}.{sys.version_info.minor}'
+          record = {
+              'schema': 'tebdlc-runtime-proof/0.1',
+              'requested_runtime': version,
+              'python': sys.version,
+              'commit': '${{ github.sha }}',
+              'executed_at_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              'expected_total_controls': 81,
+              'suites': [],
+          }
+          cp = subprocess.run([sys.executable, '-m', 'compileall', '-q', 'distribution', 'territories'], capture_output=True, text=True)
+          record['compile'] = {'returncode': cp.returncode, 'stdout': cp.stdout[-4000:], 'stderr': cp.stderr[-4000:]}
+          overall = cp.returncode == 0
+          observed = 0
+          digest = hashlib.sha256()
+          for path, expected in suites:
+              p = subprocess.run([sys.executable, path], capture_output=True, text=True)
+              text = (p.stdout or '') + '\n' + (p.stderr or '')
+              m = re.search(r'Ran\s+(\d+)\s+tests?', text) or re.search(r'PASS\s*\((\d+)\)', text)
+              count = int(m.group(1)) if m else None
+              observed += count or 0
+              normalized = text.replace(sys.version, '<PYTHON_VERSION>')
+              digest.update(path.encode()); digest.update(b'\0'); digest.update(normalized.encode())
+              ok = p.returncode == 0 and count == expected
+              overall &= ok
+              record['suites'].append({'path':path,'expected_count':expected,'observed_count':count,'returncode':p.returncode,'ok':ok,'stdout':p.stdout[-4000:],'stderr':p.stderr[-4000:]})
+          record['observed_total_controls'] = observed
+          record['normalized_output_sha256'] = digest.hexdigest()
+          record['overall_pass'] = bool(overall and observed == 81)
+          out = pathlib.Path(f'validation/GITHUB_RUNTIME_{version}.json')
+          out.write_text(json.dumps(record, indent=2, sort_keys=True)+'\n', encoding='utf-8')
+          if not record['overall_pass']:
+              raise SystemExit(f'runtime {version} failed')
+          PY
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Prove Python 3.11
+        run: python /tmp/run_tebdlc_runtime.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prove Python 3.12
+        run: python /tmp/run_tebdlc_runtime.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Prove Python 3.13
+        run: python /tmp/run_tebdlc_runtime.py
+
+      - name: Build concordance matrix
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          root = pathlib.Path('validation')
+          records = [json.loads((root/f'GITHUB_RUNTIME_{v}.json').read_text()) for v in ('3.11','3.12','3.13')]
+          hashes = {r['requested_runtime']: r['normalized_output_sha256'] for r in records}
+          matrix = {
+              'schema':'tebdlc-runtime-concordance/0.1',
+              'commit':'${{ github.sha }}',
+              'all_pass':all(r['overall_pass'] for r in records),
+              'all_81_controls':all(r['observed_total_controls']==81 for r in records),
+              'normalized_outputs_identical':len(set(hashes.values()))==1,
+              'normalized_output_sha256_by_runtime':hashes,
+              'runtimes':[{k:r[k] for k in ('requested_runtime','python','overall_pass','observed_total_controls','normalized_output_sha256')} for r in records],
+          }
+          (root/'GITHUB_RUNTIME_MATRIX.json').write_text(json.dumps(matrix,indent=2,sort_keys=True)+'\n')
+          if not matrix['all_pass'] or not matrix['all_81_controls']:
+              raise SystemExit('cross-runtime proof failed')
+          PY
+
+      - name: Persist runtime evidence
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add validation/GITHUB_RUNTIME_3.11.json validation/GITHUB_RUNTIME_3.12.json validation/GITHUB_RUNTIME_3.13.json validation/GITHUB_RUNTIME_MATRIX.json
+          git commit -m 'validation: persist 3.11-3.13 runtime proof' || exit 0
+          git push
