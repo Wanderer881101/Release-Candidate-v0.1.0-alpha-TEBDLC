@@ -31,15 +31,21 @@ This gate prevents accidental publication of the complete territorially controll
 - [x] Stored credentials use salted PBKDF2-HMAC-SHA256 verifiers; raw secrets are not intended for repository persistence.
 - [x] Integrated authentication + territorial resolution + rights authorization engine added.
 - [x] Authentication and integrated authorization test suites added for success, wrong secret, suspended account, revoked/expired/not-yet-valid credential, rotation, neutral rights, restricted denial and fail-closed behavior.
+- [x] Controlled-delivery reference primitive added for private/local package sources and authorized output destinations.
+- [x] Delivery binds authenticated subject, territorial state, licence acceptance, release identity, licence/policy hashes and exact package SHA-256.
+- [x] Delivery performs pre-copy, copied-file and post-copy package-hash verification before atomic destination promotion.
+- [x] Controlled-delivery tests added for privileged/neutral allow paths and authentication, territory, identity, policy, release, package and path failure cases.
+- [x] Hash-chained append-only audit log reference added with tamper/deletion detection tests.
+- [x] Audited delivery wrapper persists both ALLOW and DENY outcomes without persisting the presented raw credential secret.
 
 ## Verification note
 
-The authentication/authorization test code is present and reviewable. A direct clean execution from this assistant's sandbox was not recorded because the sandbox could not resolve `raw.githubusercontent.com` to reconstruct the public repository state. This infrastructure limitation is not counted as a TEBDLC test failure. Runtime execution remains part of the final clean-room verification gate.
+The reference test code is present and reviewable. A complete clean execution of the current public repository state has not yet been recorded from this assistant's sandbox because direct reconstruction through `raw.githubusercontent.com` was unavailable in the earlier lab environment. This infrastructure limitation is not counted as a TEBDLC test failure. Runtime execution remains part of the final clean-room verification gate.
 
 ## Blocking before controlled source distribution
 
-- [ ] Controlled delivery implementation outside globally public GitHub.
-- [ ] End-to-end bypass/adversarial testing of territorial decision logic and delivery path.
+- [ ] Deploy/operate the controlled-delivery reference outside globally public GitHub against a private controlled package store.
+- [ ] Execute end-to-end bypass/adversarial testing of territorial decision logic, authentication, acceptance binding, audit chain and delivery path.
 - [ ] Applicable mandatory-law/export/sanctions review.
 - [ ] Final clean-room release verification against the exact controlled package SHA.
 
