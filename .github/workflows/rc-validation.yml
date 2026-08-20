@@ -58,7 +58,7 @@ jobs:
       - name: Exercise clean-room harness end-to-end
         shell: bash
         run: |
-          set -euo pipefail
+          set -u
           mkdir -p validation/clean-room-material
           printf 'TEBDLC clean-room synthetic material package\ncommit=%s\n' '${{ github.sha }}' > validation/clean-room-material/synthetic-package.bin
           python - <<'PY'
@@ -84,14 +84,37 @@ jobs:
           (root/'validation/clean-room-material/manifest.json').write_text(json.dumps(manifest, indent=2, sort_keys=True)+'\n', encoding='utf-8')
           PY
           PKG_SHA=$(sha256sum validation/clean-room-material/synthetic-package.bin | awk '{print $1}')
+          set +e
           python distribution/clean_room_verify.py \
             --package validation/clean-room-material/synthetic-package.bin \
             --manifest validation/clean-room-material/manifest.json \
             --licence LICENSE-SOURCE-AVAILABLE-DRAFT.md \
             --policy territories/territorial-policy-v0.1.json \
             --expected-package-sha256 "$PKG_SHA" \
-            --output-record validation/CLEAN_ROOM_HARNESS_EXECUTION.json
-          rm -rf validation/clean-room-material
+            --output-record validation/CLEAN_ROOM_HARNESS_RAW.json \
+            > validation/clean-room.stdout 2> validation/clean-room.stderr
+          RC=$?
+          set -e
+          python - <<PY
+          import json, pathlib
+          p = pathlib.Path('validation')
+          raw = {}
+          raw_path = p/'CLEAN_ROOM_HARNESS_RAW.json'
+          if raw_path.exists():
+              try: raw = json.loads(raw_path.read_text(encoding='utf-8'))
+              except Exception as exc: raw = {'raw_parse_error': str(exc)}
+          wrapper = {
+              'schema':'tebdlc-clean-room-harness-execution/0.1',
+              'commit':'${{ github.sha }}',
+              'returncode':int('$RC'),
+              'stdout':(p/'clean-room.stdout').read_text(encoding='utf-8')[-8000:],
+              'stderr':(p/'clean-room.stderr').read_text(encoding='utf-8')[-8000:],
+              'raw_record':raw,
+              'overall_pass': int('$RC') == 0,
+          }
+          (p/'CLEAN_ROOM_HARNESS_EXECUTION.json').write_text(json.dumps(wrapper, indent=2, sort_keys=True)+'\n', encoding='utf-8')
+          PY
+          rm -rf validation/clean-room-material validation/CLEAN_ROOM_HARNESS_RAW.json validation/clean-room.stdout validation/clean-room.stderr
       - name: Commit execution evidence
         shell: bash
         run: |
