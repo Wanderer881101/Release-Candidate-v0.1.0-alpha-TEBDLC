@@ -1,0 +1,39 @@
+{
+  "falsification_id": "FALS-000000",
+  "status": "SUBMITTED",
+  "tebdlc_target": {
+    "version": "v0.1.0-alpha",
+    "commit_sha": "0000000000000000000000000000000000000000",
+    "repository": "Wanderer881101/Release-Candidate-v0.1.0-alpha-TEBDLC"
+  },
+  "tebdlc_ip": {
+    "declared_author": "Jonathan Therrien",
+    "project": "TEBDLC",
+    "location": "Marieville, Québec, Canada"
+  },
+  "falsifier": {
+    "declared_name_or_pseudonym": "REQUIRED",
+    "github": null,
+    "declared_ip_owner": null
+  },
+  "falsification_version": "0.1.0",
+  "parent_falsification": null,
+  "claim_attacked": "REQUIRED",
+  "scope": "REQUIRED",
+  "result": null,
+  "provenance": {
+    "source_files": [],
+    "modified_files": [],
+    "transformations": []
+  },
+  "rights": {
+    "contributor_declaration": "I declare the provenance and authorship of my contribution and do not claim authorship of pre-existing TEBDLC material.",
+    "license_or_terms": "REQUIRED"
+  },
+  "evidence": {
+    "tests": [],
+    "artifacts": [],
+    "source_hashes": [],
+    "evidence_hashes": []
+  }
+}
