@@ -12,42 +12,48 @@ TEBDLC is intended to use a **source-available sovereign/territorial** distribut
 
 The complete restricted source distribution is not intended to be published indiscriminately through the public GitHub repository. The public repository may contain public-facing documentation, governance material, release metadata, verification information, and other material deliberately designated public.
 
-## 2. Default rule — allowlist
+## 2. Territorial states
 
-Distribution authorization is positive rather than inferred:
+Policy v0.1 distinguishes three territorial states:
 
-`AUTHORIZED(T) iff T is explicitly present in the privileged territorial allowlist and no explicit exclusion applies.`
+- **PRIVILEGED** — explicitly favored under the TEBDLC distribution policy.
+- **NEUTRAL** — neither privileged nor restricted by TEBDLC territorial policy; access remains subject to the applicable licence, distribution controls, and mandatory law.
+- **RESTRICTED** — explicitly restricted or restricted by the default rule.
 
-A territory absent from the allowlist is **restricted by default** for distribution of the complete controlled source package.
-
-No geographic restriction changes attribution, provenance, authorship records, falsification records, or intellectual-property notices.
+A neutral classification must never be interpreted as a privilege, preference, endorsement, or restriction.
 
 ## 3. Privileged territories — v0.1
 
 The initial privileged territorial classes are:
 
-1. **Québec, Canada** — privileged.
-2. **France** — privileged.
-3. **Switzerland** — privileged.
-4. **Belgium** — privileged.
-5. **The Caribbean in its entirety** — privileged, subject to the explicit Florida rule below and to a future enumerated geographic annex for deterministic implementation.
-6. **Florida, United States of America** — privileged as the sole privileged U.S. state under policy v0.1.
+1. **Québec, Canada** — PRIVILEGED.
+2. **France** — PRIVILEGED.
+3. **Switzerland** — PRIVILEGED.
+4. **Belgium** — PRIVILEGED.
+5. **Florida, United States of America** — PRIVILEGED as the sole privileged U.S. state under policy v0.1.
 
-## 4. Explicit restrictions and precedence
+## 4. Neutral territories — v0.1
 
-1. **Ottawa, Ontario, Canada is explicitly restricted.**
-2. The remainder of the United States is restricted unless subsequently added by an explicit policy revision; Florida is the current exception.
-3. All other territories not expressly included in the privileged allowlist are restricted by default.
+**The Caribbean in its entirety is NEUTRAL.**
 
-Where a broad future geographic authorization and a narrower explicit restriction conflict, the **narrower explicit restriction prevails** until a later policy revision expressly removes it.
+For avoidance of doubt:
 
-## 5. Caribbean scope
+- the Caribbean receives **no TEBDLC territorial privilege**;
+- the Caribbean receives **no TEBDLC territorial restriction** merely by belonging to the Caribbean;
+- neutral status is distinct from privileged and restricted status;
+- a future machine-readable geographic annex should enumerate the geographic scope used for deterministic implementation without changing this neutral status by implication.
 
-The policy intent is to privilege **all Caribbean territories**.
+Florida is governed by its explicit PRIVILEGED U.S. subdivision rule and is not made privileged merely by any Caribbean geographic classification.
 
-Before automated territorial enforcement is activated, the project must publish a versioned machine-readable annex enumerating the countries, dependencies, overseas territories, islands, and other geographic units treated as Caribbean for TEBDLC distribution purposes. This avoids relying on ambiguous geographic interpretation at runtime.
+## 5. Explicit restrictions and default rule
 
-Florida remains governed by its explicit U.S. exception and must not be inferred solely from the Caribbean annex.
+1. **Ottawa, Ontario, Canada is explicitly RESTRICTED.**
+2. The remainder of the United States is RESTRICTED unless subsequently changed by an explicit policy revision; Florida is the current privileged exception.
+3. Territories that are neither explicitly PRIVILEGED nor explicitly NEUTRAL are RESTRICTED by default under policy v0.1.
+
+Where classifications overlap, an explicit narrower territorial rule prevails over a broader geographic class until a later policy revision expressly changes it.
+
+No geographic classification changes attribution, provenance, authorship records, falsification records, or intellectual-property notices.
 
 ## 6. Distribution controls
 
@@ -68,7 +74,7 @@ VPN, proxy, roaming, hosting location, or a transient IP address must not silent
 
 ## 7. Intellectual property and falsification
 
-Territorial authorization does not erase or transfer authorship.
+Territorial classification does not erase or transfer authorship.
 
 TEBDLC-originated intellectual property must retain its provenance and attribution. A falsifier or contributor must retain attribution and versioned provenance for their own submitted contribution according to `FALSIFICATION_POLICY.md` and the isolated `falsification-registry` branch.
 
@@ -76,7 +82,7 @@ A falsification must identify the TEBDLC version/commit it addresses and the fal
 
 ## 8. Public repository boundary
 
-Until the territorial licence and controlled distribution mechanism are ready, the public Release Candidate repository must **not** be treated as the distribution endpoint for the complete territorially restricted TEBDLC source package.
+Until the territorial licence and controlled distribution mechanism are ready, the public Release Candidate repository must **not** be treated as the distribution endpoint for the complete territorially controlled TEBDLC source package.
 
 Material placed on the public `main` branch must be presumed globally readable. Only material deliberately approved for global publication should be committed there.
 
@@ -89,7 +95,7 @@ A later territorial policy must not silently rewrite which policy governed an ea
 - policy version;
 - TEBDLC release/version;
 - TEBDLC commit/hash;
-- authorization decision;
+- territorial classification and authorization decision;
 - declared territory;
 - timestamp;
 - applicable licence version.
@@ -98,8 +104,8 @@ A later territorial policy must not silently rewrite which policy governed an ea
 
 Before controlled source distribution begins:
 
-- obtain legal review of the custom source-available licence and territorial restrictions;
-- create the exhaustive Caribbean territorial annex;
+- obtain legal review of the custom source-available licence and territorial classifications;
+- create the exhaustive Caribbean geographic annex for deterministic classification while preserving NEUTRAL status;
 - define the recipient authorization model;
 - define applicable licence rights (view, compile, execute, test, modify, falsify, redistribute, commercialize, etc.);
 - implement and test the controlled distribution mechanism;
