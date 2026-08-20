@@ -1,0 +1,32 @@
+{
+  "schema": "tebdlc-territorial-annex/0.1",
+  "annex_id": "MIDDLE_EAST_ALL",
+  "policy_version": "0.1",
+  "territorial_state": "RESTRICTED",
+  "semantics": "EXPLICITLY_RESTRICTED",
+  "note": "This annex deterministically records the restricted territories explicitly approved for TEBDLC policy v0.1. It does not rely on a universal definition of the Middle East.",
+  "members": [
+    {"type":"country","code":"TR","name":"Türkiye"},
+    {"type":"country","code":"CY","name":"Cyprus"},
+    {"type":"country","code":"LB","name":"Lebanon"},
+    {"type":"country","code":"SY","name":"Syria"},
+    {"type":"country","code":"IL","name":"Israel"},
+    {"type":"country","code":"JO","name":"Jordan"},
+    {"type":"country","code":"IQ","name":"Iraq"},
+    {"type":"country","code":"IR","name":"Iran"},
+    {"type":"country","code":"AF","name":"Afghanistan"},
+    {"type":"country","code":"KW","name":"Kuwait"},
+    {"type":"country","code":"BH","name":"Bahrain"},
+    {"type":"country","code":"SA","name":"Saudi Arabia"},
+    {"type":"country","code":"QA","name":"Qatar"},
+    {"type":"country","code":"AE","name":"United Arab Emirates"},
+    {"type":"country","code":"OM","name":"Oman"},
+    {"type":"country","code":"YE","name":"Yemen"},
+    {"type":"country","code":"EG","name":"Egypt"},
+    {"type":"country","code":"SD","name":"Sudan"},
+    {"type":"country","code":"ER","name":"Eritrea"},
+    {"type":"country","code":"ET","name":"Ethiopia"},
+    {"type":"country","code":"DJ","name":"Djibouti"},
+    {"type":"country","code":"TM","name":"Turkmenistan"}
+  ]
+}
