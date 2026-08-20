@@ -1,0 +1,51 @@
+{
+  "schema": "tebdlc-territorial-annex/0.1",
+  "annex_id": "CARIBBEAN_ALL",
+  "policy_version": "0.1",
+  "territorial_state": "NEUTRAL",
+  "semantics": "NO_TERRITORIAL_PRIVILEGE_AND_NO_TERRITORIAL_RESTRICTION",
+  "note": "This is a TEBDLC policy definition of the Caribbean scope for deterministic authorization. It is not a claim that every listed jurisdiction belongs to a single universally accepted geographic definition.",
+  "members": [
+    {"type":"country","code":"AG","name":"Antigua and Barbuda"},
+    {"type":"country","code":"BS","name":"Bahamas"},
+    {"type":"country","code":"BB","name":"Barbados"},
+    {"type":"country","code":"CU","name":"Cuba"},
+    {"type":"country","code":"DM","name":"Dominica"},
+    {"type":"country","code":"DO","name":"Dominican Republic"},
+    {"type":"country","code":"GD","name":"Grenada"},
+    {"type":"country","code":"HT","name":"Haiti"},
+    {"type":"country","code":"JM","name":"Jamaica"},
+    {"type":"country","code":"KN","name":"Saint Kitts and Nevis"},
+    {"type":"country","code":"LC","name":"Saint Lucia"},
+    {"type":"country","code":"VC","name":"Saint Vincent and the Grenadines"},
+    {"type":"country","code":"TT","name":"Trinidad and Tobago"},
+    {"type":"territory","code":"AI","name":"Anguilla"},
+    {"type":"territory","code":"AW","name":"Aruba"},
+    {"type":"territory","code":"BQ","name":"Bonaire, Sint Eustatius and Saba"},
+    {"type":"territory","code":"VG","name":"British Virgin Islands"},
+    {"type":"territory","code":"KY","name":"Cayman Islands"},
+    {"type":"territory","code":"CW","name":"Curaçao"},
+    {"type":"territory","code":"GP","name":"Guadeloupe"},
+    {"type":"territory","code":"MQ","name":"Martinique"},
+    {"type":"territory","code":"MS","name":"Montserrat"},
+    {"type":"territory","code":"PR","name":"Puerto Rico"},
+    {"type":"territory","code":"BL","name":"Saint Barthélemy"},
+    {"type":"territory","code":"MF","name":"Saint Martin (French part)"},
+    {"type":"territory","code":"SX","name":"Sint Maarten (Dutch part)"},
+    {"type":"territory","code":"TC","name":"Turks and Caicos Islands"},
+    {"type":"territory","code":"VI","name":"United States Virgin Islands"},
+    {"type":"country","code":"BZ","name":"Belize","policy_scope":"broader_caribbean_association"},
+    {"type":"country","code":"GY","name":"Guyana","policy_scope":"broader_caribbean_association"},
+    {"type":"country","code":"SR","name":"Suriname","policy_scope":"broader_caribbean_association"}
+  ],
+  "overrides": [
+    {
+      "type":"subdivision",
+      "country":"US",
+      "code":"FL",
+      "name":"Florida",
+      "territorial_state":"PRIVILEGED",
+      "reason":"Explicit narrower TEBDLC policy rule; Florida must not inherit NEUTRAL solely from Caribbean classification."
+    }
+  ]
+}
