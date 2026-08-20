@@ -1,12 +1,12 @@
 {
-  "commit": "3e1ef3038918c2c30933a471c3ae0a4d8d190ee2",
+  "commit": "e347174e76719e93d770e586641e80911c8c3b10",
   "compile": {
     "returncode": 0,
     "stderr": "",
     "stdout": ""
   },
-  "executed_at_utc": "2026-08-20T15:25:39.616835+00:00",
-  "overall_pass": false,
+  "executed_at_utc": "2026-08-20T15:25:55.293454+00:00",
+  "overall_pass": true,
   "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
   "schema": "tebdlc-execution-proof/0.1",
   "tests": [
@@ -48,9 +48,9 @@
     },
     {
       "path": "distribution/test_adversarial_distribution.py",
-      "returncode": 1,
-      "stderr": "Traceback (most recent call last):\n  File \"/home/runner/work/Release-Candidate-v0.1.0-alpha-TEBDLC/Release-Candidate-v0.1.0-alpha-TEBDLC/distribution/test_adversarial_distribution.py\", line 20, in <module>\n    from audit_chain import append_event, verify_chain\nModuleNotFoundError: No module named 'audit_chain'\n",
-      "stdout": ""
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "adversarial distribution tests: PASS (18)\n"
     },
     {
       "path": "distribution/test_adversarial_end_to_end.py",
