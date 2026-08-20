@@ -115,8 +115,28 @@ jobs:
       - name: Persist runtime evidence
         shell: bash
         run: |
+          set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add validation/GITHUB_RUNTIME_3.11.json validation/GITHUB_RUNTIME_3.12.json validation/GITHUB_RUNTIME_3.13.json validation/GITHUB_RUNTIME_MATRIX.json
-          git commit -m 'validation: persist 3.11-3.13 runtime proof' || exit 0
-          git push
+          if git diff --cached --quiet; then
+            echo 'Runtime evidence already persisted; nothing to commit.'
+            exit 0
+          fi
+          git commit -m 'validation: persist 3.11-3.13 runtime proof'
+
+          # main may advance while this 3-runtime battery is executing. Rebase the
+          # evidence commit onto the newest remote main before pushing, and retry
+          # if another concurrent writer wins the race again.
+          for attempt in 1 2 3; do
+            echo "Persistence attempt ${attempt}/3"
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then
+              echo 'Runtime evidence persisted successfully.'
+              exit 0
+            fi
+            sleep $((attempt * 2))
+          done
+          echo 'Unable to persist runtime evidence after 3 concurrency-safe attempts.' >&2
+          exit 1
