@@ -1,7 +1,7 @@
 {
   "all_81_controls": true,
   "all_pass": true,
-  "commit": "b6b97b2d4364f5ee05cc08c050d8984cb8e2847a",
+  "commit": "5196f05968add5d746b8ea8a8a4e15707654ae0b",
   "normalization": "python-version-and-unittest-wallclock-v0.2",
   "normalized_output_sha256_by_runtime": {
     "3.11": "fd2d3a88cb07316cf30535dbcf428c5b7908bf1dbe41f8a78f20cd093214a534",
