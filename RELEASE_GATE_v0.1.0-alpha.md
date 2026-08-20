@@ -15,16 +15,20 @@ This gate prevents accidental publication of the complete territorially controll
 - [x] Rights matrix for PRIVILEGED / NEUTRAL / RESTRICTED established.
 - [x] PRIVILEGED and NEUTRAL rights made identical except for the formal TEBDLC falsification right.
 - [x] NEUTRAL ordinary testing, benchmarking, debugging and private evaluation preserved without granting participation in the formal falsification regime.
+- [x] Recipient authorization/decision contract v0.1 specified.
+- [x] Licence acceptance record format specified and schema added.
+- [x] Distribution-event audit record format specified and schema added.
+- [x] Release-manifest format specified and schema added.
+- [x] Stdlib-only fail-closed record validator added.
+- [x] Validator tests cover privileged allow, neutral allow, neutral falsification denial, restricted denial, malformed hash and manifest inconsistency.
 
 ## Blocking before controlled source distribution
 
 - [ ] Deterministic Caribbean geographic annex (NEUTRAL).
 - [ ] Deterministic Middle East/restricted geographic annex.
-- [ ] Recipient authentication/authorization specification.
-- [ ] Licence acceptance record format.
-- [ ] Distribution-event audit record format.
+- [ ] Recipient authentication implementation and credential lifecycle.
 - [ ] Controlled delivery implementation outside globally public GitHub.
-- [ ] End-to-end bypass/adversarial testing of territorial decision logic.
+- [ ] End-to-end bypass/adversarial testing of territorial decision logic and delivery path.
 - [ ] Applicable mandatory-law/export/sanctions review.
 - [ ] Final clean-room release verification against the exact controlled package SHA.
 
