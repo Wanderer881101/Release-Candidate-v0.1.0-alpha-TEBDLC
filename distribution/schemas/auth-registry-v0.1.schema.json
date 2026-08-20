@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tebdlc://distribution/auth-registry-v0.1.schema.json",
+  "title": "TEBDLC Authentication Registry v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "registry_version", "accounts"],
+  "properties": {
+    "schema": {"const": "tebdlc-auth-registry/0.1"},
+    "registry_version": {"type": "string", "minLength": 1},
+    "accounts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["subject_id", "status", "declared_territory", "credentials"],
+        "properties": {
+          "subject_id": {"type": "string", "minLength": 1},
+          "status": {"enum": ["ACTIVE", "SUSPENDED", "REVOKED"]},
+          "declared_territory": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["country_code"],
+            "properties": {
+              "country_code": {"type": "string", "pattern": "^[A-Z]{2}$"},
+              "subdivision_code": {"type": ["string", "null"]},
+              "city": {"type": ["string", "null"]}
+            }
+          },
+          "credentials": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["credential_id", "status", "not_before", "expires_at", "revoked_at", "auth"],
+              "properties": {
+                "credential_id": {"type": "string", "minLength": 1},
+                "status": {"enum": ["ACTIVE", "REVOKED", "EXPIRED"]},
+                "not_before": {"type": ["string", "null"], "format": "date-time"},
+                "expires_at": {"type": ["string", "null"], "format": "date-time"},
+                "revoked_at": {"type": ["string", "null"], "format": "date-time"},
+                "auth": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["algorithm", "iterations", "salt", "verifier"],
+                  "properties": {
+                    "algorithm": {"const": "PBKDF2-HMAC-SHA256"},
+                    "iterations": {"type": "integer", "minimum": 100000},
+                    "salt": {"type": "string", "minLength": 8},
+                    "verifier": {"type": "string", "minLength": 16}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
