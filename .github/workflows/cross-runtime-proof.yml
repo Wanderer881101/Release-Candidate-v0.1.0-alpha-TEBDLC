@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Define exact 81-control runner
+      - name: Define exact 85-control runner
         shell: bash
         run: |
           mkdir -p validation
@@ -36,15 +36,16 @@ jobs:
               ('distribution/test_audit_log.py', 5),
               ('distribution/test_adversarial_distribution.py', 18),
               ('distribution/test_adversarial_end_to_end.py', 11),
+              ('distribution/test_clean_room_tree.py', 4),
           ]
           version = f'{sys.version_info.major}.{sys.version_info.minor}'
           record = {
-              'schema': 'tebdlc-runtime-proof/0.2',
+              'schema': 'tebdlc-runtime-proof/0.3',
               'requested_runtime': version,
               'python': sys.version,
               'commit': '${{ github.sha }}',
               'executed_at_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
-              'expected_total_controls': 81,
+              'expected_total_controls': 85,
               'normalization': 'python-version-and-unittest-wallclock-v0.2',
               'suites': [],
           }
@@ -60,9 +61,6 @@ jobs:
               count = int(m.group(1)) if m else None
               observed += count or 0
               normalized = text.replace(sys.version, '<PYTHON_VERSION>')
-              # unittest embeds nondeterministic wall-clock durations such as
-              # "Ran 13 tests in 0.002s". Duration is not a semantic result and
-              # must not create a false cross-runtime divergence.
               normalized = re.sub(r'(Ran\s+\d+\s+tests?\s+in\s+)\d+(?:\.\d+)?s', r'\1<TIME>s', normalized)
               digest.update(path.encode()); digest.update(b'\0'); digest.update(normalized.encode())
               ok = p.returncode == 0 and count == expected
@@ -70,7 +68,7 @@ jobs:
               record['suites'].append({'path':path,'expected_count':expected,'observed_count':count,'returncode':p.returncode,'ok':ok,'stdout':p.stdout[-4000:],'stderr':p.stderr[-4000:]})
           record['observed_total_controls'] = observed
           record['normalized_output_sha256'] = digest.hexdigest()
-          record['overall_pass'] = bool(overall and observed == 81)
+          record['overall_pass'] = bool(overall and observed == 85)
           out = pathlib.Path(f'validation/GITHUB_RUNTIME_{version}.json')
           out.write_text(json.dumps(record, indent=2, sort_keys=True)+'\n', encoding='utf-8')
           if not record['overall_pass']:
@@ -104,17 +102,17 @@ jobs:
           records = [json.loads((root/f'GITHUB_RUNTIME_{v}.json').read_text()) for v in ('3.11','3.12','3.13')]
           hashes = {r['requested_runtime']: r['normalized_output_sha256'] for r in records}
           matrix = {
-              'schema':'tebdlc-runtime-concordance/0.2',
+              'schema':'tebdlc-runtime-concordance/0.3',
               'commit':'${{ github.sha }}',
               'all_pass':all(r['overall_pass'] for r in records),
-              'all_81_controls':all(r['observed_total_controls']==81 for r in records),
+              'all_85_controls':all(r['observed_total_controls']==85 for r in records),
               'normalized_outputs_identical':len(set(hashes.values()))==1,
               'normalization':'python-version-and-unittest-wallclock-v0.2',
               'normalized_output_sha256_by_runtime':hashes,
               'runtimes':[{k:r[k] for k in ('requested_runtime','python','overall_pass','observed_total_controls','normalized_output_sha256')} for r in records],
           }
           (root/'GITHUB_RUNTIME_MATRIX.json').write_text(json.dumps(matrix,indent=2,sort_keys=True)+'\n')
-          if not matrix['all_pass'] or not matrix['all_81_controls'] or not matrix['normalized_outputs_identical']:
+          if not matrix['all_pass'] or not matrix['all_85_controls'] or not matrix['normalized_outputs_identical']:
               raise SystemExit('cross-runtime semantic concordance failed')
           PY
 
@@ -130,10 +128,6 @@ jobs:
             exit 0
           fi
           git commit -m 'validation: persist 3.11-3.13 runtime proof'
-
-          # main may advance while this 3-runtime battery is executing. Rebase the
-          # evidence commit onto the newest remote main before pushing, and retry
-          # if another concurrent writer wins the race again.
           for attempt in 1 2 3; do
             echo "Persistence attempt ${attempt}/3"
             git fetch origin main
