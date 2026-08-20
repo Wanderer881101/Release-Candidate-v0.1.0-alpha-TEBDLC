@@ -16,6 +16,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from audit_log import append_event
 from authorize_request import authorize
 
 ENGINE_VERSION = "controlled-delivery/0.1"
@@ -141,7 +142,6 @@ def controlled_deliver(
     except OSError:
         return _deny("DENY_PATH_INTEGRITY_FAILURE", subject_id, state)
 
-    # Never permit source and destination to collapse to the same path.
     destination = output_resolved / source_resolved.name
     try:
         if destination.resolve(strict=False) == source_resolved:
@@ -156,7 +156,6 @@ def controlled_deliver(
     if pre_hash != expected_hash:
         return _deny("DENY_PACKAGE_HASH_MISMATCH", subject_id, state)
 
-    # Copy to a temporary file in the destination filesystem, verify, then atomically replace.
     temp_path: Path | None = None
     try:
         fd, tmp_name = tempfile.mkstemp(prefix=".tebdlc-delivery-", dir=str(output_resolved))
@@ -164,7 +163,6 @@ def controlled_deliver(
         temp_path = Path(tmp_name)
         shutil.copyfile(source_resolved, temp_path)
         copied_hash = _sha256_file(temp_path)
-        # Detect both source mutation and copy corruption before publication.
         post_hash = _sha256_file(source_resolved)
         if copied_hash != expected_hash or post_hash != expected_hash:
             return _deny("DENY_PACKAGE_HASH_MISMATCH", subject_id, state)
@@ -179,7 +177,7 @@ def controlled_deliver(
             except OSError:
                 pass
 
-    event = {
+    return {
         "decision": "ALLOW",
         "reason_code": authz.get("reason_code"),
         "subject_id": subject_id,
@@ -192,7 +190,23 @@ def controlled_deliver(
         "delivered_at": now.isoformat(),
         "delivery_engine_version": ENGINE_VERSION,
     }
-    return event
+
+
+def audited_controlled_deliver(*, audit_log_path: str | os.PathLike[str], **kwargs: Any) -> dict[str, Any]:
+    """Run a delivery attempt and append its result to the hash-chained audit log.
+
+    Both ALLOW and DENY outcomes are persisted. Raw presented secrets are never
+    copied into the audit event.
+    """
+    now = kwargs.get("now")
+    result = controlled_deliver(**kwargs)
+    audit_event = dict(result)
+    audit_event.pop("credential_secret", None)
+    stored = append_event(audit_log_path, audit_event, now=now)
+    returned = dict(result)
+    returned["audit_sequence"] = stored["sequence"]
+    returned["audit_entry_hash"] = stored["entry_hash"]
+    return returned
 
 
 def load_json(path: str | os.PathLike[str]) -> dict[str, Any]:
