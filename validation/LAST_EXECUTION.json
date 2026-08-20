@@ -1,11 +1,11 @@
 {
-  "commit": "d6e0d874b1c0cb9dea5fff1792dc10cf7022486d",
+  "commit": "73d7880658aaf54b40384b810ebef2ed74adeecd",
   "compile": {
     "returncode": 0,
     "stderr": "",
     "stdout": ""
   },
-  "executed_at_utc": "2026-08-20T15:34:28.458205+00:00",
+  "executed_at_utc": "2026-08-20T15:48:04.372677+00:00",
   "overall_pass": true,
   "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
   "schema": "tebdlc-execution-proof/0.1",
@@ -19,7 +19,7 @@
     {
       "path": "distribution/test_resolve_territory.py",
       "returncode": 0,
-      "stderr": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.002s\n\nOK\n",
+      "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.002s\n\nOK\n",
       "stdout": ""
     },
     {
