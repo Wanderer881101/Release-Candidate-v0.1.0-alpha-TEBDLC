@@ -1,0 +1,20 @@
+{
+  "schema": "tebdlc-package-assembly-status/0.1",
+  "release_id": "v0.1.0-alpha",
+  "source_repository": "Wanderer881101/TEBDLC",
+  "source_commit": "677a28d87164379cb2a268e55cfc30302ebc44ab",
+  "source_tree_sha1": "63658d334ae8c3d280e9ef2c29845fffce2747e6",
+  "recursive_source_tree_complete": true,
+  "assembler": "distribution/assemble_private_git_tree.py",
+  "assembler_proof_controls": 5,
+  "active_cross_runtime_controls": 90,
+  "cross_runtime_all_pass": true,
+  "cross_runtime_normalized_outputs_identical": true,
+  "cross_runtime_normalized_sha256": "4dc648dfe39adfbd35b2d76783e9525ad52b82c9e82a1e0cad2cd1e141e90954",
+  "lab_private_git_credentials_available": false,
+  "real_archive_materialized": false,
+  "real_package_sha256": null,
+  "clean_room_real_package_pass": false,
+  "status": "BLOCKED_ONLY_ON_AUTHENTICATED_PRIVATE_SOURCE_MATERIALIZATION",
+  "invariant": "No package SHA-256 or CLEAN_ROOM_PASS may be claimed until the exact bound private Git tree has been materially fetched, verified, archived and re-verified."
+}
