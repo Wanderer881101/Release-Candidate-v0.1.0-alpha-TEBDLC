@@ -16,47 +16,41 @@ This gate prevents accidental publication of the complete territorially controll
 - [x] PRIVILEGED and NEUTRAL rights made identical except for the formal TEBDLC falsification right.
 - [x] NEUTRAL ordinary testing, benchmarking, debugging and private evaluation preserved without granting participation in the formal falsification regime.
 - [x] Recipient authorization/decision contract v0.1 specified.
-- [x] Licence acceptance record format specified and schema added.
-- [x] Distribution-event audit record format specified and schema added.
-- [x] Release-manifest format specified and schema added.
+- [x] Licence acceptance, distribution-event and release-manifest schemas added.
 - [x] Stdlib-only fail-closed record validator added.
-- [x] Validator tests cover privileged allow, neutral allow, neutral falsification denial, restricted denial, malformed hash and manifest inconsistency.
-- [x] Deterministic Caribbean geographic annex added with NEUTRAL semantics and Florida override preserved.
-- [x] Deterministic Middle East/restricted annex added from explicitly approved restricted territories.
+- [x] Deterministic Caribbean and restricted-region annexes added.
 - [x] Deterministic territorial resolver added with narrow-rule precedence and fail-closed default.
-- [x] Territorial resolver tests cover Québec, Ottawa, France, Florida, New York, Caribbean neutral states, restricted states and unresolved territories.
-- [x] Recipient authentication reference implementation added.
-- [x] Authentication registry schema added.
-- [x] Credential lifecycle includes ACTIVE/SUSPENDED/REVOKED account handling, credential validity windows, revocation, duplicate-ID rejection and rotation.
-- [x] Stored credentials use salted PBKDF2-HMAC-SHA256 verifiers; raw secrets are not intended for repository persistence.
+- [x] Recipient authentication reference implementation and credential lifecycle added.
 - [x] Integrated authentication + territorial resolution + rights authorization engine added.
-- [x] Authentication and integrated authorization test suites added for success, wrong secret, suspended account, revoked/expired/not-yet-valid credential, rotation, neutral rights, restricted denial and fail-closed behavior.
-- [x] Controlled-delivery reference primitive added for private/local package sources and authorized output destinations.
-- [x] Delivery binds authenticated subject, territorial state, licence acceptance, release identity, licence/policy hashes and exact package SHA-256.
-- [x] Delivery performs pre-copy, copied-file and post-copy package-hash verification before atomic destination promotion.
-- [x] Controlled-delivery tests added for privileged/neutral allow paths and authentication, territory, identity, policy, release, package and path failure cases.
-- [x] Hash-chained append-only audit log reference added.
-- [x] Audit append now verifies the entire existing chain before adding a new event.
-- [x] Audited delivery wrapper persists both ALLOW and DENY outcomes without persisting the presented raw credential secret.
-- [x] Adversarial end-to-end suite added for wrong-secret, restricted-territory, neutral/privileged mismatch, acceptance-identity substitution, release substitution, package tamper, licence/policy substitution, audit tampering and secret-field injection.
-- [x] Extended 18-scenario adversarial suite added for source symlinks, source/destination collapse, missing manifest/acceptance fields, duplicate subject records, audit deletion and other bypass/integrity cases.
-- [x] Controlled-distribution threat model v0.1 added with explicit in-scope and residual/out-of-scope risks.
-- [x] Private deployment specification v0.1 added, separating public governance, authorization, private package vault and delivery trust zones.
-- [x] Clean-room verification harness added to bind exact package, active licence and territorial-policy hashes and execute all reference/adversarial suites.
+- [x] Controlled-delivery reference primitive added with pre-copy/copy/post-copy SHA verification and atomic promotion.
+- [x] Hash-chained append-only audit log reference added; existing chain is verified before append.
+- [x] Audited delivery wrapper persists ALLOW and DENY outcomes without storing the raw presented secret.
+- [x] Controlled-distribution threat model and private deployment specification added.
+- [x] Clean-room verification harness added.
+- [x] Public executable validation persisted in `validation/LAST_EXECUTION.json` with `overall_pass: true`.
+- [x] Executed suite totals: validator 8, resolver 11, authentication 8, authorization 8, controlled delivery 10, audit 5, adversarial distribution 18, adversarial end-to-end 11 — all PASS.
+- [x] First executable pass defects were identified and corrected: resolver direct-execution import mismatch, audit-chain naming compatibility, and obsolete clean-room audit-test filename.
+- [x] Clean-room harness materially exercised with an isolated synthetic package and the real active licence/policy SHA-256 values; persisted `CLEAN_ROOM_PASS` in `validation/CLEAN_ROOM_HARNESS_EXECUTION.json`.
+- [x] Material-proof boundary and private-package attempt recorded in `validation/MATERIAL_PROOF_STATUS.md`.
 
 ## Verification note
 
-The reference test code and adversarial suites are present and reviewable. A complete clean execution of the current public repository state has not yet been recorded from this assistant's sandbox because direct reconstruction through `raw.githubusercontent.com` was unavailable in the earlier lab environment. This infrastructure limitation is not counted as a TEBDLC test failure. Runtime execution remains part of the final clean-room verification gate.
+The public reference/distribution system is no longer merely reviewable code: it has been executed on GitHub-hosted Python 3.11.16, corrected from the first observed failures, and re-executed to a complete PASS. The clean-room harness has also executed end-to-end and returned `CLEAN_ROOM_PASS` against material synthetic input bound to the active licence and territorial-policy hashes.
+
+This does **not** substitute a synthetic artifact for the private TEBDLC product package.
+
+A deterministic packaging attempt was made directly from the canonical private `Wanderer881101/TEBDLC` PR lineage. The private GitHub workflow reached workflow scheduling, but its Python 3.11/3.12/3.13 and C jobs terminated before any executable steps were exposed; the dependent package job was therefore skipped. No product failure is inferred from that non-executed private run. The private workflow was restored afterward to the quota-safe policy.
 
 ## Blocking before controlled source distribution
 
+- [ ] Obtain an execution/archive path capable of reading the canonical private source tree as a whole and assemble the exact controlled `v0.1.0-alpha` source package.
+- [ ] Calculate and persist the immutable package SHA-256 and final release manifest bound to the exact private source commit.
+- [ ] Run the already-proven `distribution/clean_room_verify.py` against that exact real package, active licence and territorial policy and persist `CLEAN_ROOM_PASS`.
 - [ ] Deploy/operate the controlled-delivery reference outside globally public GitHub against a private controlled package store.
-- [ ] Execute the complete reference and adversarial suites against that deployed/private-package environment and persist results/hashes; code presence alone is not a PASS.
+- [ ] Execute the reference/adversarial suites against that deployed/private-package environment and persist results/hashes.
 - [ ] Add production operational controls appropriate to the selected hosting environment (TLS, secret/KMS handling, service isolation, ACLs, rate limiting, monitoring and backup/recovery as applicable).
 - [ ] Applicable mandatory-law/export/sanctions review and any required operational adjustment.
-- [ ] Assemble the exact controlled `v0.1.0-alpha` package and create its immutable release manifest and package SHA-256.
-- [ ] Run `distribution/clean_room_verify.py` against that exact package, active licence and territorial policy and persist a passing verification record.
-- [ ] Persist immutable release manifest, verification record, policy/licence hashes and final audit checkpoint for the delivered candidate.
+- [ ] Persist immutable release manifest, real-package verification record, policy/licence hashes and final audit checkpoint for the delivered candidate.
 
 ## External legal status
 
