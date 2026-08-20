@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tebdlc.invalid/schemas/licence-acceptance-v0.1.schema.json",
+  "title": "TEBDLC Licence Acceptance Record v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["acceptance_id","authorization_identity","declared_territory","territorial_state","licence_version","licence_sha256","territorial_policy_version","territorial_policy_sha256","tebdlc_release","package_sha256","accepted_at","acceptance_mechanism_version"],
+  "properties": {
+    "acceptance_id": {"type":"string","minLength":8,"maxLength":128},
+    "authorization_identity": {"type":"string","minLength":1,"maxLength":256},
+    "declared_territory": {"type":"string","minLength":1,"maxLength":256},
+    "territorial_state": {"enum":["PRIVILEGED","NEUTRAL","RESTRICTED"]},
+    "licence_version": {"type":"string","const":"0.1"},
+    "licence_sha256": {"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "territorial_policy_version": {"type":"string","const":"0.1"},
+    "territorial_policy_sha256": {"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "tebdlc_release": {"type":"string","minLength":1,"maxLength":128},
+    "package_sha256": {"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "accepted_at": {"type":"string","format":"date-time"},
+    "acceptance_mechanism_version": {"type":"string","minLength":1,"maxLength":64}
+  }
+}
