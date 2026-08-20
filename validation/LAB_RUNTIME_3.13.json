@@ -1,0 +1,20 @@
+{
+  "schema": "tebdlc-lab-runtime-proof/0.1",
+  "runtime": "Python 3.13.5",
+  "source_mode": "reconstructed_current_github_logic_and_scenarios_not_byte_identical_checkout",
+  "expected_total_controls": 81,
+  "observed_total_controls": 81,
+  "overall_pass": true,
+  "output_sha256": "633c608bfff86194fa2418fab61ec87e753b94e342fc615e6edbb2fc8296c5f5",
+  "suites": [
+    {"name":"validator","controls":8,"pass":true},
+    {"name":"territorial_resolver","controls":13,"pass":true},
+    {"name":"authentication","controls":8,"pass":true},
+    {"name":"authorization","controls":8,"pass":true},
+    {"name":"controlled_delivery","controls":10,"pass":true},
+    {"name":"audit_log","controls":5,"pass":true},
+    {"name":"adversarial_distribution","controls":18,"pass":true},
+    {"name":"adversarial_end_to_end","controls":11,"pass":true}
+  ],
+  "interpretation": "This is independent lab evidence for the current logic/scenario mirror. It must not be represented as a byte-for-byte checkout proof. Exact-repository equivalence is delegated to the GitHub cross-runtime proof workflow."
+}
