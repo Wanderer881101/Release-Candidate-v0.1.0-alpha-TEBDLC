@@ -25,10 +25,19 @@ This gate prevents accidental publication of the complete territorially controll
 - [x] Deterministic Middle East/restricted annex added from explicitly approved restricted territories.
 - [x] Deterministic territorial resolver added with narrow-rule precedence and fail-closed default.
 - [x] Territorial resolver tests cover Québec, Ottawa, France, Florida, New York, Caribbean neutral states, restricted states and unresolved territories.
+- [x] Recipient authentication reference implementation added.
+- [x] Authentication registry schema added.
+- [x] Credential lifecycle includes ACTIVE/SUSPENDED/REVOKED account handling, credential validity windows, revocation, duplicate-ID rejection and rotation.
+- [x] Stored credentials use salted PBKDF2-HMAC-SHA256 verifiers; raw secrets are not intended for repository persistence.
+- [x] Integrated authentication + territorial resolution + rights authorization engine added.
+- [x] Authentication and integrated authorization test suites added for success, wrong secret, suspended account, revoked/expired/not-yet-valid credential, rotation, neutral rights, restricted denial and fail-closed behavior.
+
+## Verification note
+
+The authentication/authorization test code is present and reviewable. A direct clean execution from this assistant's sandbox was not recorded because the sandbox could not resolve `raw.githubusercontent.com` to reconstruct the public repository state. This infrastructure limitation is not counted as a TEBDLC test failure. Runtime execution remains part of the final clean-room verification gate.
 
 ## Blocking before controlled source distribution
 
-- [ ] Recipient authentication implementation and credential lifecycle.
 - [ ] Controlled delivery implementation outside globally public GitHub.
 - [ ] End-to-end bypass/adversarial testing of territorial decision logic and delivery path.
 - [ ] Applicable mandatory-law/export/sanctions review.
