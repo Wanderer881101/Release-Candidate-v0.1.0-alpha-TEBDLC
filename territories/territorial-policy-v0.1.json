@@ -13,23 +13,33 @@
     {"type": "subdivision", "country": "US", "code": "FL", "name": "Florida"}
   ],
   "neutral": [
-    {
-      "type": "region_class",
-      "id": "CARIBBEAN_ALL",
-      "name": "Caribbean — all territories",
-      "requires_enumerated_annex": true,
-      "meaning": "NO_TERRITORIAL_PRIVILEGE_AND_NO_TERRITORIAL_RESTRICTION"
-    }
+    {"type": "region_class", "id": "CARIBBEAN_ALL", "name": "Caribbean — all territories", "requires_enumerated_annex": true, "meaning": "NO_TERRITORIAL_PRIVILEGE_AND_NO_TERRITORIAL_RESTRICTION"}
   ],
   "explicitly_restricted": [
     {"type": "city", "country": "CA", "subdivision": "Ontario", "name": "Ottawa"},
-    {
-      "type": "region_class",
-      "id": "MIDDLE_EAST_ALL",
-      "name": "Middle East — all territories",
-      "requires_enumerated_annex": true,
-      "meaning": "EXPLICITLY_RESTRICTED"
-    }
+    {"type": "region_class", "id": "MIDDLE_EAST_ALL", "name": "Middle East — all territories", "requires_enumerated_annex": true, "meaning": "EXPLICITLY_RESTRICTED"},
+    {"type": "country", "code": "TR", "name": "Türkiye"},
+    {"type": "country", "code": "CY", "name": "Cyprus"},
+    {"type": "country", "code": "LB", "name": "Lebanon"},
+    {"type": "country", "code": "SY", "name": "Syria"},
+    {"type": "country", "code": "IL", "name": "Israel"},
+    {"type": "country", "code": "JO", "name": "Jordan"},
+    {"type": "country", "code": "IQ", "name": "Iraq"},
+    {"type": "country", "code": "IR", "name": "Iran"},
+    {"type": "country", "code": "AF", "name": "Afghanistan"},
+    {"type": "country", "code": "KW", "name": "Kuwait"},
+    {"type": "country", "code": "BH", "name": "Bahrain"},
+    {"type": "country", "code": "SA", "name": "Saudi Arabia"},
+    {"type": "country", "code": "QA", "name": "Qatar"},
+    {"type": "country", "code": "AE", "name": "United Arab Emirates"},
+    {"type": "country", "code": "OM", "name": "Oman"},
+    {"type": "country", "code": "YE", "name": "Yemen"},
+    {"type": "country", "code": "EG", "name": "Egypt"},
+    {"type": "country", "code": "SD", "name": "Sudan"},
+    {"type": "country", "code": "ER", "name": "Eritrea"},
+    {"type": "country", "code": "ET", "name": "Ethiopia"},
+    {"type": "country", "code": "DJ", "name": "Djibouti"},
+    {"type": "country", "code": "TM", "name": "Turkmenistan"}
   ],
   "rules": {
     "neutral_is_not_privileged": true,
@@ -44,13 +54,5 @@
     "territorial_state_must_be_logged": true,
     "authorship_and_provenance_survive_policy_changes": true
   },
-  "activation_blockers": [
-    "LEGAL_REVIEW",
-    "CUSTOM_LICENCE_FINALIZATION",
-    "CARIBBEAN_ENUMERATED_ANNEX",
-    "MIDDLE_EAST_ENUMERATED_ANNEX",
-    "RECIPIENT_AUTHORIZATION_MODEL",
-    "CONTROLLED_DISTRIBUTION_IMPLEMENTATION",
-    "MANDATORY_LAW_AND_EXPORT_SANCTIONS_REVIEW"
-  ]
+  "activation_blockers": ["LEGAL_REVIEW", "CUSTOM_LICENCE_FINALIZATION", "CARIBBEAN_ENUMERATED_ANNEX", "MIDDLE_EAST_ENUMERATED_ANNEX", "RECIPIENT_AUTHORIZATION_MODEL", "CONTROLLED_DISTRIBUTION_IMPLEMENTATION", "MANDATORY_LAW_AND_EXPORT_SANCTIONS_REVIEW"]
 }
