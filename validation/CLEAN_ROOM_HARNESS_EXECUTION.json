@@ -1,62 +1,66 @@
 {
-  "commit": "84dcf1c927c292fba6dc4628c72e0d8c7ac9c833",
-  "compile": {
-    "returncode": 0,
-    "stderr": "",
-    "stdout": ""
-  },
-  "executed_at_utc": "2026-08-20T15:31:35.795022+00:00",
-  "overall_pass": true,
-  "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
-  "schema": "tebdlc-execution-proof/0.1",
+  "clean_room_version": "0.1",
+  "licence_sha256": "86fddddedbd112c2c8b420d4b31802147a3bce702ff68db3683b816b39e69ac1",
+  "manifest_sha256": "6c4eb2d46dfee93a5f4174f411f02c77e6b7c12614871708a84b7c2ebf740f63",
+  "package_sha256": "5ffda7da49bae241acb829806fba6bf5841deba50f452f89648fff1159656011",
+  "territorial_policy_sha256": "df810bf913d1ee2abb552ed11ca6255cbd484305d8a4f13d09d976533174c33e",
   "tests": [
     {
-      "path": "distribution/test_validate_records.py",
+      "ok": true,
       "returncode": 0,
       "stderr": "test_bad_hash_rejected (__main__.ValidatorTests.test_bad_hash_rejected) ... ok\ntest_manifest (__main__.ValidatorTests.test_manifest) ... ok\ntest_neutral_allow_non_falsification (__main__.ValidatorTests.test_neutral_allow_non_falsification) ... ok\ntest_neutral_falsification_denied (__main__.ValidatorTests.test_neutral_falsification_denied) ... ok\ntest_privileged_allow (__main__.ValidatorTests.test_privileged_allow) ... ok\ntest_restricted_acceptance_forbidden (__main__.ValidatorTests.test_restricted_acceptance_forbidden) ... ok\ntest_restricted_must_deny (__main__.ValidatorTests.test_restricted_must_deny) ... ok\ntest_unknown_field_rejected (__main__.ValidatorTests.test_unknown_field_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
-      "stdout": ""
+      "stdout": "",
+      "test": "test_validate_records.py"
     },
     {
-      "path": "distribution/test_resolve_territory.py",
+      "ok": true,
       "returncode": 0,
       "stderr": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.002s\n\nOK\n",
-      "stdout": ""
+      "stdout": "",
+      "test": "test_resolve_territory.py"
     },
     {
-      "path": "distribution/test_authentication.py",
+      "ok": true,
       "returncode": 0,
       "stderr": "",
-      "stdout": "authentication tests: PASS (8)\n"
+      "stdout": "authentication tests: PASS (8)\n",
+      "test": "test_authentication.py"
     },
     {
-      "path": "distribution/test_authorize_request.py",
+      "ok": true,
       "returncode": 0,
       "stderr": "",
-      "stdout": "integrated authorization tests: PASS (8)\n"
+      "stdout": "integrated authorization tests: PASS (8)\n",
+      "test": "test_authorize_request.py"
     },
     {
-      "path": "distribution/test_controlled_delivery.py",
+      "ok": true,
       "returncode": 0,
       "stderr": "",
-      "stdout": "controlled delivery tests: PASS (10)\n"
+      "stdout": "controlled delivery tests: PASS (10)\n",
+      "test": "test_controlled_delivery.py"
     },
     {
-      "path": "distribution/test_audit_log.py",
+      "ok": true,
       "returncode": 0,
       "stderr": "",
-      "stdout": "audit log tests: PASS (5)\n"
+      "stdout": "audit log tests: PASS (5)\n",
+      "test": "test_audit_log.py"
     },
     {
-      "path": "distribution/test_adversarial_distribution.py",
+      "ok": true,
       "returncode": 0,
       "stderr": "",
-      "stdout": "adversarial distribution tests: PASS (18)\n"
+      "stdout": "adversarial distribution tests: PASS (18)\n",
+      "test": "test_adversarial_distribution.py"
     },
     {
-      "path": "distribution/test_adversarial_end_to_end.py",
+      "ok": true,
       "returncode": 0,
       "stderr": "",
-      "stdout": "adversarial end-to-end tests: PASS (11)\n"
+      "stdout": "adversarial end-to-end tests: PASS (11)\n",
+      "test": "test_adversarial_end_to_end.py"
     }
-  ]
+  ],
+  "tests_ok": true
 }
