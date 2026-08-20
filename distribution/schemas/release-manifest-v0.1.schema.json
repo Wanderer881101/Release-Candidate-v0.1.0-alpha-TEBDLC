@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tebdlc.invalid/schemas/release-manifest-v0.1.schema.json",
+  "title": "TEBDLC Controlled Release Manifest v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["manifest_version","release_id","source_commits","package_sha256","assembly_procedure_version","licence_version","licence_sha256","territorial_policy_version","territorial_policy_sha256","verification_record_sha256","created_at"],
+  "properties": {
+    "manifest_version": {"const":"0.1"},
+    "release_id": {"type":"string","minLength":1,"maxLength":128},
+    "source_commits": {"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string","pattern":"^[a-f0-9]{40}$"}},
+    "package_sha256": {"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "assembly_procedure_version": {"type":"string","minLength":1,"maxLength":64},
+    "licence_version": {"const":"0.1"},
+    "licence_sha256": {"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "territorial_policy_version": {"const":"0.1"},
+    "territorial_policy_sha256": {"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "verification_record_sha256": {"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "created_at": {"type":"string","format":"date-time"}
+  }
+}
