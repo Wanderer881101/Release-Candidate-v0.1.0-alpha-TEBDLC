@@ -26,34 +26,61 @@ jobs:
         run: |
           mkdir -p validation
           python - <<'PY'
-          import json, pathlib, subprocess, sys, datetime
-          tests = [
-              'distribution/test_validate_records.py',
-              'distribution/test_resolve_territory.py',
-              'distribution/test_authentication.py',
-              'distribution/test_authorize_request.py',
-              'distribution/test_controlled_delivery.py',
-              'distribution/test_audit_log.py',
-              'distribution/test_adversarial_distribution.py',
-              'distribution/test_adversarial_end_to_end.py',
+          import json, pathlib, re, subprocess, sys, datetime
+          suites = [
+              ('distribution/test_validate_records.py', 8),
+              ('distribution/test_resolve_territory.py', 13),
+              ('distribution/test_authentication.py', 8),
+              ('distribution/test_authorize_request.py', 8),
+              ('distribution/test_controlled_delivery.py', 10),
+              ('distribution/test_audit_log.py', 5),
+              ('distribution/test_adversarial_distribution.py', 18),
+              ('distribution/test_adversarial_end_to_end.py', 11),
           ]
+          expected_total = sum(count for _, count in suites)
           record = {
-              'schema': 'tebdlc-execution-proof/0.1',
+              'schema': 'tebdlc-execution-proof/0.2',
               'python': sys.version,
               'executed_at_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
               'commit': '${{ github.sha }}',
+              'expected_total_controls': expected_total,
               'tests': [],
           }
           overall = True
+          observed_total = 0
           compile_proc = subprocess.run([sys.executable, '-m', 'compileall', '-q', 'distribution', 'territories'], capture_output=True, text=True)
           record['compile'] = {'returncode': compile_proc.returncode, 'stdout': compile_proc.stdout[-4000:], 'stderr': compile_proc.stderr[-4000:]}
           overall &= compile_proc.returncode == 0
-          for path in tests:
+          for path, expected_count in suites:
               p = subprocess.run([sys.executable, path], capture_output=True, text=True)
-              record['tests'].append({'path': path, 'returncode': p.returncode, 'stdout': p.stdout[-4000:], 'stderr': p.stderr[-4000:]})
-              overall &= p.returncode == 0
+              text = (p.stdout or '') + '\n' + (p.stderr or '')
+              found = None
+              m = re.search(r'Ran\s+(\d+)\s+tests?', text)
+              if m:
+                  found = int(m.group(1))
+              else:
+                  m = re.search(r'PASS\s*\((\d+)\)', text)
+                  if m:
+                      found = int(m.group(1))
+              count_ok = found == expected_count
+              observed_total += found or 0
+              record['tests'].append({
+                  'path': path,
+                  'expected_count': expected_count,
+                  'observed_count': found,
+                  'count_ok': count_ok,
+                  'returncode': p.returncode,
+                  'stdout': p.stdout[-4000:],
+                  'stderr': p.stderr[-4000:],
+              })
+              overall &= p.returncode == 0 and count_ok
+          record['observed_total_controls'] = observed_total
+          record['control_count_ok'] = observed_total == expected_total == 81
+          overall &= record['control_count_ok']
           record['overall_pass'] = bool(overall)
           pathlib.Path('validation/LAST_EXECUTION.json').write_text(json.dumps(record, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          if not overall:
+              raise SystemExit('RC validation failed or control-count regression detected')
           PY
       - name: Exercise clean-room harness end-to-end
         shell: bash
@@ -113,6 +140,8 @@ jobs:
               'overall_pass': int('$RC') == 0,
           }
           (p/'CLEAN_ROOM_HARNESS_EXECUTION.json').write_text(json.dumps(wrapper, indent=2, sort_keys=True)+'\n', encoding='utf-8')
+          if int('$RC') != 0:
+              raise SystemExit('clean-room harness failed')
           PY
           rm -rf validation/clean-room-material validation/CLEAN_ROOM_HARNESS_RAW.json validation/clean-room.stdout validation/clean-room.stderr
       - name: Commit execution evidence
@@ -121,5 +150,33 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add validation/LAST_EXECUTION.json validation/CLEAN_ROOM_HARNESS_EXECUTION.json
-          git commit -m 'validation: persist RC execution and clean-room evidence' || exit 0
+          git commit -m 'validation: persist 81-control execution evidence' || exit 0
           git push
+
+  compatibility:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile
+        run: python -m compileall -q distribution territories
+      - name: Execute all 81 controls
+        shell: bash
+        run: |
+          set -euo pipefail
+          python distribution/test_validate_records.py
+          python distribution/test_resolve_territory.py
+          python distribution/test_authentication.py
+          python distribution/test_authorize_request.py
+          python distribution/test_controlled_delivery.py
+          python distribution/test_audit_log.py
+          python distribution/test_adversarial_distribution.py
+          python distribution/test_adversarial_end_to_end.py
