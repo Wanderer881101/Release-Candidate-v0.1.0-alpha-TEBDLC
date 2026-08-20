@@ -30,39 +30,42 @@ This gate prevents accidental publication of the complete territorially controll
 - [x] Clean-room verification harness added.
 - [x] Public executable validation persisted with `overall_pass: true`.
 - [x] Base distribution/reference suite totals: validator 8, resolver 13, authentication 8, authorization 8, controlled delivery 10, audit 5, adversarial distribution 18, adversarial end-to-end 11 — **81 controls**.
-- [x] Git-tree/archive binding suite added with 4 controls: known Git-tree vector, one-byte mutation, duplicate-path rejection, and traversal rejection.
-- [x] Active executable baseline raised to **85 controls**.
-- [x] GitHub-hosted compatibility proof materially completed on Python 3.11.16, 3.12.14 and 3.13.15: **85/85 PASS on all three runtimes**.
-- [x] Cross-runtime semantic concordance v0.3 confirmed: all three runtimes produce normalized output SHA-256 `66b8e73171d66b753b5c0d5e1ed288999ea597f7026bba7c68ba4ac176e7b96e`.
+- [x] Git-tree/archive binding suite added with 4 controls.
+- [x] Authenticated private-Git assembler added with 5 executable controls covering known Git object vectors, one-byte mutation, deterministic rebuild, archive/tree round-trip and symlink round-trip.
+- [x] Active executable baseline raised to **90 controls**.
+- [x] GitHub-hosted compatibility proof materially completed on Python 3.11.16, 3.12.14 and 3.13.15: **90/90 PASS on all three runtimes**.
+- [x] Cross-runtime semantic concordance v0.4 confirmed: all three runtimes produce normalized output SHA-256 `4dc648dfe39adfbd35b2d76783e9525ad52b82c9e82a1e0cad2cd1e141e90954`.
 - [x] Clean-room v0.2 binds a candidate archive to its expected Git root tree in addition to package/licence/policy SHA-256 values.
 - [x] Exact private source candidate bound to PR #4 branch `proof/r6-executable-invariants`, commit `677a28d87164379cb2a268e55cfc30302ebc44ab`.
 - [x] Exact private Git root-tree Merkle identity persisted: `63658d334ae8c3d280e9ef2c29845fffce2747e6`; recursive authenticated Git-tree query returned `truncated:false`.
 - [x] Public non-disclosing source-tree proof persisted in `validation/PRIVATE_SOURCE_TREE_PROOF.json`.
+- [x] Operational acceptance gate persisted in `distribution/OPERATIONAL_ACCEPTANCE_v0.1.md`.
 - [x] Material-proof boundary and private-package attempts recorded without substituting synthetic/package-placeholder hashes for the real package.
 
 ## Verification note
 
-The public reference/distribution system is materially exercised, not merely reviewable. GitHub-hosted Python 3.11.16, 3.12.14 and 3.13.15 each execute the full **85-control** active battery successfully. Concordance matrix schema `tebdlc-runtime-concordance/0.3` reports identical normalized output hashes across all three runtimes.
+The active public reference/release-tooling battery now contains **90 controls**. GitHub-hosted Python 3.11.16, 3.12.14 and 3.13.15 each execute all 90 successfully. Concordance matrix schema `tebdlc-runtime-concordance/0.4` reports the same normalized output SHA-256 across all three runtimes: `4dc648dfe39adfbd35b2d76783e9525ad52b82c9e82a1e0cad2cd1e141e90954`.
 
-The private product candidate is materially bound at the Git-object level. Its exact source commit is `677a28d87164379cb2a268e55cfc30302ebc44ab`; the commit object points to root tree `63658d334ae8c3d280e9ef2c29845fffce2747e6`. A recursive authenticated Git-tree query for that candidate is complete (`truncated:false`). This establishes exact Merkle identity of the tracked private source content without publishing that source.
+The private product candidate is materially bound at the Git-object level. Its exact source commit is `677a28d87164379cb2a268e55cfc30302ebc44ab`; the commit object points to root tree `63658d334ae8c3d280e9ef2c29845fffce2747e6`. A recursive authenticated Git-tree query for that candidate is complete (`truncated:false`).
 
-The Git root-tree identity is **not** the final distribution archive SHA-256. The archive must still be materially assembled, hashed, checked back against the expected Git tree, and then passed through clean-room verification.
+`distribution/assemble_private_git_tree.py` is the current material assembly path. It authenticates to GitHub, verifies every fetched blob against its Git SHA-1, rebuilds the complete source tree locally, requires exact root-tree equality, creates a canonical deterministic tar.gz, rebuilds it byte-for-byte, and emits `PACKAGE_PROOF.json` plus `SHA256SUMS`.
 
-The private hosted-runner packaging attempt failed before exposing executable steps and produced no artifact/log blob. No product or packaging-script failure is inferred from that non-execution. Authenticated Git-object API access is therefore the preferred source-reading path for the next material assembly attempt.
+The current ChatGPT lab does not expose a `GITHUB_TOKEN` or `GH_TOKEN`; therefore the private blobs cannot yet be fetched into that container. No real package SHA-256 is claimed until a token-bearing/private-source-readable execution actually produces the archive.
 
 ## Blocking before controlled source distribution
 
-- [x] Materially confirm the active 85-control compatibility battery on Python 3.11 / 3.12 / 3.13.
-- [x] Confirm cross-runtime semantic concordance for all 85 controls.
+- [x] Materially confirm the active 90-control compatibility battery on Python 3.11 / 3.12 / 3.13.
+- [x] Confirm cross-runtime semantic concordance for all 90 controls.
 - [x] Resolve and persist the exact canonical private source commit and complete Git-tree Merkle identity.
 - [x] Bind clean-room verification to the expected private Git root tree.
-- [ ] Materially reconstruct/assemble the exact controlled `v0.1.0-alpha` distribution archive from the bound private Git tree.
+- [x] Implement and test the authenticated Git-object → canonical archive assembly path.
+- [ ] Execute that assembly path in an environment able to authenticate to/read the bound private source and materially produce the real `v0.1.0-alpha` archive.
 - [ ] Calculate and persist the immutable package SHA-256 and final release manifest bound to source commit `677a28d87164379cb2a268e55cfc30302ebc44ab` and root tree `63658d334ae8c3d280e9ef2c29845fffce2747e6`.
 - [ ] Run `distribution/clean_room_verify.py` against that exact real package, active licence and territorial policy and persist `CLEAN_ROOM_PASS`.
 - [ ] Place the verified package in a private controlled package store and exercise the real controlled-delivery path.
 - [ ] Verify authorized and denied deliveries, pre/post-delivery SHA equality, territorial resolution, authentication/authorization decisions and append-only audit-chain continuity against the real package.
 - [ ] Execute reference/adversarial suites against the deployed/private-package environment and persist results/hashes.
-- [ ] Add production operational controls appropriate to the selected hosting environment: TLS, secret/KMS handling, service isolation, ACLs, rate limiting, monitoring, backup/recovery and incident/revocation procedures as applicable.
+- [ ] Complete production operational controls from `distribution/OPERATIONAL_ACCEPTANCE_v0.1.md` (TLS, secrets/KMS, isolation, ACLs, rate limiting, monitoring, backup/recovery, incident/revocation procedures as applicable).
 - [ ] Verify recipient/provenance records bind recipient identity, resolved territory, authorization decision, licence/policy versions, delivered package hash and audit checkpoint without storing raw secrets.
 - [ ] Preserve formal falsification attribution and contributor intellectual-property provenance in the isolated falsification registry.
 - [ ] Complete applicable mandatory-law/export/sanctions review and record any required operational adjustment.
@@ -84,7 +87,7 @@ The public repository may continue to host intentionally global governance, poli
 Candidate: `v0.1.0-alpha`
 Private source commit: `677a28d87164379cb2a268e55cfc30302ebc44ab`
 Private source root tree: `63658d334ae8c3d280e9ef2c29845fffce2747e6`
-Active runtime baseline: `85 controls`
-Cross-runtime normalized proof SHA-256: `66b8e73171d66b753b5c0d5e1ed288999ea597f7026bba7c68ba4ac176e7b96e`
+Active runtime baseline: `90 controls`
+Cross-runtime normalized proof SHA-256: `4dc648dfe39adfbd35b2d76783e9525ad52b82c9e82a1e0cad2cd1e141e90954`
 
 The final controlled package must receive its own immutable SHA-256, manifest SHA-256, licence version/hash, territorial-policy version/hash, build/verification record, delivery proof and audit checkpoint before release identity is frozen.
