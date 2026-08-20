@@ -1,18 +1,19 @@
 {
-  "commit": "78892f1b1d990cb16cb688135b01d436cd84499f",
+  "commit": "b6b97b2d4364f5ee05cc08c050d8984cb8e2847a",
   "compile": {
     "returncode": 0,
     "stderr": "",
     "stdout": ""
   },
-  "executed_at_utc": "2026-08-20T18:07:37.860182+00:00",
+  "executed_at_utc": "2026-08-20T18:28:09.539262+00:00",
   "expected_total_controls": 81,
-  "normalized_output_sha256": "2340b86b19bd74d2278ba33ad93bd856cc35792f9290621c6b0aa67b08b9191b",
+  "normalization": "python-version-and-unittest-wallclock-v0.2",
+  "normalized_output_sha256": "fd2d3a88cb07316cf30535dbcf428c5b7908bf1dbe41f8a78f20cd093214a534",
   "observed_total_controls": 81,
   "overall_pass": true,
   "python": "3.12.14 (main, Aug 13 2026, 02:47:42) [GCC 13.3.0]",
   "requested_runtime": "3.12",
-  "schema": "tebdlc-runtime-proof/0.1",
+  "schema": "tebdlc-runtime-proof/0.2",
   "suites": [
     {
       "expected_count": 8,
@@ -20,7 +21,7 @@
       "ok": true,
       "path": "distribution/test_validate_records.py",
       "returncode": 0,
-      "stderr": "test_bad_hash_rejected (__main__.ValidatorTests.test_bad_hash_rejected) ... ok\ntest_manifest (__main__.ValidatorTests.test_manifest) ... ok\ntest_neutral_allow_non_falsification (__main__.ValidatorTests.test_neutral_allow_non_falsification) ... ok\ntest_neutral_falsification_denied (__main__.ValidatorTests.test_neutral_falsification_denied) ... ok\ntest_privileged_allow (__main__.ValidatorTests.test_privileged_allow) ... ok\ntest_restricted_acceptance_forbidden (__main__.ValidatorTests.test_restricted_acceptance_forbidden) ... ok\ntest_restricted_must_deny (__main__.ValidatorTests.test_restricted_must_deny) ... ok\ntest_unknown_field_rejected (__main__.ValidatorTests.test_unknown_field_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
+      "stderr": "test_bad_hash_rejected (__main__.ValidatorTests.test_bad_hash_rejected) ... ok\ntest_manifest (__main__.ValidatorTests.test_manifest) ... ok\ntest_neutral_allow_non_falsification (__main__.ValidatorTests.test_neutral_allow_non_falsification) ... ok\ntest_neutral_falsification_denied (__main__.ValidatorTests.test_neutral_falsification_denied) ... ok\ntest_privileged_allow (__main__.ValidatorTests.test_privileged_allow) ... ok\ntest_restricted_acceptance_forbidden (__main__.ValidatorTests.test_restricted_acceptance_forbidden) ... ok\ntest_restricted_must_deny (__main__.ValidatorTests.test_restricted_must_deny) ... ok\ntest_unknown_field_rejected (__main__.ValidatorTests.test_unknown_field_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.000s\n\nOK\n",
       "stdout": ""
     },
     {

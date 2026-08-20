@@ -1,35 +1,36 @@
 {
   "all_81_controls": true,
   "all_pass": true,
-  "commit": "78892f1b1d990cb16cb688135b01d436cd84499f",
+  "commit": "b6b97b2d4364f5ee05cc08c050d8984cb8e2847a",
+  "normalization": "python-version-and-unittest-wallclock-v0.2",
   "normalized_output_sha256_by_runtime": {
-    "3.11": "2340b86b19bd74d2278ba33ad93bd856cc35792f9290621c6b0aa67b08b9191b",
-    "3.12": "2340b86b19bd74d2278ba33ad93bd856cc35792f9290621c6b0aa67b08b9191b",
-    "3.13": "b8bebed5f00e56949bd7b3c7f6ec77ff103c51be6eb3d6f9f58027e118e344ee"
+    "3.11": "fd2d3a88cb07316cf30535dbcf428c5b7908bf1dbe41f8a78f20cd093214a534",
+    "3.12": "fd2d3a88cb07316cf30535dbcf428c5b7908bf1dbe41f8a78f20cd093214a534",
+    "3.13": "fd2d3a88cb07316cf30535dbcf428c5b7908bf1dbe41f8a78f20cd093214a534"
   },
-  "normalized_outputs_identical": false,
+  "normalized_outputs_identical": true,
   "runtimes": [
     {
-      "normalized_output_sha256": "2340b86b19bd74d2278ba33ad93bd856cc35792f9290621c6b0aa67b08b9191b",
+      "normalized_output_sha256": "fd2d3a88cb07316cf30535dbcf428c5b7908bf1dbe41f8a78f20cd093214a534",
       "observed_total_controls": 81,
       "overall_pass": true,
       "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
       "requested_runtime": "3.11"
     },
     {
-      "normalized_output_sha256": "2340b86b19bd74d2278ba33ad93bd856cc35792f9290621c6b0aa67b08b9191b",
+      "normalized_output_sha256": "fd2d3a88cb07316cf30535dbcf428c5b7908bf1dbe41f8a78f20cd093214a534",
       "observed_total_controls": 81,
       "overall_pass": true,
       "python": "3.12.14 (main, Aug 13 2026, 02:47:42) [GCC 13.3.0]",
       "requested_runtime": "3.12"
     },
     {
-      "normalized_output_sha256": "b8bebed5f00e56949bd7b3c7f6ec77ff103c51be6eb3d6f9f58027e118e344ee",
+      "normalized_output_sha256": "fd2d3a88cb07316cf30535dbcf428c5b7908bf1dbe41f8a78f20cd093214a534",
       "observed_total_controls": 81,
       "overall_pass": true,
       "python": "3.13.15 (main, Aug  6 2026, 02:15:18) [GCC 13.3.0]",
       "requested_runtime": "3.13"
     }
   ],
-  "schema": "tebdlc-runtime-concordance/0.1"
+  "schema": "tebdlc-runtime-concordance/0.2"
 }
