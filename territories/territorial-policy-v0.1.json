@@ -1,0 +1,35 @@
+{
+  "schema": "tebdlc-territorial-policy/0.1",
+  "policy_version": "0.1",
+  "status": "DRAFT_PRE_RELEASE",
+  "model": "ALLOWLIST_WITH_EXPLICIT_EXCLUSIONS",
+  "default_distribution_status": "RESTRICTED",
+  "privileged": [
+    {"type": "subdivision", "country": "CA", "name": "Québec"},
+    {"type": "country", "code": "FR", "name": "France"},
+    {"type": "country", "code": "CH", "name": "Switzerland"},
+    {"type": "country", "code": "BE", "name": "Belgium"},
+    {"type": "region_class", "id": "CARIBBEAN_ALL", "name": "Caribbean — all territories", "requires_enumerated_annex": true},
+    {"type": "subdivision", "country": "US", "code": "FL", "name": "Florida"}
+  ],
+  "explicitly_restricted": [
+    {"type": "city", "country": "CA", "subdivision": "Ontario", "name": "Ottawa"}
+  ],
+  "rules": {
+    "narrow_explicit_restriction_precedence": true,
+    "ip_geolocation_alone_is_sufficient": false,
+    "public_github_is_controlled_distribution_endpoint": false,
+    "policy_version_must_be_logged": true,
+    "release_commit_must_be_logged": true,
+    "licence_version_must_be_logged": true,
+    "authorship_and_provenance_survive_policy_changes": true
+  },
+  "activation_blockers": [
+    "LEGAL_REVIEW",
+    "CUSTOM_LICENCE_FINALIZATION",
+    "CARIBBEAN_ENUMERATED_ANNEX",
+    "RECIPIENT_AUTHORIZATION_MODEL",
+    "CONTROLLED_DISTRIBUTION_IMPLEMENTATION",
+    "MANDATORY_LAW_AND_EXPORT_SANCTIONS_REVIEW"
+  ]
+}
