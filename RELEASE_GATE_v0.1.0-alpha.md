@@ -11,12 +11,13 @@ This gate prevents accidental publication of the complete territorially controll
 - [x] Territorial policy v0.1 established.
 - [x] Caribbean classification corrected to NEUTRAL.
 - [x] Explicit restricted territorial entries recorded from the approved policy inputs.
-- [x] Draft source-available licence framework recorded.
+- [x] Sovereign source-available licence activated as project licence v0.1.
+- [x] Rights matrix for PRIVILEGED / NEUTRAL / RESTRICTED established.
+- [x] PRIVILEGED and NEUTRAL rights made identical except for the formal TEBDLC falsification right.
+- [x] NEUTRAL ordinary testing, benchmarking, debugging and private evaluation preserved without granting participation in the formal falsification regime.
 
 ## Blocking before controlled source distribution
 
-- [ ] Legal review of custom source-available licence.
-- [ ] Final rights matrix for PRIVILEGED / NEUTRAL / RESTRICTED states.
 - [ ] Deterministic Caribbean geographic annex (NEUTRAL).
 - [ ] Deterministic Middle East/restricted geographic annex.
 - [ ] Recipient authentication/authorization specification.
@@ -26,6 +27,10 @@ This gate prevents accidental publication of the complete territorially controll
 - [ ] End-to-end bypass/adversarial testing of territorial decision logic.
 - [ ] Applicable mandatory-law/export/sanctions review.
 - [ ] Final clean-room release verification against the exact controlled package SHA.
+
+## External legal status
+
+The project licence is active as TEBDLC project policy. No claim is made that it has received governmental, judicial, or specialist legal certification. Mandatory applicable law prevails where required, without silently rewriting historical distribution provenance.
 
 ## Hard publication invariant
 
