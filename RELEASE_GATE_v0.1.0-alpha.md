@@ -20,6 +20,7 @@ This gate prevents accidental publication of the complete territorially controll
 - [x] Stdlib-only fail-closed record validator added.
 - [x] Deterministic Caribbean and restricted-region annexes added.
 - [x] Deterministic territorial resolver added with narrow-rule precedence and fail-closed default.
+- [x] Explicit non-regression coverage added for Switzerland (`CH -> PRIVILEGED`) and Belgium (`BE -> PRIVILEGED`).
 - [x] Recipient authentication reference implementation and credential lifecycle added.
 - [x] Integrated authentication + territorial resolution + rights authorization engine added.
 - [x] Controlled-delivery reference primitive added with pre-copy/copy/post-copy SHA verification and atomic promotion.
@@ -28,14 +29,18 @@ This gate prevents accidental publication of the complete territorially controll
 - [x] Controlled-distribution threat model and private deployment specification added.
 - [x] Clean-room verification harness added.
 - [x] Public executable validation persisted in `validation/LAST_EXECUTION.json` with `overall_pass: true`.
-- [x] Executed suite totals: validator 8, resolver 11, authentication 8, authorization 8, controlled delivery 10, audit 5, adversarial distribution 18, adversarial end-to-end 11 — all PASS.
+- [x] Executed suite totals: validator 8, resolver 13, authentication 8, authorization 8, controlled delivery 10, audit 5, adversarial distribution 18, adversarial end-to-end 11 — **81 controls total, all PASS** on GitHub-hosted Python 3.11.16.
 - [x] First executable pass defects were identified and corrected: resolver direct-execution import mismatch, audit-chain naming compatibility, and obsolete clean-room audit-test filename.
 - [x] Clean-room harness materially exercised with an isolated synthetic package and the real active licence/policy SHA-256 values; persisted `CLEAN_ROOM_PASS` in `validation/CLEAN_ROOM_HARNESS_EXECUTION.json`.
+- [x] Validation workflow hardened to require the expected 81-control baseline and fail on silent test-count regression.
+- [x] Python 3.11 / 3.12 / 3.13 compatibility matrix encoded in the validation workflow for the 81-control suite.
 - [x] Material-proof boundary and private-package attempt recorded in `validation/MATERIAL_PROOF_STATUS.md`.
 
 ## Verification note
 
-The public reference/distribution system is no longer merely reviewable code: it has been executed on GitHub-hosted Python 3.11.16, corrected from the first observed failures, and re-executed to a complete PASS. The clean-room harness has also executed end-to-end and returned `CLEAN_ROOM_PASS` against material synthetic input bound to the active licence and territorial-policy hashes.
+The public reference/distribution system is no longer merely reviewable code: it has been executed on GitHub-hosted Python 3.11.16, corrected from the first observed failures, and re-executed to a complete 81-control PASS. The territorial regression suite now explicitly protects Switzerland and Belgium as PRIVILEGED. The clean-room harness has also executed end-to-end and returned `CLEAN_ROOM_PASS` against material synthetic input bound to the active licence and territorial-policy hashes.
+
+The 3.11/3.12/3.13 matrix is encoded as a required compatibility battery; a version is not to be described as materially confirmed until its corresponding execution result is available.
 
 This does **not** substitute a synthetic artifact for the private TEBDLC product package.
 
@@ -43,6 +48,7 @@ A deterministic packaging attempt was made directly from the canonical private `
 
 ## Blocking before controlled source distribution
 
+- [ ] Materially confirm the public 81-control compatibility battery on Python 3.12 and Python 3.13 (3.11 already PASS).
 - [ ] Obtain an execution/archive path capable of reading the canonical private source tree as a whole and assemble the exact controlled `v0.1.0-alpha` source package.
 - [ ] Calculate and persist the immutable package SHA-256 and final release manifest bound to the exact private source commit.
 - [ ] Run the already-proven `distribution/clean_room_verify.py` against that exact real package, active licence and territorial policy and persist `CLEAN_ROOM_PASS`.
