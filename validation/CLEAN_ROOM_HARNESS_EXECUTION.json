@@ -1,17 +1,17 @@
 {
-  "commit": "b6b97b2d4364f5ee05cc08c050d8984cb8e2847a",
+  "commit": "5196f05968add5d746b8ea8a8a4e15707654ae0b",
   "overall_pass": true,
   "raw_record": {
     "clean_room_version": "0.1",
     "licence_sha256": "86fddddedbd112c2c8b420d4b31802147a3bce702ff68db3683b816b39e69ac1",
-    "manifest_sha256": "ee3f0652255699a8eaf244b5615f9da73e54450cd2f8219692bed53d8fd2140d",
-    "package_sha256": "493a2ef2ff45eff60636dd2cb545b666b856ffc740a1c5cbfe166585b6cea3b3",
+    "manifest_sha256": "9feab0c9f72a1095aaf10a8cc629419dcfe96572d24e880c6773b4213597f1c4",
+    "package_sha256": "e7b062e2e4cb532fc295ec482d9113a92d4c25b007f86173d03d57da7b852980",
     "territorial_policy_sha256": "df810bf913d1ee2abb552ed11ca6255cbd484305d8a4f13d09d976533174c33e",
     "tests": [
       {
         "ok": true,
         "returncode": 0,
-        "stderr": "test_bad_hash_rejected (__main__.ValidatorTests.test_bad_hash_rejected) ... ok\ntest_manifest (__main__.ValidatorTests.test_manifest) ... ok\ntest_neutral_allow_non_falsification (__main__.ValidatorTests.test_neutral_allow_non_falsification) ... ok\ntest_neutral_falsification_denied (__main__.ValidatorTests.test_neutral_falsification_denied) ... ok\ntest_privileged_allow (__main__.ValidatorTests.test_privileged_allow) ... ok\ntest_restricted_acceptance_forbidden (__main__.ValidatorTests.test_restricted_acceptance_forbidden) ... ok\ntest_restricted_must_deny (__main__.ValidatorTests.test_restricted_must_deny) ... ok\ntest_unknown_field_rejected (__main__.ValidatorTests.test_unknown_field_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
+        "stderr": "test_bad_hash_rejected (__main__.ValidatorTests.test_bad_hash_rejected) ... ok\ntest_manifest (__main__.ValidatorTests.test_manifest) ... ok\ntest_neutral_allow_non_falsification (__main__.ValidatorTests.test_neutral_allow_non_falsification) ... ok\ntest_neutral_falsification_denied (__main__.ValidatorTests.test_neutral_falsification_denied) ... ok\ntest_privileged_allow (__main__.ValidatorTests.test_privileged_allow) ... ok\ntest_restricted_acceptance_forbidden (__main__.ValidatorTests.test_restricted_acceptance_forbidden) ... ok\ntest_restricted_must_deny (__main__.ValidatorTests.test_restricted_must_deny) ... ok\ntest_unknown_field_rejected (__main__.ValidatorTests.test_unknown_field_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.000s\n\nOK\n",
         "stdout": "",
         "test": "test_validate_records.py"
       },
@@ -70,5 +70,5 @@
   "returncode": 0,
   "schema": "tebdlc-clean-room-harness-execution/0.1",
   "stderr": "",
-  "stdout": "{\"package_sha256\": \"493a2ef2ff45eff60636dd2cb545b666b856ffc740a1c5cbfe166585b6cea3b3\", \"status\": \"CLEAN_ROOM_PASS\"}\n"
+  "stdout": "{\"package_sha256\": \"e7b062e2e4cb532fc295ec482d9113a92d4c25b007f86173d03d57da7b852980\", \"status\": \"CLEAN_ROOM_PASS\"}\n"
 }
