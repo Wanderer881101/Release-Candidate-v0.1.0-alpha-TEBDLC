@@ -1,19 +1,19 @@
 {
-  "commit": "db4be5c3663820e7cd3b6480a2cdaae56fbb5998",
+  "commit": "cb3c01c8fe9a58d05f4e0d65efc719bd60e8e993",
   "compile": {
     "returncode": 0,
     "stderr": "",
     "stdout": ""
   },
-  "executed_at_utc": "2026-08-20T20:01:20.827429+00:00",
-  "expected_total_controls": 85,
+  "executed_at_utc": "2026-08-20T20:01:53.030648+00:00",
+  "expected_total_controls": 90,
   "normalization": "python-version-and-unittest-wallclock-v0.2",
-  "normalized_output_sha256": "66b8e73171d66b753b5c0d5e1ed288999ea597f7026bba7c68ba4ac176e7b96e",
-  "observed_total_controls": 85,
+  "normalized_output_sha256": "4dc648dfe39adfbd35b2d76783e9525ad52b82c9e82a1e0cad2cd1e141e90954",
+  "observed_total_controls": 90,
   "overall_pass": true,
   "python": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
   "requested_runtime": "3.11",
-  "schema": "tebdlc-runtime-proof/0.3",
+  "schema": "tebdlc-runtime-proof/0.4",
   "suites": [
     {
       "expected_count": 8,
@@ -93,7 +93,16 @@
       "ok": true,
       "path": "distribution/test_clean_room_tree.py",
       "returncode": 0,
-      "stderr": "test_duplicate_path_rejected (__main__.CleanRoomTreeTests.test_duplicate_path_rejected) ... ok\ntest_known_git_tree_vector (__main__.CleanRoomTreeTests.test_known_git_tree_vector) ... ok\ntest_single_byte_mutation_changes_tree (__main__.CleanRoomTreeTests.test_single_byte_mutation_changes_tree) ... ok\ntest_unsafe_parent_path_rejected (__main__.CleanRoomTreeTests.test_unsafe_parent_path_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.046s\n\nOK\n",
+      "stderr": "test_duplicate_path_rejected (__main__.CleanRoomTreeTests.test_duplicate_path_rejected) ... ok\ntest_known_git_tree_vector (__main__.CleanRoomTreeTests.test_known_git_tree_vector) ... ok\ntest_single_byte_mutation_changes_tree (__main__.CleanRoomTreeTests.test_single_byte_mutation_changes_tree) ... ok\ntest_unsafe_parent_path_rejected (__main__.CleanRoomTreeTests.test_unsafe_parent_path_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.005s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "expected_count": 5,
+      "observed_count": 5,
+      "ok": true,
+      "path": "distribution/test_assemble_private_git_tree.py",
+      "returncode": 0,
+      "stderr": "test_archive_rebuild_is_byte_identical (__main__.PrivateTreeAssemblerTests.test_archive_rebuild_is_byte_identical) ... ok\ntest_archive_round_trip_preserves_git_tree (__main__.PrivateTreeAssemblerTests.test_archive_round_trip_preserves_git_tree) ... ok\ntest_known_git_blob_and_tree_vector (__main__.PrivateTreeAssemblerTests.test_known_git_blob_and_tree_vector) ... ok\ntest_one_byte_mutation_changes_tree (__main__.PrivateTreeAssemblerTests.test_one_byte_mutation_changes_tree) ... ok\ntest_symbolic_link_round_trip_preserves_git_tree (__main__.PrivateTreeAssemblerTests.test_symbolic_link_round_trip_preserves_git_tree) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.003s\n\nOK\n",
       "stdout": ""
     }
   ]
