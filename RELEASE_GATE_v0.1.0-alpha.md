@@ -2,7 +2,7 @@
 
 This gate prevents accidental publication of the complete territorially controlled source through a globally public GitHub branch.
 
-## Completed governance prerequisites
+## Completed governance and reference-implementation prerequisites
 
 - [x] Public Release Candidate repository exists.
 - [x] Evidence-safe `.gitignore` policy established.
@@ -35,19 +35,24 @@ This gate prevents accidental publication of the complete territorially controll
 - [x] Delivery binds authenticated subject, territorial state, licence acceptance, release identity, licence/policy hashes and exact package SHA-256.
 - [x] Delivery performs pre-copy, copied-file and post-copy package-hash verification before atomic destination promotion.
 - [x] Controlled-delivery tests added for privileged/neutral allow paths and authentication, territory, identity, policy, release, package and path failure cases.
-- [x] Hash-chained append-only audit log reference added with tamper/deletion detection tests.
+- [x] Hash-chained append-only audit log reference added.
+- [x] Audit append now verifies the entire existing chain before adding a new event.
 - [x] Audited delivery wrapper persists both ALLOW and DENY outcomes without persisting the presented raw credential secret.
+- [x] Adversarial end-to-end suite added for wrong-secret, restricted-territory, neutral/privileged mismatch, acceptance-identity substitution, release substitution, package tamper, licence/policy substitution, audit tampering and secret-field injection.
+- [x] Controlled-distribution threat model v0.1 added with explicit in-scope and residual/out-of-scope risks.
 
 ## Verification note
 
-The reference test code is present and reviewable. A complete clean execution of the current public repository state has not yet been recorded from this assistant's sandbox because direct reconstruction through `raw.githubusercontent.com` was unavailable in the earlier lab environment. This infrastructure limitation is not counted as a TEBDLC test failure. Runtime execution remains part of the final clean-room verification gate.
+The reference test code and adversarial suites are present and reviewable. A complete clean execution of the current public repository state has not yet been recorded from this assistant's sandbox because direct reconstruction through `raw.githubusercontent.com` was unavailable in the earlier lab environment. This infrastructure limitation is not counted as a TEBDLC test failure. Runtime execution remains part of the final clean-room verification gate.
 
 ## Blocking before controlled source distribution
 
 - [ ] Deploy/operate the controlled-delivery reference outside globally public GitHub against a private controlled package store.
-- [ ] Execute end-to-end bypass/adversarial testing of territorial decision logic, authentication, acceptance binding, audit chain and delivery path.
+- [ ] Execute the complete adversarial suite against that deployed/private-package environment and persist results/hashes.
+- [ ] Add production operational controls appropriate to the selected hosting environment (TLS, secret/KMS handling, service isolation, ACLs, rate limiting, monitoring and backup/recovery as applicable).
 - [ ] Applicable mandatory-law/export/sanctions review.
 - [ ] Final clean-room release verification against the exact controlled package SHA.
+- [ ] Persist immutable release manifest, verification record, policy/licence hashes and final audit checkpoint for the delivered candidate.
 
 ## External legal status
 
@@ -63,4 +68,4 @@ The public repository may continue to host intentionally global governance, poli
 
 Candidate: `v0.1.0-alpha`
 
-The final controlled package must receive its own immutable content hash, manifest, licence version, territorial-policy version, and build/verification record before delivery.
+The final controlled package must receive its own immutable content hash, manifest, licence version, territorial-policy version, build/verification record and audit checkpoint before delivery.
