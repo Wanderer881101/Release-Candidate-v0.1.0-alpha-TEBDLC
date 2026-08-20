@@ -22,8 +22,9 @@ TEST_FILES = [
     "test_authentication.py",
     "test_authorize_request.py",
     "test_controlled_delivery.py",
-    "test_audit_chain.py",
+    "test_audit_log.py",
     "test_adversarial_distribution.py",
+    "test_adversarial_end_to_end.py",
 ]
 
 
