@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tebdlc.invalid/schemas/distribution-event-v0.1.schema.json",
+  "title": "TEBDLC Distribution Event v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["event_id","authorization_identity","declared_territory","territorial_state","policy_version","policy_sha256","licence_version","licence_sha256","tebdlc_release","package_sha256","requested_action","decision","reason_code","timestamp","authorization_engine_version"],
+  "properties": {
+    "event_id": {"type":"string","minLength":8,"maxLength":128},
+    "acceptance_id": {"type":["string","null"],"minLength":8,"maxLength":128},
+    "authorization_identity": {"type":"string","minLength":1,"maxLength":256},
+    "declared_territory": {"type":"string","minLength":1,"maxLength":256},
+    "territorial_state": {"enum":["PRIVILEGED","NEUTRAL","RESTRICTED"]},
+    "policy_version": {"type":"string","const":"0.1"},
+    "policy_sha256": {"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "licence_version": {"type":"string","const":"0.1"},
+    "licence_sha256": {"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "tebdlc_release": {"type":"string","minLength":1,"maxLength":128},
+    "package_sha256": {"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "requested_action": {"enum":["READ_SOURCE","BUILD","EXECUTE","TEST","BENCHMARK","PRIVATE_MODIFY","FALSIFY","DELIVER_PACKAGE"]},
+    "decision": {"enum":["ALLOW","DENY"]},
+    "reason_code": {"enum":["ALLOW_PRIVILEGED","ALLOW_NEUTRAL","DENY_RESTRICTED_TERRITORY","DENY_UNRESOLVED_TERRITORY","DENY_NO_LICENCE_ACCEPTANCE","DENY_LICENCE_VERSION_MISMATCH","DENY_PACKAGE_HASH_MISMATCH","DENY_RIGHT_NOT_GRANTED","DENY_AUTHENTICATION_FAILURE","DENY_POLICY_INTEGRITY_FAILURE"]},
+    "timestamp": {"type":"string","format":"date-time"},
+    "authorization_engine_version": {"type":"string","minLength":1,"maxLength":64}
+  },
+  "allOf": [
+    {"if":{"properties":{"decision":{"const":"ALLOW"}}},"then":{"required":["acceptance_id"]}},
+    {"if":{"properties":{"territorial_state":{"const":"RESTRICTED"}}},"then":{"properties":{"decision":{"const":"DENY"}}}},
+    {"if":{"properties":{"territorial_state":{"const":"NEUTRAL"},"requested_action":{"const":"FALSIFY"}}},"then":{"properties":{"decision":{"const":"DENY"},"reason_code":{"const":"DENY_RIGHT_NOT_GRANTED"}}}}
+  ]
+}
