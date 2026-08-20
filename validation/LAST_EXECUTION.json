@@ -1,12 +1,12 @@
 {
-  "commit": "78892f1b1d990cb16cb688135b01d436cd84499f",
+  "commit": "b6b97b2d4364f5ee05cc08c050d8984cb8e2847a",
   "compile": {
     "returncode": 0,
     "stderr": "",
     "stdout": ""
   },
   "control_count_ok": true,
-  "executed_at_utc": "2026-08-20T18:07:30.293720+00:00",
+  "executed_at_utc": "2026-08-20T18:28:04.856332+00:00",
   "expected_total_controls": 81,
   "observed_total_controls": 81,
   "overall_pass": true,
