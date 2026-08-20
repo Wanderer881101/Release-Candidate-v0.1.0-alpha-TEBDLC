@@ -12,6 +12,12 @@ class TerritorialResolverTests(unittest.TestCase):
     def test_france_privileged(self):
         self.assertEqual(resolve("FR")["state"], "PRIVILEGED")
 
+    def test_switzerland_privileged(self):
+        self.assertEqual(resolve("CH")["state"], "PRIVILEGED")
+
+    def test_belgium_privileged(self):
+        self.assertEqual(resolve("BE")["state"], "PRIVILEGED")
+
     def test_florida_privileged(self):
         self.assertEqual(resolve("US", "FL")["state"], "PRIVILEGED")
 
