@@ -1,11 +1,11 @@
 {
-  "commit": "1a9f41e7ca57518f99efd3d2ca0d398a8ea593e4",
+  "commit": "78892f1b1d990cb16cb688135b01d436cd84499f",
   "overall_pass": true,
   "raw_record": {
     "clean_room_version": "0.1",
     "licence_sha256": "86fddddedbd112c2c8b420d4b31802147a3bce702ff68db3683b816b39e69ac1",
-    "manifest_sha256": "e013b2ad6220123667aaca63a948f1f62a4a82718800abe5018fdbd7e37aece7",
-    "package_sha256": "20034ac53ce57d7c982c562d27b898f61f2891e2d3488d40c0a553efa8959f59",
+    "manifest_sha256": "488cb3c3ffa547935ca6f7e9d8fc3f2452c1631608aee48f708f62cf280d59ba",
+    "package_sha256": "f9e6d10be6a1023efa899f459b7606e2fafbef2836421ccbf946c8b81fc03b12",
     "territorial_policy_sha256": "df810bf913d1ee2abb552ed11ca6255cbd484305d8a4f13d09d976533174c33e",
     "tests": [
       {
@@ -70,5 +70,5 @@
   "returncode": 0,
   "schema": "tebdlc-clean-room-harness-execution/0.1",
   "stderr": "",
-  "stdout": "{\"package_sha256\": \"20034ac53ce57d7c982c562d27b898f61f2891e2d3488d40c0a553efa8959f59\", \"status\": \"CLEAN_ROOM_PASS\"}\n"
+  "stdout": "{\"package_sha256\": \"f9e6d10be6a1023efa899f459b7606e2fafbef2836421ccbf946c8b81fc03b12\", \"status\": \"CLEAN_ROOM_PASS\"}\n"
 }
