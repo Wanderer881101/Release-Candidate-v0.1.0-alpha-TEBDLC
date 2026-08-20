@@ -1,5 +1,5 @@
 import unittest
-from distribution.resolve_territory import resolve
+from resolve_territory import resolve
 
 
 class TerritorialResolverTests(unittest.TestCase):
