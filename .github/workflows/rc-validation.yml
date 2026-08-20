@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths-ignore:
       - 'validation/LAST_EXECUTION.json'
+      - 'validation/CLEAN_ROOM_HARNESS_EXECUTION.json'
   workflow_dispatch:
 
 permissions:
@@ -54,11 +55,48 @@ jobs:
           record['overall_pass'] = bool(overall)
           pathlib.Path('validation/LAST_EXECUTION.json').write_text(json.dumps(record, indent=2, sort_keys=True) + '\n', encoding='utf-8')
           PY
+      - name: Exercise clean-room harness end-to-end
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p validation/clean-room-material
+          printf 'TEBDLC clean-room synthetic material package\ncommit=%s\n' '${{ github.sha }}' > validation/clean-room-material/synthetic-package.bin
+          python - <<'PY'
+          import hashlib, json, pathlib, datetime
+          root = pathlib.Path('.')
+          pkg = root/'validation/clean-room-material/synthetic-package.bin'
+          lic = root/'LICENSE-SOURCE-AVAILABLE-DRAFT.md'
+          pol = root/'territories/territorial-policy-v0.1.json'
+          def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+          manifest = {
+              'manifest_version':'0.1',
+              'release_id':'clean-room-harness-synthetic-v0.1',
+              'source_commits':['${{ github.sha }}'],
+              'package_sha256':sha(pkg),
+              'assembly_procedure_version':'synthetic-harness/0.1',
+              'licence_version':'0.1',
+              'licence_sha256':sha(lic),
+              'territorial_policy_version':'0.1',
+              'territorial_policy_sha256':sha(pol),
+              'verification_record_sha256':'0'*64,
+              'created_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+          }
+          (root/'validation/clean-room-material/manifest.json').write_text(json.dumps(manifest, indent=2, sort_keys=True)+'\n', encoding='utf-8')
+          PY
+          PKG_SHA=$(sha256sum validation/clean-room-material/synthetic-package.bin | awk '{print $1}')
+          python distribution/clean_room_verify.py \
+            --package validation/clean-room-material/synthetic-package.bin \
+            --manifest validation/clean-room-material/manifest.json \
+            --licence LICENSE-SOURCE-AVAILABLE-DRAFT.md \
+            --policy territories/territorial-policy-v0.1.json \
+            --expected-package-sha256 "$PKG_SHA" \
+            --output-record validation/CLEAN_ROOM_HARNESS_EXECUTION.json
+          rm -rf validation/clean-room-material
       - name: Commit execution evidence
         shell: bash
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add validation/LAST_EXECUTION.json
-          git commit -m 'validation: persist RC execution evidence' || exit 0
+          git add validation/LAST_EXECUTION.json validation/CLEAN_ROOM_HARNESS_EXECUTION.json
+          git commit -m 'validation: persist RC execution and clean-room evidence' || exit 0
           git push
