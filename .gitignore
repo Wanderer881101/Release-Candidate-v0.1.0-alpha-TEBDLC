@@ -1,55 +1,66 @@
-# Prerequisites
-*.d
+# TEBDLC Release Candidate — repository hygiene
+# Jonathan Therrien, Marieville, Québec.
+#
+# Policy: ignore reproducible local artifacts and local/private environment state.
+# Do NOT globally ignore evidence-oriented extensions: TEBDLC may intentionally
+# persist logs, maps, binaries, archives, manifests or other material as proof.
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# Python caches
+**/__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# Local Python environments
+.venv/
+venv/
+env/
 
-# Precompiled Headers
-*.gch
-*.pch
+# Reproducible build / packaging outputs
+/build/
+/dist/
+*.egg-info/
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# Explicitly local TEBDLC artifacts
+/local-artifacts/
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# Coverage / profiling generated locally
+.coverage
+coverage.xml
+htmlcov/
+*.gcda
+*.gcno
+*.profraw
+*.profdata
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# IDE / OS noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# Temporary editor files
+*.tmp
+*.swp
+*.bak
+*~
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# Local secrets and environment configuration
+.env
+.env.*
+!.env.example
 
-# debug information files
-*.dwo
+# Local private key / certificate material
+# Public test fixtures must live in an explicitly documented evidence/test path.
+*.key
+*.p12
+*.pfx
+
+# IMPORTANT TEBDLC EXCEPTIONS
+# The following are intentionally NOT globally ignored:
+#   *.log *.txt *.json *.out *.map *.so *.dll *.exe *.tar.gz
+#   evidence/ docs/ vectors* FINGERPRINTS* RAW_RESULTS* manifest*
+# A material artifact can become part of a falsification or proof bundle and
+# must then remain versionable regardless of extension.
