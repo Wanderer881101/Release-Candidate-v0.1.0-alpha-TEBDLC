@@ -48,8 +48,9 @@ Florida is governed by its explicit PRIVILEGED U.S. subdivision rule and is not 
 ## 5. Explicit restrictions and default rule
 
 1. **Ottawa, Ontario, Canada is explicitly RESTRICTED.**
-2. The remainder of the United States is RESTRICTED unless subsequently changed by an explicit policy revision; Florida is the current privileged exception.
-3. Territories that are neither explicitly PRIVILEGED nor explicitly NEUTRAL are RESTRICTED by default under policy v0.1.
+2. **The Middle East in its entirety is explicitly RESTRICTED.** Because "Middle East" has no single universally standardized geographic boundary, automated enforcement must use a future versioned enumerated annex rather than infer membership from a vague regional label.
+3. The remainder of the United States is RESTRICTED unless subsequently changed by an explicit policy revision; Florida is the current privileged exception.
+4. Territories that are neither explicitly PRIVILEGED nor explicitly NEUTRAL are RESTRICTED by default under policy v0.1.
 
 Where classifications overlap, an explicit narrower territorial rule prevails over a broader geographic class until a later policy revision expressly changes it.
 
@@ -106,6 +107,7 @@ Before controlled source distribution begins:
 
 - obtain legal review of the custom source-available licence and territorial classifications;
 - create the exhaustive Caribbean geographic annex for deterministic classification while preserving NEUTRAL status;
+- create an exhaustive Middle East geographic annex for deterministic RESTRICTED classification;
 - define the recipient authorization model;
 - define applicable licence rights (view, compile, execute, test, modify, falsify, redistribute, commercialize, etc.);
 - implement and test the controlled distribution mechanism;
