@@ -1,12 +1,12 @@
 {
-  "commit": "5196f05968add5d746b8ea8a8a4e15707654ae0b",
+  "commit": "cea17b13c9fffc080431bab5c902592787952d9a",
   "compile": {
     "returncode": 0,
     "stderr": "",
     "stdout": ""
   },
   "control_count_ok": true,
-  "executed_at_utc": "2026-08-20T18:41:33.866603+00:00",
+  "executed_at_utc": "2026-08-20T18:42:14.415513+00:00",
   "expected_total_controls": 81,
   "observed_total_controls": 81,
   "overall_pass": true,
@@ -19,7 +19,7 @@
       "observed_count": 8,
       "path": "distribution/test_validate_records.py",
       "returncode": 0,
-      "stderr": "test_bad_hash_rejected (__main__.ValidatorTests.test_bad_hash_rejected) ... ok\ntest_manifest (__main__.ValidatorTests.test_manifest) ... ok\ntest_neutral_allow_non_falsification (__main__.ValidatorTests.test_neutral_allow_non_falsification) ... ok\ntest_neutral_falsification_denied (__main__.ValidatorTests.test_neutral_falsification_denied) ... ok\ntest_privileged_allow (__main__.ValidatorTests.test_privileged_allow) ... ok\ntest_restricted_acceptance_forbidden (__main__.ValidatorTests.test_restricted_acceptance_forbidden) ... ok\ntest_restricted_must_deny (__main__.ValidatorTests.test_restricted_must_deny) ... ok\ntest_unknown_field_rejected (__main__.ValidatorTests.test_unknown_field_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
+      "stderr": "test_bad_hash_rejected (__main__.ValidatorTests.test_bad_hash_rejected) ... ok\ntest_manifest (__main__.ValidatorTests.test_manifest) ... ok\ntest_neutral_allow_non_falsification (__main__.ValidatorTests.test_neutral_allow_non_falsification) ... ok\ntest_neutral_falsification_denied (__main__.ValidatorTests.test_neutral_falsification_denied) ... ok\ntest_privileged_allow (__main__.ValidatorTests.test_privileged_allow) ... ok\ntest_restricted_acceptance_forbidden (__main__.ValidatorTests.test_restricted_acceptance_forbidden) ... ok\ntest_restricted_must_deny (__main__.ValidatorTests.test_restricted_must_deny) ... ok\ntest_unknown_field_rejected (__main__.ValidatorTests.test_unknown_field_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.000s\n\nOK\n",
       "stdout": ""
     },
     {
@@ -28,7 +28,7 @@
       "observed_count": 13,
       "path": "distribution/test_resolve_territory.py",
       "returncode": 0,
-      "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.002s\n\nOK\n",
+      "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.001s\n\nOK\n",
       "stdout": ""
     },
     {

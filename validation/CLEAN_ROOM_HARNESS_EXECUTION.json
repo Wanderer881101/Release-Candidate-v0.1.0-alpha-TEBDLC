@@ -1,11 +1,11 @@
 {
-  "commit": "5196f05968add5d746b8ea8a8a4e15707654ae0b",
+  "commit": "cea17b13c9fffc080431bab5c902592787952d9a",
   "overall_pass": true,
   "raw_record": {
     "clean_room_version": "0.1",
     "licence_sha256": "86fddddedbd112c2c8b420d4b31802147a3bce702ff68db3683b816b39e69ac1",
-    "manifest_sha256": "9feab0c9f72a1095aaf10a8cc629419dcfe96572d24e880c6773b4213597f1c4",
-    "package_sha256": "e7b062e2e4cb532fc295ec482d9113a92d4c25b007f86173d03d57da7b852980",
+    "manifest_sha256": "e2f8c0ea4d470a73af9b491aad7295cc81664b2644185b31de9aeb4cc0f2a5e4",
+    "package_sha256": "273e94ecfa42c7c4886efdf15a3dc53d64b851ef7235c61cb487ffffa059cc50",
     "territorial_policy_sha256": "df810bf913d1ee2abb552ed11ca6255cbd484305d8a4f13d09d976533174c33e",
     "tests": [
       {
@@ -18,7 +18,7 @@
       {
         "ok": true,
         "returncode": 0,
-        "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.002s\n\nOK\n",
+        "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.001s\n\nOK\n",
         "stdout": "",
         "test": "test_resolve_territory.py"
       },
@@ -70,5 +70,5 @@
   "returncode": 0,
   "schema": "tebdlc-clean-room-harness-execution/0.1",
   "stderr": "",
-  "stdout": "{\"package_sha256\": \"e7b062e2e4cb532fc295ec482d9113a92d4c25b007f86173d03d57da7b852980\", \"status\": \"CLEAN_ROOM_PASS\"}\n"
+  "stdout": "{\"package_sha256\": \"273e94ecfa42c7c4886efdf15a3dc53d64b851ef7235c61cb487ffffa059cc50\", \"status\": \"CLEAN_ROOM_PASS\"}\n"
 }
