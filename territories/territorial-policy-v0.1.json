@@ -22,12 +22,20 @@
     }
   ],
   "explicitly_restricted": [
-    {"type": "city", "country": "CA", "subdivision": "Ontario", "name": "Ottawa"}
+    {"type": "city", "country": "CA", "subdivision": "Ontario", "name": "Ottawa"},
+    {
+      "type": "region_class",
+      "id": "MIDDLE_EAST_ALL",
+      "name": "Middle East — all territories",
+      "requires_enumerated_annex": true,
+      "meaning": "EXPLICITLY_RESTRICTED"
+    }
   ],
   "rules": {
     "neutral_is_not_privileged": true,
     "neutral_is_not_restricted": true,
     "narrow_explicit_rule_precedence": true,
+    "ambiguous_region_labels_require_enumerated_annex": true,
     "ip_geolocation_alone_is_sufficient": false,
     "public_github_is_controlled_distribution_endpoint": false,
     "policy_version_must_be_logged": true,
@@ -40,6 +48,7 @@
     "LEGAL_REVIEW",
     "CUSTOM_LICENCE_FINALIZATION",
     "CARIBBEAN_ENUMERATED_ANNEX",
+    "MIDDLE_EAST_ENUMERATED_ANNEX",
     "RECIPIENT_AUTHORIZATION_MODEL",
     "CONTROLLED_DISTRIBUTION_IMPLEMENTATION",
     "MANDATORY_LAW_AND_EXPORT_SANCTIONS_REVIEW"
