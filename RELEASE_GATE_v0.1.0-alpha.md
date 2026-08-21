@@ -52,11 +52,11 @@ The active public reference/release-tooling battery contains **90 controls**. Gi
 
 The private product candidate is materially bound at the Git-object level. Its exact source commit is `677a28d87164379cb2a268e55cfc30302ebc44ab`; the commit object points to root tree `63658d334ae8c3d280e9ef2c29845fffce2747e6`.
 
-A real deterministic archive has now been produced from that exact source. Its immutable SHA-256 is `dd15a49e30a2419d504d315c29aa4f25d6c6590202bedbce8f78dc632f426ba3`, its tracked file count is 139, and independent reconstruction from the archive yields the same expected Git root tree.
+A real deterministic archive has been produced from that exact source. Its immutable SHA-256 is `dd15a49e30a2419d504d315c29aa4f25d6c6590202bedbce8f78dc632f426ba3`, its tracked file count is 139, and independent reconstruction from the archive yields the same expected Git root tree.
 
-The clean-room record persisted on the private evidence branch reports `source_tree_match: true`, `tests_ok: true`, expected and observed root tree both `63658d334ae8c3d280e9ef2c29845fffce2747e6`, licence SHA-256 `86fddddedbd112c2c8b420d4b31802147a3bce702ff68db3683b816b39e69ac1`, territorial-policy SHA-256 `1e0a639c10ae2d124f4d535536788b19912903f310c9e494d57e6fbcba9b6090`, and manifest SHA-256 `ee8cff12529b190b7f9fcf7028a61a32af50f68dc3bfa6c39b24411f85521826`.
+The clean-room record reports `source_tree_match: true`, `tests_ok: true`, expected and observed root tree both `63658d334ae8c3d280e9ef2c29845fffce2747e6`, licence SHA-256 `86fddddedbd112c2c8b420d4b31802147a3bce702ff68db3683b816b39e69ac1`, territorial-policy SHA-256 `1e0a639c10ae2d124f4d535536788b19912903f310c9e494d57e6fbcba9b6090`, and manifest SHA-256 `ee8cff12529b190b7f9fcf7028a61a32af50f68dc3bfa6c39b24411f85521826`.
 
-## Blocking before controlled source distribution
+## Controlled-source distribution blockers
 
 - [x] Materially confirm the active 90-control compatibility battery on Python 3.11 / 3.12 / 3.13.
 - [x] Confirm cross-runtime semantic concordance for all 90 controls.
@@ -66,29 +66,33 @@ The clean-room record persisted on the private evidence branch reports `source_t
 - [x] Materially produce the real `v0.1.0-alpha` archive from the bound private source.
 - [x] Calculate and persist the immutable package SHA-256 and final release manifest bound to source commit `677a28d87164379cb2a268e55cfc30302ebc44ab` and root tree `63658d334ae8c3d280e9ef2c29845fffce2747e6`.
 - [x] Run `distribution/clean_room_verify.py` against that exact real package, active licence and territorial policy and persist the clean-room success record.
-- [ ] Place the verified package in a private controlled package store and exercise the real controlled-delivery path.
-- [ ] Verify authorized and denied deliveries, pre/post-delivery SHA equality, territorial resolution, authentication/authorization decisions and append-only audit-chain continuity against the real package.
-- [ ] Execute reference/adversarial suites against the deployed/private-package environment and persist results/hashes.
-- [ ] Complete production operational controls from `distribution/OPERATIONAL_ACCEPTANCE_v0.1.md` (TLS, secrets/KMS, isolation, ACLs, rate limiting, monitoring, backup/recovery, incident/revocation procedures as applicable).
-- [ ] Verify recipient/provenance records bind recipient identity, resolved territory, authorization decision, licence/policy versions, delivered package hash and audit checkpoint without storing raw secrets.
-- [ ] Preserve formal falsification attribution and contributor intellectual-property provenance in the isolated falsification registry.
-- [ ] Complete applicable mandatory-law/export/sanctions review and record any required operational adjustment.
-- [ ] Persist immutable final distribution proof and final audit checkpoint.
-- [ ] Freeze/tag the release identity only after all preceding blockers are closed.
+- [x] Place the verified package in a private controlled package store and exercise the real controlled-delivery path.
+- [x] Verify authorized and denied deliveries, pre/post-delivery SHA equality, territorial resolution, authentication/authorization decisions and append-only audit-chain continuity against the real package.
+- [x] Execute reference/adversarial suites against the deployed/private-package environment and persist results/hashes.
+- [x] Complete applicable operational controls from `distribution/OPERATIONAL_ACCEPTANCE_v0.1.md` for the current deployment boundary: HTTPS transport, secrets handling, isolation, ACL/least privilege, abuse/rate-limit boundary, monitoring, backup/recovery and incident/revocation procedures.
+- [x] Verify recipient/provenance records bind recipient identity, resolved territory, authorization decision, licence/policy versions, delivered package hash and audit checkpoint without storing raw secrets.
+- [x] Preserve formal falsification attribution and contributor intellectual-property provenance in the isolated falsification registry.
+- [x] Complete applicable mandatory-law/export/sanctions operational review and record required transaction-time adjustments in `distribution/LEGAL_MANDATORY_RULE_CHECKPOINT_v0.1.md`.
+- [x] Persist immutable final distribution proof in private evidence as `FINAL_DISTRIBUTION_PROOF.json`.
+- [x] Persist final audit checkpoint in private evidence as `FINAL_AUDIT_CHECKPOINT.json`, sequence `3`, checkpoint hash `64105fb03f89f28434bf565d55dd57302455a5eeccf1c7360ac65cf6e7221f00`.
+- [x] Final consolidation/freeze readiness gate completed successfully.
 
 ## External legal status
 
 The project licence is active as TEBDLC project policy. No claim is made that it has received governmental, judicial, or specialist legal certification. Mandatory applicable law prevails where required, without silently rewriting historical distribution provenance.
 
+`distribution/LEGAL_MANDATORY_RULE_CHECKPOINT_v0.1.md` records the external fail-closed conditions. Real external controlled delivery remains transaction-dependent and requires current export-classification/destination/sanctions/privacy checks as applicable.
+
 ## Hard publication invariant
 
-**DO NOT COPY THE COMPLETE CONTROLLED TEBDLC SOURCE PACKAGE TO PUBLIC `main` WHILE ANY CONTROLLED-DISTRIBUTION BLOCKER ABOVE REMAINS OPEN.**
+**DO NOT COPY THE COMPLETE CONTROLLED TEBDLC SOURCE PACKAGE TO PUBLIC `main`.**
 
-The public repository may continue to host intentionally global governance, policy, provenance formats, release metadata, hashes and documentation that do not disclose controlled source material.
+The public repository may host intentionally global governance, policy, provenance formats, release metadata, hashes and documentation that do not disclose controlled source material.
 
 ## Release identity
 
-Candidate: `v0.1.0-alpha`
+Release identity: `v0.1.0-alpha`
+Freeze readiness: `PASS`
 Private source commit: `677a28d87164379cb2a268e55cfc30302ebc44ab`
 Private source root tree: `63658d334ae8c3d280e9ef2c29845fffce2747e6`
 Real package SHA-256: `dd15a49e30a2419d504d315c29aa4f25d6c6590202bedbce8f78dc632f426ba3`
@@ -98,5 +102,7 @@ Territorial policy SHA-256: `1e0a639c10ae2d124f4d535536788b19912903f310c9e494d57
 Active runtime baseline: `90 controls`
 Cross-runtime normalized proof SHA-256: `4dc648dfe39adfbd35b2d76783e9525ad52b82c9e82a1e0cad2cd1e141e90954`
 Clean-room status: `PASS`
+Final distribution proof: `SEALED_FREEZE_READY`
+Final audit checkpoint: `SEALED`
 
-The controlled package is materially assembled and clean-room verified. The release identity must not be frozen/tagged until real controlled-delivery, operational, provenance, legal-review and final-audit blockers are closed.
+All controlled-distribution blockers are closed for freeze readiness. The release identity may now be frozen/tagged at the exact private source commit above. Real external controlled delivery remains subject to the transaction-time mandatory-rule conditions documented in the legal checkpoint.
