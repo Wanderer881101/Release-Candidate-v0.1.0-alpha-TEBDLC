@@ -1,6 +1,6 @@
 # TEBDLC v0.1.0-alpha — Release Notes
 
-Status: **FROZEN / CONTROLLED DISTRIBUTION**
+Status: **PUBLISHED PRERELEASE / FROZEN / CONTROLLED DISTRIBUTION**
 
 This document intentionally contains no complete controlled TEBDLC source package and no recipient secret.
 
@@ -33,7 +33,20 @@ This document intentionally contains no complete controlled TEBDLC source packag
 - Falsification provenance/registry isolation: `PASS`
 - HTTPS transport and least-privilege boundary: `PASS`
 - Final consolidation/freeze readiness gate: `PASS`
-- Canonical tag freeze: `PASS` — tag resolves exactly to the private source commit above.
+- Canonical tag freeze: `PASS`
+- GitHub prerelease publication: `PASS`
+
+## GitHub Release publication
+
+- Private repository: `Wanderer881101/TEBDLC`
+- GitHub Release ID: `374280928`
+- Release name: `TEBDLC v0.1.0-alpha — Controlled prerelease`
+- Tag: `v0.1.0-alpha`
+- Draft: `false`
+- Prerelease: `true`
+- User-uploaded release assets: `0`
+- Controlled package attached to GitHub Release: `false`
+- Private publication URL: `https://github.com/Wanderer881101/TEBDLC/releases/tag/v0.1.0-alpha`
 
 ## Final evidence
 
@@ -44,6 +57,7 @@ Final records:
 - `FINAL_DISTRIBUTION_PROOF.json` — `SEALED_FREEZE_READY`
 - `FINAL_AUDIT_CHECKPOINT.json` — `SEALED`
 - `TAG_FREEZE_RECORD.json` — `FROZEN`
+- `GITHUB_RELEASE_PUBLICATION_RECORD.json` — publication verified
 - Final audit checkpoint sequence: `3`
 - Final audit checkpoint hash: `64105fb03f89f28434bf565d55dd57302455a5eeccf1c7360ac65cf6e7221f00`
 
@@ -51,7 +65,7 @@ Final records:
 
 The complete controlled TEBDLC source package is **not published on public `main`**. Public materials contain governance, policies, provenance formats, hashes and non-sensitive release metadata.
 
-The canonical GitHub Release is intended to live in the private `TEBDLC` repository and to be tied to the canonical private tag. No controlled package asset is to be attached to that GitHub Release; controlled package delivery remains through the verified private delivery boundary.
+The canonical GitHub Release is published in the private `TEBDLC` repository and tied to the canonical private tag. No controlled package asset is attached to that GitHub Release; controlled package delivery remains through the verified private delivery boundary.
 
 Real external controlled delivery remains fail-closed until applicable transaction-time requirements are satisfied, including export classification/authorization where required, destination and sanctions screening, and applicable privacy governance.
 
