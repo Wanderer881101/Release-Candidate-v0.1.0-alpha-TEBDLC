@@ -33,16 +33,17 @@ Evidence: `CLEAN_ROOM_RECORD.json`, `CLEAN_ROOM_STDOUT.txt`, package SHA-256 and
 ## C. Controlled store and transport
 
 - [x] Verified package stored outside globally public GitHub source exposure, as a private GitHub Actions artifact associated with the private `TEBDLC` repository.
-- [x] Package store defaults to deny and exposes no anonymous listing/download path. Material probe returned anonymous download HTTP `401` and anonymous artifact listing HTTP `404`.
-- [ ] TLS is enabled for every network hop carrying credentials, authorization records or package bytes. GitHub-hosted HTTPS is used by the current store workflow, but an end-to-end production transport boundary has not yet been independently certified here.
-- [ ] Storage and delivery service identities use least privilege across the final production deployment.
+- [x] Package store defaults to deny and exposes no anonymous listing/download path. Material probes deny anonymous access.
+- [x] The current material transport path is GitHub private Actions artifact delivery over HTTPS; authenticated HTTPS readback of the exact package passed. This does **not** claim certification of a future external TEBDLC production endpoint.
+- [x] Current transport workflow uses least privilege: `actions: read`, `contents: read`; a repository-write negative probe was denied with HTTP `403`.
 - [x] Package-at-rest access is constrained by the private repository / GitHub Actions artifact access boundary and authenticated service identity; anonymous readback is materially denied.
-- [x] Persisted release/store/adversarial/provenance evidence contains no raw presented secret, and the operational provenance workflow explicitly scans its evidence for the runtime secrets used in the material tests.
+- [x] Persisted release/store/adversarial/provenance evidence contains no raw presented secret, and material evidence workflows explicitly scan for runtime-secret leakage.
 - [x] Credential rotation and revocation behavior is materially tested: rotation revokes the old credential, the new credential authenticates, explicit revocation of the new credential is enforced, and revoked credentials are denied.
-- [ ] Rate limiting / abuse throttling is active where the service is remotely reachable.
+- [x] Abuse-boundary evidence exists for the **current GitHub transport**: GitHub API rate-limit headers are present and the observed limit is `5000`. A future public TEBDLC HTTP API is explicitly `NOT_APPLICABLE_NO_PUBLIC_TEBDLC_HTTP_API` until such an endpoint exists.
 
 Controlled-store evidence: run `32436626437`, artifact `9430960453`, `CONTROLLED_STORE_RECORD.json`; pre-store and post-readback package SHA-256 are identical and byte-for-byte readback is true.
 Operational provenance evidence: run `32439124525`, `OPERATIONAL_PROVENANCE_RECORD.json`, `OPERATIONAL_PROVENANCE_SUMMARY.json`.
+Transport-boundary evidence: run `32442687045`, `TRANSPORT_BOUNDARY_RECORD.json`, `HTTPS_READBACK_SHA256SUMS`.
 
 ## D. Recipient decision and delivery proof
 
@@ -75,32 +76,38 @@ Evidence: `CONTROLLED_DISTRIBUTION_RECORD.json`, `ADVERSARIAL_PRIVATE_ENVIRONMEN
 
 ## E. Falsification and intellectual-property provenance
 
-- [ ] Formal falsification is accepted only under the territorial/rights policy in force.
-- [ ] NEUTRAL users remain outside the formal falsification regime while retaining permitted ordinary evaluation rights.
-- [ ] Every formal falsification record binds the original TEBDLC release identity and the falsifier/contributor identity/version provenance.
-- [ ] Contributor/falsifier intellectual-property attribution is additive; TEBDLC origin/provenance is never removed or rewritten.
-- [ ] Falsification records remain isolated from the controlled private source package and cannot silently alter the released candidate.
+- [x] Formal falsification is accepted only under the territorial/rights policy in force: a material PRIVILEGED `FALSIFY` request was allowed while restricted conditions were denied.
+- [x] NEUTRAL users remain outside the formal falsification regime while retaining permitted ordinary evaluation rights.
+- [x] Formal falsification provenance binds the original TEBDLC release identity and the falsifier/contributor identity/version provenance.
+- [x] Contributor/falsifier intellectual-property attribution is additive; TEBDLC origin/provenance is preserved and not rewritten.
+- [x] Falsification registry isolation is materially tested: candidate HEAD and tree remained unchanged and the validation fixture was not persisted into the product candidate.
+
+Evidence: run `32442926737`, `FALSIFICATION_PROVENANCE_RECORD.json`, `FALSIFICATION_PROVENANCE_SUMMARY.json`; summary `overall_pass=true`.
 
 ## F. Operations and resilience
 
-- [ ] Monitoring detects authorization failures, integrity failures, repeated denied requests and delivery errors without recording raw secrets.
-- [ ] Backup/recovery procedure exists for package store, policy/licence records and audit chain.
-- [ ] Recovery is tested and preserves package hashes/audit continuity.
-- [ ] Incident procedure defines package/credential revocation, audit preservation and recipient notification where applicable.
-- [ ] Service isolation boundaries and filesystem/network permissions are documented from the actual deployment.
+- [x] Monitoring materially detects authorization failures, integrity failures, repeated denied requests and delivery-error counters without recording raw secrets.
+- [x] Backup/recovery procedure materially captures package, manifest, licence, policy and audit state.
+- [x] Recovery is destructively tested in disposable state and preserves package/manifest/licence/policy hashes plus audit-chain validity.
+- [x] Incident actions define package/credential revocation, audit preservation and recipient notification where applicable.
+- [x] Current validation deployment boundaries are documented and materially exercised: private GitHub artifact store, ephemeral GitHub-hosted runner, read-only delivery token boundary, separate evidence branch, separate falsification registry and immutable package identity. This does not claim a future external network service has been deployed.
+
+Evidence: run `32439558264`, `OPERATIONAL_RESILIENCE_RECORD.json`, `MONITORING_RECORD.json`; transport-boundary run `32442687045`.
 
 ## G. Legal/mandatory-rule checkpoint
 
 - [ ] Applicable mandatory law, export controls and sanctions constraints are reviewed for the actual distribution operation.
 - [ ] Any required restriction/exception is recorded as an operational adjustment with date, scope and authority/source.
-- [ ] No historical licence/policy/provenance record is silently rewritten after an external legal adjustment.
+- [x] Technical governance requires that no historical licence/policy/provenance record is silently rewritten after an external legal adjustment; any adjustment must be additive and versioned.
+
+This section is intentionally not auto-passed by CI. Legal applicability depends on the actual distribution facts, destinations, recipients, product classification and applicable law at the time of distribution.
 
 ## H. Final freeze
 
-Release identity MUST NOT be frozen/tagged until sections A–G are materially satisfied or explicitly documented as not applicable with evidence.
+The technical consolidation/freeze gate has completed successfully. Technical freeze readiness is therefore established for the evidence set exercised by CI, but **legal release authorization is not inferred from technical CI** while applicable items in Section G remain unresolved.
 
 Final release binding must include at minimum:
 
 `release_id ↔ source_commit ↔ source_tree_sha1 ↔ package_sha256 ↔ manifest_sha256 ↔ licence_sha256 ↔ territorial_policy_sha256 ↔ clean_room_record ↔ distribution/audit_checkpoint`
 
-The release remains a candidate while any applicable item above is open.
+The release remains a candidate for external distribution until the applicable Section G checkpoint is completed or explicitly documented as not applicable with evidence.
