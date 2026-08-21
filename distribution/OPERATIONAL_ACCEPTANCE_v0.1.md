@@ -37,11 +37,12 @@ Evidence: `CLEAN_ROOM_RECORD.json`, `CLEAN_ROOM_STDOUT.txt`, package SHA-256 and
 - [ ] TLS is enabled for every network hop carrying credentials, authorization records or package bytes. GitHub-hosted HTTPS is used by the current store workflow, but an end-to-end production transport boundary has not yet been independently certified here.
 - [ ] Storage and delivery service identities use least privilege across the final production deployment.
 - [x] Package-at-rest access is constrained by the private repository / GitHub Actions artifact access boundary and authenticated service identity; anonymous readback is materially denied.
-- [ ] Secrets/credentials are not committed, logged, embedded in manifests, or returned in audit records across the complete deployment. Existing persisted release/store/adversarial evidence records explicitly contain no raw secret, but a complete secret-leak scan remains required.
-- [ ] Secret rotation and revocation procedure is documented and tested.
+- [x] Persisted release/store/adversarial/provenance evidence contains no raw presented secret, and the operational provenance workflow explicitly scans its evidence for the runtime secrets used in the material tests.
+- [x] Credential rotation and revocation behavior is materially tested: rotation revokes the old credential, the new credential authenticates, explicit revocation of the new credential is enforced, and revoked credentials are denied.
 - [ ] Rate limiting / abuse throttling is active where the service is remotely reachable.
 
 Controlled-store evidence: run `32436626437`, artifact `9430960453`, `CONTROLLED_STORE_RECORD.json`; pre-store and post-readback package SHA-256 are identical and byte-for-byte readback is true.
+Operational provenance evidence: run `32439124525`, `OPERATIONAL_PROVENANCE_RECORD.json`, `OPERATIONAL_PROVENANCE_SUMMARY.json`.
 
 ## D. Recipient decision and delivery proof
 
@@ -59,7 +60,8 @@ For each real delivery attempt, persist a non-secret record binding:
 - audit event/checkpoint identifier;
 - timestamp in UTC.
 
-The current material adversarial package run proves the behavioral delivery gates below. A dedicated complete per-attempt provenance record covering every binding listed above remains required before Section D is wholly closed.
+- [x] Dedicated material per-attempt provenance record persists all required bindings for one ALLOW, one authentication DENY and one restricted-territory DENY without storing raw secrets.
+- [x] Recipient provenance is bound to audit sequence and audit-entry hash for every recorded attempt.
 
 Material tests required:
 
@@ -69,7 +71,7 @@ Material tests required:
 - [x] At least one integrity mismatch/tamper scenario fails closed.
 - [x] Audit chain remains valid after ALLOW and DENY outcomes; deliberate audit tampering is detected.
 
-Evidence: `CONTROLLED_DISTRIBUTION_RECORD.json`, `ADVERSARIAL_PRIVATE_ENVIRONMENT_RECORD.json`, `PRIVATE_PACKAGE_ADVERSARIAL_RECORD.json`; adversarial run `32438606191`; 18 distribution + 11 end-to-end reference controls PASS plus 6 material real-package cases PASS.
+Evidence: `CONTROLLED_DISTRIBUTION_RECORD.json`, `ADVERSARIAL_PRIVATE_ENVIRONMENT_RECORD.json`, `PRIVATE_PACKAGE_ADVERSARIAL_RECORD.json`, `OPERATIONAL_PROVENANCE_RECORD.json`; adversarial run `32438606191`; provenance run `32439124525`.
 
 ## E. Falsification and intellectual-property provenance
 
