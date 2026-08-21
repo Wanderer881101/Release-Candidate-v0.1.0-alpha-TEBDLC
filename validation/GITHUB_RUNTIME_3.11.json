@@ -1,11 +1,11 @@
 {
-  "commit": "15bfe9039efacc580f58e064e75d5289dc295744",
+  "commit": "f28506207eb865ded04f8537d174b0a4ecc8f04b",
   "compile": {
     "returncode": 0,
     "stderr": "",
     "stdout": ""
   },
-  "executed_at_utc": "2026-08-21T02:17:01.606947+00:00",
+  "executed_at_utc": "2026-08-21T03:34:19.545715+00:00",
   "expected_total_controls": 90,
   "normalization": "python-version-and-unittest-wallclock-v0.2",
   "normalized_output_sha256": "4dc648dfe39adfbd35b2d76783e9525ad52b82c9e82a1e0cad2cd1e141e90954",
@@ -30,7 +30,7 @@
       "ok": true,
       "path": "distribution/test_resolve_territory.py",
       "returncode": 0,
-      "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.001s\n\nOK\n",
+      "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.002s\n\nOK\n",
       "stdout": ""
     },
     {
@@ -93,7 +93,7 @@
       "ok": true,
       "path": "distribution/test_clean_room_tree.py",
       "returncode": 0,
-      "stderr": "test_duplicate_path_rejected (__main__.CleanRoomTreeTests.test_duplicate_path_rejected) ... ok\ntest_known_git_tree_vector (__main__.CleanRoomTreeTests.test_known_git_tree_vector) ... ok\ntest_single_byte_mutation_changes_tree (__main__.CleanRoomTreeTests.test_single_byte_mutation_changes_tree) ... ok\ntest_unsafe_parent_path_rejected (__main__.CleanRoomTreeTests.test_unsafe_parent_path_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.004s\n\nOK\n",
+      "stderr": "test_duplicate_path_rejected (__main__.CleanRoomTreeTests.test_duplicate_path_rejected) ... ok\ntest_known_git_tree_vector (__main__.CleanRoomTreeTests.test_known_git_tree_vector) ... ok\ntest_single_byte_mutation_changes_tree (__main__.CleanRoomTreeTests.test_single_byte_mutation_changes_tree) ... ok\ntest_unsafe_parent_path_rejected (__main__.CleanRoomTreeTests.test_unsafe_parent_path_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.005s\n\nOK\n",
       "stdout": ""
     },
     {
