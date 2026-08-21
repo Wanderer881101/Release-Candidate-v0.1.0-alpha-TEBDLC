@@ -113,7 +113,7 @@ class SymbolicFractionalGain:
         raise TypeError("addition is not yet a TEBDLC symbolic gain primitive")
 
     def __sub__(self, other: object) -> "SymbolicFractionalGain":
-        raise TypeError("subtraction is not yet a TEBDLC symbolic gain primitive")
+        raise TypeError("subtraction is not a TEBDLC symbolic gain primitive")
 
     def __truediv__(self, other: object) -> "SymbolicFractionalGain":
         raise TypeError("division is not a TEBDLC symbolic gain primitive")

@@ -128,10 +128,10 @@ class ExactFractionalGain:
         raise TypeError("addition is not yet a TEBDLC fractional gain primitive")
 
     def __sub__(self, other: object) -> "ExactFractionalGain":
-        raise TypeError("subtraction is not yet a TEBDLC fractional gain primitive")
+        raise TypeError("subtraction is not a TEBDLC fractional gain primitive")
 
     def __truediv__(self, other: object) -> "ExactFractionalGain":
-        raise TypeError("division is not yet a TEBDLC fractional gain primitive")
+        raise TypeError("division is not a TEBDLC fractional gain primitive")
 
     def canonical(self) -> dict[str, object]:
         return {
