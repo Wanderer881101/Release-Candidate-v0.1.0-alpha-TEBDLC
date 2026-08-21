@@ -40,17 +40,21 @@ This gate prevents accidental publication of the complete territorially controll
 - [x] Exact private Git root-tree Merkle identity persisted: `63658d334ae8c3d280e9ef2c29845fffce2747e6`; recursive authenticated Git-tree query returned `truncated:false`.
 - [x] Public non-disclosing source-tree proof persisted in `validation/PRIVATE_SOURCE_TREE_PROOF.json`.
 - [x] Operational acceptance gate persisted in `distribution/OPERATIONAL_ACCEPTANCE_v0.1.md`.
-- [x] Material-proof boundary and private-package attempts recorded without substituting synthetic/package-placeholder hashes for the real package.
+- [x] Material private package assembled deterministically from the bound source commit and independently rechecked byte-for-byte.
+- [x] Real package SHA-256 persisted: `dd15a49e30a2419d504d315c29aa4f25d6c6590202bedbce8f78dc632f426ba3`.
+- [x] Real package contains 139 tracked files and reconstructs the exact expected source root tree `63658d334ae8c3d280e9ef2c29845fffce2747e6`.
+- [x] Final release manifest persisted privately; manifest SHA-256: `ee8cff12529b190b7f9fcf7028a61a32af50f68dc3bfa6c39b24411f85521826`.
+- [x] Clean-room v0.2 materially completed against the exact real package with `tests_ok: true` and `source_tree_match: true`.
 
 ## Verification note
 
-The active public reference/release-tooling battery now contains **90 controls**. GitHub-hosted Python 3.11.16, 3.12.14 and 3.13.15 each execute all 90 successfully. Concordance matrix schema `tebdlc-runtime-concordance/0.4` reports the same normalized output SHA-256 across all three runtimes: `4dc648dfe39adfbd35b2d76783e9525ad52b82c9e82a1e0cad2cd1e141e90954`.
+The active public reference/release-tooling battery contains **90 controls**. GitHub-hosted Python 3.11.16, 3.12.14 and 3.13.15 each execute all 90 successfully. Concordance matrix schema `tebdlc-runtime-concordance/0.4` reports the same normalized output SHA-256 across all three runtimes: `4dc648dfe39adfbd35b2d76783e9525ad52b82c9e82a1e0cad2cd1e141e90954`.
 
-The private product candidate is materially bound at the Git-object level. Its exact source commit is `677a28d87164379cb2a268e55cfc30302ebc44ab`; the commit object points to root tree `63658d334ae8c3d280e9ef2c29845fffce2747e6`. A recursive authenticated Git-tree query for that candidate is complete (`truncated:false`).
+The private product candidate is materially bound at the Git-object level. Its exact source commit is `677a28d87164379cb2a268e55cfc30302ebc44ab`; the commit object points to root tree `63658d334ae8c3d280e9ef2c29845fffce2747e6`.
 
-`distribution/assemble_private_git_tree.py` is the current material assembly path. It authenticates to GitHub, verifies every fetched blob against its Git SHA-1, rebuilds the complete source tree locally, requires exact root-tree equality, creates a canonical deterministic tar.gz, rebuilds it byte-for-byte, and emits `PACKAGE_PROOF.json` plus `SHA256SUMS`.
+A real deterministic archive has now been produced from that exact source. Its immutable SHA-256 is `dd15a49e30a2419d504d315c29aa4f25d6c6590202bedbce8f78dc632f426ba3`, its tracked file count is 139, and independent reconstruction from the archive yields the same expected Git root tree.
 
-The current ChatGPT lab does not expose a `GITHUB_TOKEN` or `GH_TOKEN`; therefore the private blobs cannot yet be fetched into that container. No real package SHA-256 is claimed until a token-bearing/private-source-readable execution actually produces the archive.
+The clean-room record persisted on the private evidence branch reports `source_tree_match: true`, `tests_ok: true`, expected and observed root tree both `63658d334ae8c3d280e9ef2c29845fffce2747e6`, licence SHA-256 `86fddddedbd112c2c8b420d4b31802147a3bce702ff68db3683b816b39e69ac1`, territorial-policy SHA-256 `1e0a639c10ae2d124f4d535536788b19912903f310c9e494d57e6fbcba9b6090`, and manifest SHA-256 `ee8cff12529b190b7f9fcf7028a61a32af50f68dc3bfa6c39b24411f85521826`.
 
 ## Blocking before controlled source distribution
 
@@ -59,9 +63,9 @@ The current ChatGPT lab does not expose a `GITHUB_TOKEN` or `GH_TOKEN`; therefor
 - [x] Resolve and persist the exact canonical private source commit and complete Git-tree Merkle identity.
 - [x] Bind clean-room verification to the expected private Git root tree.
 - [x] Implement and test the authenticated Git-object → canonical archive assembly path.
-- [ ] Execute that assembly path in an environment able to authenticate to/read the bound private source and materially produce the real `v0.1.0-alpha` archive.
-- [ ] Calculate and persist the immutable package SHA-256 and final release manifest bound to source commit `677a28d87164379cb2a268e55cfc30302ebc44ab` and root tree `63658d334ae8c3d280e9ef2c29845fffce2747e6`.
-- [ ] Run `distribution/clean_room_verify.py` against that exact real package, active licence and territorial policy and persist `CLEAN_ROOM_PASS`.
+- [x] Materially produce the real `v0.1.0-alpha` archive from the bound private source.
+- [x] Calculate and persist the immutable package SHA-256 and final release manifest bound to source commit `677a28d87164379cb2a268e55cfc30302ebc44ab` and root tree `63658d334ae8c3d280e9ef2c29845fffce2747e6`.
+- [x] Run `distribution/clean_room_verify.py` against that exact real package, active licence and territorial policy and persist the clean-room success record.
 - [ ] Place the verified package in a private controlled package store and exercise the real controlled-delivery path.
 - [ ] Verify authorized and denied deliveries, pre/post-delivery SHA equality, territorial resolution, authentication/authorization decisions and append-only audit-chain continuity against the real package.
 - [ ] Execute reference/adversarial suites against the deployed/private-package environment and persist results/hashes.
@@ -69,7 +73,7 @@ The current ChatGPT lab does not expose a `GITHUB_TOKEN` or `GH_TOKEN`; therefor
 - [ ] Verify recipient/provenance records bind recipient identity, resolved territory, authorization decision, licence/policy versions, delivered package hash and audit checkpoint without storing raw secrets.
 - [ ] Preserve formal falsification attribution and contributor intellectual-property provenance in the isolated falsification registry.
 - [ ] Complete applicable mandatory-law/export/sanctions review and record any required operational adjustment.
-- [ ] Persist immutable final release manifest, real-package verification record, policy/licence hashes, distribution proof and final audit checkpoint.
+- [ ] Persist immutable final distribution proof and final audit checkpoint.
 - [ ] Freeze/tag the release identity only after all preceding blockers are closed.
 
 ## External legal status
@@ -87,7 +91,12 @@ The public repository may continue to host intentionally global governance, poli
 Candidate: `v0.1.0-alpha`
 Private source commit: `677a28d87164379cb2a268e55cfc30302ebc44ab`
 Private source root tree: `63658d334ae8c3d280e9ef2c29845fffce2747e6`
+Real package SHA-256: `dd15a49e30a2419d504d315c29aa4f25d6c6590202bedbce8f78dc632f426ba3`
+Release manifest SHA-256: `ee8cff12529b190b7f9fcf7028a61a32af50f68dc3bfa6c39b24411f85521826`
+Licence SHA-256: `86fddddedbd112c2c8b420d4b31802147a3bce702ff68db3683b816b39e69ac1`
+Territorial policy SHA-256: `1e0a639c10ae2d124f4d535536788b19912903f310c9e494d57e6fbcba9b6090`
 Active runtime baseline: `90 controls`
 Cross-runtime normalized proof SHA-256: `4dc648dfe39adfbd35b2d76783e9525ad52b82c9e82a1e0cad2cd1e141e90954`
+Clean-room status: `PASS`
 
-The final controlled package must receive its own immutable SHA-256, manifest SHA-256, licence version/hash, territorial-policy version/hash, build/verification record, delivery proof and audit checkpoint before release identity is frozen.
+The controlled package is materially assembled and clean-room verified. The release identity must not be frozen/tagged until real controlled-delivery, operational, provenance, legal-review and final-audit blockers are closed.
