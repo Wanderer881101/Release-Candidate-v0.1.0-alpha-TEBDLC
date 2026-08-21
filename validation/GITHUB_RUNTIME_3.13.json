@@ -1,11 +1,11 @@
 {
-  "commit": "e92886ba1f1f82f18ab6531bfeee26dce4ba5d67",
+  "commit": "37373590cef15106985860d313071b35f4ba14f9",
   "compile": {
     "returncode": 0,
     "stderr": "",
     "stdout": ""
   },
-  "executed_at_utc": "2026-08-21T03:42:25.756293+00:00",
+  "executed_at_utc": "2026-08-21T09:06:12.274810+00:00",
   "expected_total_controls": 90,
   "normalization": "python-version-and-unittest-wallclock-v0.2",
   "normalized_output_sha256": "4dc648dfe39adfbd35b2d76783e9525ad52b82c9e82a1e0cad2cd1e141e90954",
@@ -21,7 +21,7 @@
       "ok": true,
       "path": "distribution/test_validate_records.py",
       "returncode": 0,
-      "stderr": "test_bad_hash_rejected (__main__.ValidatorTests.test_bad_hash_rejected) ... ok\ntest_manifest (__main__.ValidatorTests.test_manifest) ... ok\ntest_neutral_allow_non_falsification (__main__.ValidatorTests.test_neutral_allow_non_falsification) ... ok\ntest_neutral_falsification_denied (__main__.ValidatorTests.test_neutral_falsification_denied) ... ok\ntest_privileged_allow (__main__.ValidatorTests.test_privileged_allow) ... ok\ntest_restricted_acceptance_forbidden (__main__.ValidatorTests.test_restricted_acceptance_forbidden) ... ok\ntest_restricted_must_deny (__main__.ValidatorTests.test_restricted_must_deny) ... ok\ntest_unknown_field_rejected (__main__.ValidatorTests.test_unknown_field_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
+      "stderr": "test_bad_hash_rejected (__main__.ValidatorTests.test_bad_hash_rejected) ... ok\ntest_manifest (__main__.ValidatorTests.test_manifest) ... ok\ntest_neutral_allow_non_falsification (__main__.ValidatorTests.test_neutral_allow_non_falsification) ... ok\ntest_neutral_falsification_denied (__main__.ValidatorTests.test_neutral_falsification_denied) ... ok\ntest_privileged_allow (__main__.ValidatorTests.test_privileged_allow) ... ok\ntest_restricted_acceptance_forbidden (__main__.ValidatorTests.test_restricted_acceptance_forbidden) ... ok\ntest_restricted_must_deny (__main__.ValidatorTests.test_restricted_must_deny) ... ok\ntest_unknown_field_rejected (__main__.ValidatorTests.test_unknown_field_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.000s\n\nOK\n",
       "stdout": ""
     },
     {
@@ -30,7 +30,7 @@
       "ok": true,
       "path": "distribution/test_resolve_territory.py",
       "returncode": 0,
-      "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.003s\n\nOK\n",
+      "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.002s\n\nOK\n",
       "stdout": ""
     },
     {
@@ -93,7 +93,7 @@
       "ok": true,
       "path": "distribution/test_clean_room_tree.py",
       "returncode": 0,
-      "stderr": "test_duplicate_path_rejected (__main__.CleanRoomTreeTests.test_duplicate_path_rejected) ... ok\ntest_known_git_tree_vector (__main__.CleanRoomTreeTests.test_known_git_tree_vector) ... ok\ntest_single_byte_mutation_changes_tree (__main__.CleanRoomTreeTests.test_single_byte_mutation_changes_tree) ... ok\ntest_unsafe_parent_path_rejected (__main__.CleanRoomTreeTests.test_unsafe_parent_path_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.013s\n\nOK\n",
+      "stderr": "test_duplicate_path_rejected (__main__.CleanRoomTreeTests.test_duplicate_path_rejected) ... ok\ntest_known_git_tree_vector (__main__.CleanRoomTreeTests.test_known_git_tree_vector) ... ok\ntest_single_byte_mutation_changes_tree (__main__.CleanRoomTreeTests.test_single_byte_mutation_changes_tree) ... ok\ntest_unsafe_parent_path_rejected (__main__.CleanRoomTreeTests.test_unsafe_parent_path_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.032s\n\nOK\n",
       "stdout": ""
     },
     {
@@ -102,7 +102,7 @@
       "ok": true,
       "path": "distribution/test_assemble_private_git_tree.py",
       "returncode": 0,
-      "stderr": "test_archive_rebuild_is_byte_identical (__main__.PrivateTreeAssemblerTests.test_archive_rebuild_is_byte_identical) ... ok\ntest_archive_round_trip_preserves_git_tree (__main__.PrivateTreeAssemblerTests.test_archive_round_trip_preserves_git_tree) ... ok\ntest_known_git_blob_and_tree_vector (__main__.PrivateTreeAssemblerTests.test_known_git_blob_and_tree_vector) ... ok\ntest_one_byte_mutation_changes_tree (__main__.PrivateTreeAssemblerTests.test_one_byte_mutation_changes_tree) ... ok\ntest_symbolic_link_round_trip_preserves_git_tree (__main__.PrivateTreeAssemblerTests.test_symbolic_link_round_trip_preserves_git_tree) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.004s\n\nOK\n",
+      "stderr": "test_archive_rebuild_is_byte_identical (__main__.PrivateTreeAssemblerTests.test_archive_rebuild_is_byte_identical) ... ok\ntest_archive_round_trip_preserves_git_tree (__main__.PrivateTreeAssemblerTests.test_archive_round_trip_preserves_git_tree) ... ok\ntest_known_git_blob_and_tree_vector (__main__.PrivateTreeAssemblerTests.test_known_git_blob_and_tree_vector) ... ok\ntest_one_byte_mutation_changes_tree (__main__.PrivateTreeAssemblerTests.test_one_byte_mutation_changes_tree) ... ok\ntest_symbolic_link_round_trip_preserves_git_tree (__main__.PrivateTreeAssemblerTests.test_symbolic_link_round_trip_preserves_git_tree) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.003s\n\nOK\n",
       "stdout": ""
     }
   ]
