@@ -1,11 +1,11 @@
 {
-  "commit": "f159852cdd4011e963f4fde9fb75642639a1244a",
+  "commit": "989ae1b7d0f514a8fac78bf2d1dbe79e6b72d362",
   "compile": {
     "returncode": 0,
     "stderr": "",
     "stdout": ""
   },
-  "executed_at_utc": "2026-08-21T03:37:21.169544+00:00",
+  "executed_at_utc": "2026-08-21T03:39:37.330560+00:00",
   "expected_total_controls": 90,
   "normalization": "python-version-and-unittest-wallclock-v0.2",
   "normalized_output_sha256": "4dc648dfe39adfbd35b2d76783e9525ad52b82c9e82a1e0cad2cd1e141e90954",
@@ -102,7 +102,7 @@
       "ok": true,
       "path": "distribution/test_assemble_private_git_tree.py",
       "returncode": 0,
-      "stderr": "test_archive_rebuild_is_byte_identical (__main__.PrivateTreeAssemblerTests.test_archive_rebuild_is_byte_identical) ... ok\ntest_archive_round_trip_preserves_git_tree (__main__.PrivateTreeAssemblerTests.test_archive_round_trip_preserves_git_tree) ... ok\ntest_known_git_blob_and_tree_vector (__main__.PrivateTreeAssemblerTests.test_known_git_blob_and_tree_vector) ... ok\ntest_one_byte_mutation_changes_tree (__main__.PrivateTreeAssemblerTests.test_one_byte_mutation_changes_tree) ... ok\ntest_symbolic_link_round_trip_preserves_git_tree (__main__.PrivateTreeAssemblerTests.test_symbolic_link_round_trip_preserves_git_tree) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.004s\n\nOK\n",
+      "stderr": "test_archive_rebuild_is_byte_identical (__main__.PrivateTreeAssemblerTests.test_archive_rebuild_is_byte_identical) ... ok\ntest_archive_round_trip_preserves_git_tree (__main__.PrivateTreeAssemblerTests.test_archive_round_trip_preserves_git_tree) ... ok\ntest_known_git_blob_and_tree_vector (__main__.PrivateTreeAssemblerTests.test_known_git_blob_and_tree_vector) ... ok\ntest_one_byte_mutation_changes_tree (__main__.PrivateTreeAssemblerTests.test_one_byte_mutation_changes_tree) ... ok\ntest_symbolic_link_round_trip_preserves_git_tree (__main__.PrivateTreeAssemblerTests.test_symbolic_link_round_trip_preserves_git_tree) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.003s\n\nOK\n",
       "stdout": ""
     }
   ]
