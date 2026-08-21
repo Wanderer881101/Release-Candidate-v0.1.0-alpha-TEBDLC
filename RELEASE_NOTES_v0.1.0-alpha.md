@@ -51,7 +51,7 @@ Final records:
 
 The complete controlled TEBDLC source package is **not published on public `main`**. Public materials contain governance, policies, provenance formats, hashes and non-sensitive release metadata.
 
-The canonical GitHub Release is published in the private `TEBDLC` repository and is tied to the canonical private tag. No controlled package asset is attached to the GitHub Release; controlled package delivery continues through the verified private delivery boundary.
+The canonical GitHub Release is intended to live in the private `TEBDLC` repository and to be tied to the canonical private tag. No controlled package asset is to be attached to that GitHub Release; controlled package delivery remains through the verified private delivery boundary.
 
 Real external controlled delivery remains fail-closed until applicable transaction-time requirements are satisfied, including export classification/authorization where required, destination and sanctions screening, and applicable privacy governance.
 
