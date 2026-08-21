@@ -1,0 +1,26 @@
+# Jonathan Therrien, Marieville, Québec.
+
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tebdlc"
+version = "0.1.0"
+description = "Gain conservation and reconciliation ledger"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "Jonathan Therrien"}]
+
+[project.scripts]
+tebdlc = "tebdlc.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
