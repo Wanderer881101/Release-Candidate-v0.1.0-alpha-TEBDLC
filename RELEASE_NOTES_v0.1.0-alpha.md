@@ -1,13 +1,14 @@
 # TEBDLC v0.1.0-alpha — Release Notes
 
-Status: **FREEZE READY / CONTROLLED DISTRIBUTION**
+Status: **FROZEN / CONTROLLED DISTRIBUTION**
 
 This document intentionally contains no complete controlled TEBDLC source package and no recipient secret.
 
 ## Canonical product identity
 
 - Release: `v0.1.0-alpha`
-- Private source commit: `677a28d87164379cb2a268e55cfc30302ebc44ab`
+- Canonical private Git tag: `v0.1.0-alpha`
+- Tag target / private source commit: `677a28d87164379cb2a268e55cfc30302ebc44ab`
 - Private source root tree SHA-1: `63658d334ae8c3d280e9ef2c29845fffce2747e6`
 - Canonical package SHA-256: `dd15a49e30a2419d504d315c29aa4f25d6c6590202bedbce8f78dc632f426ba3`
 - Package tracked files: `139`
@@ -32,6 +33,7 @@ This document intentionally contains no complete controlled TEBDLC source packag
 - Falsification provenance/registry isolation: `PASS`
 - HTTPS transport and least-privilege boundary: `PASS`
 - Final consolidation/freeze readiness gate: `PASS`
+- Canonical tag freeze: `PASS` — tag resolves exactly to the private source commit above.
 
 ## Final evidence
 
@@ -41,12 +43,15 @@ Final records:
 
 - `FINAL_DISTRIBUTION_PROOF.json` — `SEALED_FREEZE_READY`
 - `FINAL_AUDIT_CHECKPOINT.json` — `SEALED`
+- `TAG_FREEZE_RECORD.json` — `FROZEN`
 - Final audit checkpoint sequence: `3`
 - Final audit checkpoint hash: `64105fb03f89f28434bf565d55dd57302455a5eeccf1c7360ac65cf6e7221f00`
 
 ## Distribution boundary
 
 The complete controlled TEBDLC source package is **not published on public `main`**. Public materials contain governance, policies, provenance formats, hashes and non-sensitive release metadata.
+
+The canonical GitHub Release is published in the private `TEBDLC` repository and is tied to the canonical private tag. No controlled package asset is attached to the GitHub Release; controlled package delivery continues through the verified private delivery boundary.
 
 Real external controlled delivery remains fail-closed until applicable transaction-time requirements are satisfied, including export classification/authorization where required, destination and sanctions screening, and applicable privacy governance.
 
