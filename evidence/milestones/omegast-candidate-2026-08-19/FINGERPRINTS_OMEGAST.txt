@@ -1,0 +1,8 @@
+Jonathan Therrien, Marieville, Québec.
+SHA-256 local executed artifacts:
+4cdfbe00c6811f38b8fbee68ba2a62b930e74d820453501bd5d1030ed26f3d85  c_core/omega/python_oracle_omega_st.py
+f9a6f810318563391c629d268c8409f6c3b6791e7d37809cc78dc71454dc3c5d  c_core/omega/tebdlc_omega_st.c
+58e13cf6c4233368fe5536af3a8594b25f8b631550a926c2e2dc1ebb7ad73c0a  c_core/omega/tebdlc_omega_st.h
+257ef4cd52e791bb355dcda98af4cb4469d1b65bf84311757212f3963f2e1b2b  c_core/omega/test_omega_st.c
+5beafd2963e05fe739cfa7714cd382b606bc7f361cee2e2c6a49823b80247bf3  docs/REPORT_OMEGAST_CANDIDATE_2026-08-19.md
+Archive local SHA-256: 5126b93c1cad19fece7b3cd71f4b92318d6635008b2196af177e3ecb6593e03d

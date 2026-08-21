@@ -1,0 +1,45 @@
+{
+  "milestone_id": "R9-session-sandbox-2026-08-19",
+  "status": "PERSISTED",
+  "material_continuity": true,
+  "scope": "Independent session-sandbox execution of the bounded C mirror for the tested fraction core, including repeated GCC/Clang runs, exhaustive finite corpus execution, capacity-event observation, sanitizer runs, and persistence of the evidence references needed to reconstruct the milestone.",
+  "evidence": {
+    "source_code": [
+      {"ref": "c_core/tebdlc_core.h@blob:0c2d6baa1d26fec4400cfb0dc3bcf6c8747b47cd", "role": "exact C public interface used by the milestone"},
+      {"ref": "c_core/tebdlc_core.c@blob:d05f5fa3190c044003ec7db212518f9be1015d66", "role": "exact bounded C mirror implementation used by the milestone"}
+    ],
+    "tests": [
+      {"ref": "c_core/test_tebdlc_core.c@blob:0c6f0059d03775f52e03239f0c5945a27c8afdc0", "role": "C test harness executed in the session sandbox"},
+      {"ref": "tests/test_r6_executable_proofs.py", "role": "Python proof corpus used as the semantic reference lineage"}
+    ],
+    "vectors": [
+      {"ref": "c_core/test_tebdlc_core.c@blob:0c6f0059d03775f52e03239f0c5945a27c8afdc0#test_exhaustive_small_space", "role": "deterministic generator for the 608400 finite fraction-pair corpus"},
+      {"ref": "c_core/test_tebdlc_core.c@blob:0c6f0059d03775f52e03239f0c5945a27c8afdc0#test_capacity", "role": "capacity-boundary vector 4294967295/4294967297 squared"}
+    ],
+    "logs": [
+      {"ref": "docs/LOG_R8_MIROIR_C_2026-08-19.md", "role": "construction and first-pass divergence log"},
+      {"ref": "docs/LOG_R8_MIROIR_C_PHASE2_2026-08-19.md", "role": "phase-2 correction and repeated C-corpus log"},
+      {"ref": "docs/LOG_R9_SESSION_SANDBOX_RUNNER_2026-08-19.md", "role": "independent session-sandbox runner log"}
+    ],
+    "fingerprints": [
+      {"ref": "evidence/milestones/R9-session-sandbox-2026-08-19/FINGERPRINTS.txt", "role": "Git blob identifiers and SHA-256 of the persisted session archive"}
+    ],
+    "results": [
+      {"ref": "docs/LOG_R9_SESSION_SANDBOX_RUNNER_2026-08-19.md", "role": "observed repeated GCC/Clang results and sanitizer observations"},
+      {"ref": "docs/PROOF_MATRIX_R6_2026-08-19.md", "role": "proof-status matrix separating finite evidence from general proof"}
+    ],
+    "documentation": [
+      {"ref": "docs/THESE_ARITHMETIQUE_DES_GAINS_R9_2026-08-19.md", "role": "R9 doctrine and candidate PFR invariants"},
+      {"ref": "docs/RULE_JALON_CONTINUITE_MATERIELLE.md", "role": "material-continuity rule governing this and future solid milestones"}
+    ]
+  },
+  "limitations": [
+    "The current C mirror is bounded and does not yet implement multi-precision promotion and exact resume.",
+    "The finite 608400-pair corpus is not a universal proof over all rational inputs.",
+    "The session sandbox is ephemeral; this manifest persists references to the evidence but does not make the original execution environment permanent.",
+    "GitHub Actions failure previously observed is an independent infrastructure state and is not resolved by this milestone.",
+    "The manifest validator establishes structural completeness of the seven evidence families, not scientific truth or correctness of each referenced artifact."
+  ],
+  "supersedes": [],
+  "superseded_by": []
+}

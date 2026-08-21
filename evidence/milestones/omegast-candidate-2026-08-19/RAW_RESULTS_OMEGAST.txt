@@ -1,0 +1,7 @@
+INITIAL_BUILD_REJECTED_BY_WERROR: misleading-indentation; no functional OmegaSt test executed in that build.
+GCC strict 3/3 PASS: repeat_1=184 repeat_100=976 distinct_10=1280 distinct_20=2800 repetitions_factorized=99
+Clang strict 3/3 PASS: repeat_1=184 repeat_100=976 distinct_10=1280 distinct_20=2800 repetitions_factorized=99
+Python independent oracle 3/3 PASS: same values.
+Clang UBSan PASS; no diagnostic.
+Clang ASan + leak detection PASS; no diagnostic.
+Runner note: Python process emitted unrelated artifact_tool spreadsheet warmup errors after the oracle PASS while exiting 0; retained in local raw log and excluded from TEBDLC result semantics.

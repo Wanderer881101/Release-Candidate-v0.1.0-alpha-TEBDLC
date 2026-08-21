@@ -1,0 +1,58 @@
+{
+  "milestone_id": "R8R9-lab-multiprecision-fracto-recursive-2026-08-19",
+  "status": "PERSISTED",
+  "material_continuity": true,
+  "scope": "Session-lab validation of R8 capacity promotion/exact resume and R9 poly-fractal fracto-recursive continuation using bounded uint64_t plus GMP multi-precision, independent Python oracle, repeated GCC/Clang runs, finite exhaustive corpus, UBSan and ASan.",
+  "evidence": {
+    "source_code": [
+      {"ref": "c_core/r8r9/tebdlc_poly_core.h", "role": "R8/R9 experimental public interface"},
+      {"ref": "c_core/r8r9/tebdlc_poly_core.c", "role": "bounded plus GMP multi-precision implementation"}
+    ],
+    "tests": [
+      {"ref": "c_core/r8r9/test_r8r9_poly.c", "role": "C falsification and regression harness"},
+      {"ref": "c_core/r8r9/python_oracle_r8r9.py", "role": "independent Python Fraction oracle"}
+    ],
+    "vectors": [
+      {"ref": "evidence/milestones/R8R9-lab-2026-08-19/vectors_r8r9.json", "role": "capacity, recursive, genealogy and context vectors"}
+    ],
+    "logs": [
+      {"ref": "evidence/milestones/R8R9-lab-2026-08-19/RAW_RESULTS_R8R9.txt", "role": "repeated GCC/Clang, oracle, UBSan and ASan observed outputs"}
+    ],
+    "fingerprints": [
+      {"ref": "evidence/milestones/R8R9-lab-2026-08-19/FINGERPRINTS_R8R9.txt", "role": "SHA-256 fingerprints and local persisted bundle digest"}
+    ],
+    "results": [
+      {"ref": "docs/REPORT_R8R9_LAB_2026-08-19.md", "role": "interpreted results, limitations and PFR coverage"}
+    ],
+    "documentation": [
+      {"ref": "docs/THESE_ARITHMETIQUE_DES_GAINS_R8_2026-08-19.md", "role": "R8 capacity and exact-resume doctrine"},
+      {"ref": "docs/THESE_ARITHMETIQUE_DES_GAINS_R9_2026-08-19.md", "role": "R9 poly-fractal/fracto-recursive doctrine"},
+      {"ref": "docs/RULE_JALON_CONTINUITE_MATERIELLE.md", "role": "material continuity rule"},
+      {"ref": "docs/REPORT_R8R9_LAB_2026-08-19.md", "role": "professional experimental report"}
+    ]
+  },
+  "observed": {
+    "gcc_runs": "3/3 PASS",
+    "clang_runs": "3/3 PASS",
+    "gcc_clang_logical_output_identical": true,
+    "finite_pairs_per_run": 608400,
+    "hybrid_u64_to_gmp_transition_depth_for_3_over_10": 20,
+    "final_depth": 1000,
+    "final_numerator_bits": 1585,
+    "final_denominator_bits": 3322,
+    "final_genealogy_count": 1000,
+    "clang_ubsan": "PASS/no diagnostics",
+    "clang_asan_leak_detection": "PASS/no diagnostics",
+    "python_oracle_repeated": "3/3 identical"
+  },
+  "limitations": [
+    "Finite corpus and constructed recursive paths are not universal proofs over all rationals.",
+    "Provenance is currently bounded to 32 entries and genealogy to 4096 node identifiers in this experiment.",
+    "Only Linux x86_64, GCC 14.2.0, Clang 17.0.0, Python 3.13.5 and GMP 6.3.0 were exercised in this session lab.",
+    "Persistence/serialization of live GMP objects is not yet implemented; persisted evidence stores source, vectors and results rather than process memory.",
+    "The aggregate session command timeout is an orchestration limit and was handled by rerunning incomplete subtests separately.",
+    "PFR-8 remains primarily doctrinal and is not universally proven by this milestone."
+  ],
+  "supersedes": [],
+  "superseded_by": []
+}

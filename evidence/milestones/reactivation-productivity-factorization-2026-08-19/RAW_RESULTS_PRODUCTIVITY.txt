@@ -1,0 +1,33 @@
+=== GCC RUN 1 ===
+events=102 factors=2 productive=2 repeated_nonproductive=100 reconstructible=1
+TEBDLC reactivation productivity factorization: PASS
+=== GCC RUN 2 ===
+events=102 factors=2 productive=2 repeated_nonproductive=100 reconstructible=1
+TEBDLC reactivation productivity factorization: PASS
+=== GCC RUN 3 ===
+events=102 factors=2 productive=2 repeated_nonproductive=100 reconstructible=1
+TEBDLC reactivation productivity factorization: PASS
+=== CLANG RUN 1 ===
+events=102 factors=2 productive=2 repeated_nonproductive=100 reconstructible=1
+TEBDLC reactivation productivity factorization: PASS
+=== CLANG RUN 2 ===
+events=102 factors=2 productive=2 repeated_nonproductive=100 reconstructible=1
+TEBDLC reactivation productivity factorization: PASS
+=== CLANG RUN 3 ===
+events=102 factors=2 productive=2 repeated_nonproductive=100 reconstructible=1
+TEBDLC reactivation productivity factorization: PASS
+events=102 factors=2 productive=2 repeated_nonproductive=100 reconstructible=1
+TEBDLC reactivation productivity factorization: PASS
+UBSAN_STDERR_BYTES=0
+events=102 factors=2 productive=2 repeated_nonproductive=100 reconstructible=1
+TEBDLC reactivation productivity factorization: PASS
+ASAN_STDERR_BYTES=0
+=== PYTHON ORACLE RUN 1 ===
+events=102 factors=2 productive=2 repeated_nonproductive=100 reconstructible=1
+TEBDLC reactivation productivity factorization oracle: PASS
+=== PYTHON ORACLE RUN 2 ===
+events=102 factors=2 productive=2 repeated_nonproductive=100 reconstructible=1
+TEBDLC reactivation productivity factorization oracle: PASS
+=== PYTHON ORACLE RUN 3 ===
+events=102 factors=2 productive=2 repeated_nonproductive=100 reconstructible=1
+TEBDLC reactivation productivity factorization oracle: PASS

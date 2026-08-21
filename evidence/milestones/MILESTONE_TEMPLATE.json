@@ -1,0 +1,34 @@
+{
+  "milestone_id": "REPLACE_ME",
+  "status": "DRAFT",
+  "material_continuity": false,
+  "scope": "Describe exactly what this milestone establishes.",
+  "evidence": {
+    "source_code": [
+      {"ref": "path/or/immutable-reference", "role": "exact source used"}
+    ],
+    "tests": [
+      {"ref": "path/or/immutable-reference", "role": "executed test implementation"}
+    ],
+    "vectors": [
+      {"ref": "path/or/immutable-reference", "role": "test vectors/corpus/generator+parameters"}
+    ],
+    "logs": [
+      {"ref": "path/or/immutable-reference", "role": "execution and divergence log"}
+    ],
+    "fingerprints": [
+      {"ref": "path/or/hash-record", "role": "cryptographic or immutable fingerprint record"}
+    ],
+    "results": [
+      {"ref": "path/or/immutable-reference", "role": "observed outputs and PASS/FAIL evidence"}
+    ],
+    "documentation": [
+      {"ref": "path/or/immutable-reference", "role": "why/how/interpretation/limitations"}
+    ]
+  },
+  "limitations": [
+    "Document what this milestone does not prove."
+  ],
+  "supersedes": [],
+  "superseded_by": []
+}

@@ -1,0 +1,37 @@
+Jonathan Therrien, Marieville, Québec.
+TEBDLC — ΩSt Phase 2 — Bundle provenance and derived-artifact inventory
+Date: 2026-08-20
+
+Canonical laboratory bundle:
+TEBDLC_omegast_phase2_2026-08-19.tar.gz
+SHA-256: 41a4d2fb62a22417096f45d1dc0182947b5f49b95422ff4422c7bcc3171080d1
+
+Purpose:
+This file preserves the material relationship between the repository milestone and the complete laboratory bundle. Repository sources, tests, vectors, logs, fingerprints, results and documentation remain the canonical reconstructible evidence. Platform-specific compiled executables are derived artifacts and are therefore fingerprinted here rather than treated as source-of-truth binaries.
+
+Derived executables present in the laboratory bundle:
+72d9e5914c3e7c64261069b97d4057614239439cb96d68f32a678306df3b0c63  c_core/omega/phase2_asan
+b86373c637c82e7484689bed97cf4bb97690c73be78fc6b9b5af3d635ee8e66d  c_core/omega/phase2_clang
+f07e71be08c04bd96172c47023b06725cee415e70cbdd0bcfc0e8171ed333cce  c_core/omega/phase2_gcc
+a9085e34c6677dac7e3d22cbec795047c642c437f456b2c41e9b9397bf33de04  c_core/omega/phase2_ubsan
+
+Selected complete-bundle source/evidence fingerprints:
+6622fa86adc1a19879df2e1b0424db86ceb8770b5281fd483a49a8c708b10202  c_core/behavior/tebdlc_behavior.h
+eba6fa588374694d468dae034ae63d19949cef2d64d6588960e94726669ef226  c_core/omega/python_oracle_omega_st_phase2.py
+c500ff88eb3a4b9dbe009768ed8369ae5c3630f64e33951a53c9f2ec4c2201a6  c_core/omega/tebdlc_omega_st.c
+edcea5ecd16af59c8606ae7207f203824ea6e5731ba164d9171e3f58709bc0a7  c_core/omega/tebdlc_omega_st.h
+d644e90f8a305c31a93b533c39dd87417f0079fb042c2c079ba706cae7b2e862  c_core/omega/test_omega_st_phase2.c
+b199e169511d981d5dd6f0dafb4fcbd3f29e276f70fe3a743c08c4f4f48eda91  c_core/productivity/tebdlc_productivity.c
+76ba64b3e1f3d9b84f2636bf2ad225e912872a5ced57671b3ed4a46123db68ed  c_core/productivity/tebdlc_productivity.h
+3d0126492ce2ade9d9318fb0c4d1532b401e5789f4eaca1d19c73aac9d783f44  docs/ADDENDUM_R10_OMEGAST_PHASE2_2026-08-19.md
+49df659226a51dafbd1650688809067568f3b03054e88d42df57582ec5997411  docs/REPORT_OMEGAST_PHASE2_2026-08-19.md
+7fbd16b53bd0885b0789ba225552e2bd2bc7f456558d13c0fe92c5b38d61c76c  evidence/FINGERPRINTS_OMEGAST_PHASE2.txt
+e8d50e6869102fb946731c260db583c2d411d33dcb2de921a0c7a69cfe495a9a  evidence/RAW_RESULTS_OMEGAST_PHASE2.txt
+9dde7629a30dc437378adef0e529cdc4f9a21361613b9c1eca693d7bf2c7d1ae  evidence/manifest.txt
+441ba6339ed388ae6841f7cd0d2db11cc104191b1105fde6c7ca13a4e8762f70  evidence/vectors_omegast_phase2.txt
+
+Non-loss rule:
+The absence of compiled binaries from Git history is not treated as loss because their byte-identities are recorded above and they are reproducible derived products of the persisted source/build procedure. If a future rebuild differs, the divergence must be documented rather than silently replacing these fingerprints.
+
+Jonathan Therrien, Marieville, Québec.
+TEBDLC — Tout est bon dans le cochon. Tous droits réservés sauf autorisation explicite du propriétaire.

@@ -1,0 +1,56 @@
+{
+  "milestone_id": "behavioral-assimilation-2026-08-19",
+  "status": "PERSISTED",
+  "material_continuity": true,
+  "scope": "Behavioral assimilation from contextualized reactivation observations without replacement of source observations or identity inference.",
+  "evidence": {
+    "source_code": [
+      {"ref":"c_core/behavior/tebdlc_behavior.h","role":"behavior history/model interface"},
+      {"ref":"c_core/behavior/tebdlc_behavior.c","role":"behavior recording and assimilation implementation"}
+    ],
+    "tests": [
+      {"ref":"c_core/behavior/test_behavior.c","role":"C falsification harness"},
+      {"ref":"c_core/behavior/python_oracle_behavior.py","role":"independent Python oracle"}
+    ],
+    "vectors": [
+      {"ref":"evidence/milestones/behavioral-assimilation-2026-08-19/vectors_behavior.json","role":"context/proof/outcome vectors including contradictory vector"}
+    ],
+    "logs": [
+      {"ref":"evidence/milestones/behavioral-assimilation-2026-08-19/RAW_RESULTS_BEHAVIOR.txt","role":"repeated compiler, sanitizer and oracle outputs"}
+    ],
+    "fingerprints": [
+      {"ref":"evidence/milestones/behavioral-assimilation-2026-08-19/FINGERPRINTS_BEHAVIOR.txt","role":"SHA-256 fingerprints"}
+    ],
+    "results": [
+      {"ref":"docs/REPORT_BEHAVIOR_LAB_2026-08-19.md","role":"interpreted experimental results and limits"}
+    ],
+    "documentation": [
+      {"ref":"docs/THESE_ARITHMETIQUE_DES_GAINS_R6_2026-08-19.md","role":"source doctrine for behavioral assimilation"},
+      {"ref":"docs/REPORT_BEHAVIOR_LAB_2026-08-19.md","role":"professional milestone report"},
+      {"ref":"docs/RULE_JALON_CONTINUITE_MATERIELLE.md","role":"material continuity rule"}
+    ]
+  },
+  "observed": {
+    "observations": 4,
+    "integrable": 1,
+    "proof_rejected": 2,
+    "stagnated": 1,
+    "origin_U1_still_impotent": true,
+    "identity_inference_permitted": false,
+    "contradictory_observation_rejected": true,
+    "gcc_runs": "3/3 PASS",
+    "clang_runs": "3/3 PASS",
+    "python_oracle_runs": "3/3 PASS",
+    "clang_ubsan": "PASS/no diagnostics",
+    "clang_asan": "PASS/no diagnostics"
+  },
+  "limitations": [
+    "The current behavior model is descriptive, not a predictive autonomous decision engine.",
+    "Four observations do not prove a universal behavioral law.",
+    "Identity inference is intentionally not implemented.",
+    "Behavior history compression and OmegaSt are not implemented.",
+    "No automatic action authority follows from this model."
+  ],
+  "supersedes": [],
+  "superseded_by": []
+}

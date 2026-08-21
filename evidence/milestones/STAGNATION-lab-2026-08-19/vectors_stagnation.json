@@ -1,0 +1,1 @@
+{"vectors":[{"gain":"(3/10)^100","origin_context":"C-origin","call_context":"C-call-new","expected":"REVALIDATION_REQUIRED"},{"revalidation":false,"expected_state":"STAGNATED"},{"revalidation":true,"expected_state":"REVALIDATED"},{"mutation":"compressed_midbyte_xor_0x5a","expected":"DECOMPRESS_OR_INTEGRITY_FAIL"}]}

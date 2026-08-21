@@ -1,0 +1,11 @@
+{
+  "milestone": "behavioral-assimilation-2026-08-19",
+  "origin": {"mass": "600/361", "unit": "U1", "context": "C-origin", "impotent": true},
+  "observations": [
+    {"seq":1,"context":"C-origin","model":"U1-model","unit":"U1","outcome":"STAGNATED","proof":[1,0,1,0]},
+    {"seq":2,"context":"C-call-2","model":"U2-model","unit":"U2","outcome":"PROOF_REJECTED","proof":[1,1,0,1]},
+    {"seq":3,"context":"C-call-3","model":"U3-model","unit":"U3","outcome":"PROOF_REJECTED","proof":[1,0,1,1]},
+    {"seq":4,"context":"C-call-4","model":"U4-model","unit":"U4","outcome":"INTEGRABLE","proof":[1,1,1,1]}
+  ],
+  "forbidden_vector": {"seq":5,"context":"C-call-5","model":"U5-model","unit":"U5","outcome":"INTEGRABLE","proof":[1,0,1,1],"expected":"TEBDLC_BH_CONTRADICTORY"}
+}

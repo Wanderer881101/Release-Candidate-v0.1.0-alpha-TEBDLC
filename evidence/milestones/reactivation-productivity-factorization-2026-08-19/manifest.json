@@ -1,0 +1,18 @@
+{
+  "milestone_id":"reactivation-productivity-factorization-2026-08-19",
+  "status":"PERSISTED",
+  "material_continuity":true,
+  "scope":"Lossless factorization of repeated reactivation signatures while preserving every occurrence sequence and distinguishing structural novelty from exact repetition.",
+  "evidence":{
+    "source_code":[{"ref":"c_core/productivity/tebdlc_productivity.h"},{"ref":"c_core/productivity/tebdlc_productivity.c"}],
+    "tests":[{"ref":"c_core/productivity/test_productivity.c"},{"ref":"c_core/productivity/python_oracle_productivity.py"}],
+    "vectors":[{"ref":"evidence/milestones/reactivation-productivity-factorization-2026-08-19/vectors_productivity.json"}],
+    "logs":[{"ref":"evidence/milestones/reactivation-productivity-factorization-2026-08-19/RAW_RESULTS_PRODUCTIVITY.txt"}],
+    "fingerprints":[{"ref":"evidence/milestones/reactivation-productivity-factorization-2026-08-19/FINGERPRINTS_PRODUCTIVITY.txt"}],
+    "results":[{"ref":"docs/REPORT_PRODUCTIVITY_LAB_2026-08-19.md"}],
+    "documentation":[{"ref":"docs/THESE_ARITHMETIQUE_DES_GAINS_R6_2026-08-19.md"},{"ref":"docs/REPORT_PRODUCTIVITY_LAB_2026-08-19.md"},{"ref":"docs/RULE_JALON_CONTINUITE_MATERIELLE.md"}]
+  },
+  "observed":{"events":102,"factors":2,"productive":2,"repeated_nonproductive":100,"reconstructible":true,"gcc_runs":"3/3 PASS","clang_runs":"3/3 PASS","python_oracle_runs":"3/3 PASS","ubsan":"PASS/no diagnostics","asan":"PASS/no diagnostics"},
+  "limitations":["This is not OmegaSt.","Novel signature does not automatically constitute a gain.","Capacities are currently fixed and bounded.","No action authority or identity inference is produced."],
+  "supersedes":[],"superseded_by":[]
+}

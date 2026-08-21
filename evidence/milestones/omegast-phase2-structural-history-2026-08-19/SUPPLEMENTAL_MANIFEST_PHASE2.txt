@@ -1,0 +1,26 @@
+Jonathan Therrien, Marieville, Québec.
+TEBDLC — ΩSt Phase 2 — Supplemental material-continuity manifest
+Date: 2026-08-20
+
+This supplemental manifest does not replace the original Phase 2 manifest. It records evidence added during the exhaustive consolidation requested after the original milestone was already persisted.
+
+Original milestone manifest:
+evidence/milestones/omegast-phase2-structural-history-2026-08-19/manifest.txt
+
+Additional persisted evidence:
+- bundle provenance and full laboratory archive fingerprint:
+  evidence/milestones/omegast-phase2-structural-history-2026-08-19/BUNDLE_PROVENANCE.txt
+- cumulative Phase 2 consolidation document:
+  docs/CONSOLIDATION_R10_OMEGAST_PHASE2_2026-08-20.md
+
+Bundle:
+TEBDLC_omegast_phase2_2026-08-19.tar.gz
+SHA-256: 41a4d2fb62a22417096f45d1dc0182947b5f49b95422ff4422c7bcc3171080d1
+
+Derived executables are not treated as canonical source binaries. Their byte fingerprints are preserved in BUNDLE_PROVENANCE.txt so a future rebuild can be compared without silently replacing historical derived artifacts.
+
+Continuity statement:
+The original Phase 2 milestone remains materially valid and untouched. This supplemental layer only increases reconstructibility and provenance coverage.
+
+Jonathan Therrien, Marieville, Québec.
+TEBDLC — Tout est bon dans le cochon. Tous droits réservés sauf autorisation explicite du propriétaire.

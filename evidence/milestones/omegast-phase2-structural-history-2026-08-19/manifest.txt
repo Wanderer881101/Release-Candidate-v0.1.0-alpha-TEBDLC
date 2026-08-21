@@ -1,0 +1,12 @@
+milestone_id: omegast-phase2-structural-history-2026-08-19
+status: PERSISTED
+material_continuity: true
+scope: Structural and historical stress of the encoding-relative OmegaSt candidate through the real productivity factorization ledger.
+source_code: c_core/omega/tebdlc_omega_st.h ; c_core/omega/tebdlc_omega_st.c ; c_core/productivity/tebdlc_productivity.h ; c_core/productivity/tebdlc_productivity.c
+tests: c_core/omega/test_omega_st_phase2.c ; c_core/omega/python_oracle_omega_st_phase2.py
+vectors: evidence/milestones/omegast-phase2-structural-history-2026-08-19/vectors_omegast_phase2.txt
+logs: evidence/milestones/omegast-phase2-structural-history-2026-08-19/RAW_RESULTS_OMEGAST_PHASE2.txt
+fingerprints: evidence/milestones/omegast-phase2-structural-history-2026-08-19/FINGERPRINTS_OMEGAST_PHASE2.txt
+results: docs/REPORT_OMEGAST_PHASE2_2026-08-19.md
+documentation: docs/ADDENDUM_R10_OMEGAST_PHASE2_2026-08-19.md ; docs/THESE_ARITHMETIQUE_DES_GAINS_R10_2026-08-19.md ; docs/RULE_JALON_CONTINUITE_MATERIELLE.md
+limitations: encoding-relative; ULEB128 not proven optimal; 64 factor/512 occurrence upstream bounds; no identity or maliciousness inference; no universal complexity claim.

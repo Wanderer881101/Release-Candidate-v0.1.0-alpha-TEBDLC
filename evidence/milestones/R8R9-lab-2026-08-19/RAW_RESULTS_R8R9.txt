@@ -1,0 +1,87 @@
+# R8/R9 SESSION LAB RAW RESULT SUMMARY
+## GCC 1
+depth=1 num_bits=2 den_bits=4 genealogy=0
+depth=2 num_bits=4 den_bits=7 genealogy=2
+depth=10 num_bits=16 den_bits=34 genealogy=10
+depth=100 num_bits=159 den_bits=333 genealogy=100
+depth=1000 num_bits=1585 den_bits=3322 genealogy=1000
+hybrid_transition_depth=20 final_num_bits=1585 final_den_bits=3322 genealogy=1000
+exhaustive_poly_pairs=608400
+R8R9 poly-fractal/fracto-recursive tests: PASS
+7.18
+## GCC 2
+depth=1 num_bits=2 den_bits=4 genealogy=0
+depth=2 num_bits=4 den_bits=7 genealogy=2
+depth=10 num_bits=16 den_bits=34 genealogy=10
+depth=100 num_bits=159 den_bits=333 genealogy=100
+depth=1000 num_bits=1585 den_bits=3322 genealogy=1000
+hybrid_transition_depth=20 final_num_bits=1585 final_den_bits=3322 genealogy=1000
+exhaustive_poly_pairs=608400
+R8R9 poly-fractal/fracto-recursive tests: PASS
+7.08
+## GCC 3
+depth=1 num_bits=2 den_bits=4 genealogy=0
+depth=2 num_bits=4 den_bits=7 genealogy=2
+depth=10 num_bits=16 den_bits=34 genealogy=10
+depth=100 num_bits=159 den_bits=333 genealogy=100
+depth=1000 num_bits=1585 den_bits=3322 genealogy=1000
+hybrid_transition_depth=20 final_num_bits=1585 final_den_bits=3322 genealogy=1000
+exhaustive_poly_pairs=608400
+R8R9 poly-fractal/fracto-recursive tests: PASS
+7.30
+## CLANG 1
+depth=1 num_bits=2 den_bits=4 genealogy=0
+depth=2 num_bits=4 den_bits=7 genealogy=2
+depth=10 num_bits=16 den_bits=34 genealogy=10
+depth=100 num_bits=159 den_bits=333 genealogy=100
+depth=1000 num_bits=1585 den_bits=3322 genealogy=1000
+hybrid_transition_depth=20 final_num_bits=1585 final_den_bits=3322 genealogy=1000
+exhaustive_poly_pairs=608400
+R8R9 poly-fractal/fracto-recursive tests: PASS
+4.41
+## CLANG 2
+depth=1 num_bits=2 den_bits=4 genealogy=0
+depth=2 num_bits=4 den_bits=7 genealogy=2
+depth=10 num_bits=16 den_bits=34 genealogy=10
+depth=100 num_bits=159 den_bits=333 genealogy=100
+depth=1000 num_bits=1585 den_bits=3322 genealogy=1000
+hybrid_transition_depth=20 final_num_bits=1585 final_den_bits=3322 genealogy=1000
+exhaustive_poly_pairs=608400
+R8R9 poly-fractal/fracto-recursive tests: PASS
+4.58
+## CLANG 3
+depth=1 num_bits=2 den_bits=4 genealogy=0
+depth=2 num_bits=4 den_bits=7 genealogy=2
+depth=10 num_bits=16 den_bits=34 genealogy=10
+depth=100 num_bits=159 den_bits=333 genealogy=100
+depth=1000 num_bits=1585 den_bits=3322 genealogy=1000
+hybrid_transition_depth=20 final_num_bits=1585 final_den_bits=3322 genealogy=1000
+exhaustive_poly_pairs=608400
+R8R9 poly-fractal/fracto-recursive tests: PASS
+4.34
+## PYTHON ORACLE
+{"capacity_vector":{"denominator":"18446744082299486209","denominator_bits":65,"numerator":"18446744065119617025","numerator_bits":64},"depths":[{"below_one":true,"denominator_bits":4,"depth":1,"numerator_bits":2,"positive":true},{"below_one":true,"denominator_bits":7,"depth":2,"numerator_bits":4,"positive":true},{"below_one":true,"denominator_bits":34,"depth":10,"numerator_bits":16,"positive":true},{"below_one":true,"denominator_bits":333,"depth":100,"numerator_bits":159,"positive":true},{"below_one":true,"denominator_bits":3322,"depth":1000,"numerator_bits":1585,"positive":true}],"final_depth_1000":{"denominator_bits":3322,"numerator_bits":1585},"hybrid_expected_transition_depth":20}
+## UBSAN
+stderr_bytes=0
+depth=1 num_bits=2 den_bits=4 genealogy=0
+depth=2 num_bits=4 den_bits=7 genealogy=2
+depth=10 num_bits=16 den_bits=34 genealogy=10
+depth=100 num_bits=159 den_bits=333 genealogy=100
+depth=1000 num_bits=1585 den_bits=3322 genealogy=1000
+hybrid_transition_depth=20 final_num_bits=1585 final_den_bits=3322 genealogy=1000
+exhaustive_poly_pairs=608400
+R8R9 poly-fractal/fracto-recursive tests: PASS
+5.27
+## ASAN
+stderr_bytes=0
+depth=1 num_bits=2 den_bits=4 genealogy=0
+depth=2 num_bits=4 den_bits=7 genealogy=2
+depth=10 num_bits=16 den_bits=34 genealogy=10
+depth=100 num_bits=159 den_bits=333 genealogy=100
+depth=1000 num_bits=1585 den_bits=3322 genealogy=1000
+hybrid_transition_depth=20 final_num_bits=1585 final_den_bits=3322 genealogy=1000
+exhaustive_poly_pairs=608400
+R8R9 poly-fractal/fracto-recursive tests: PASS
+5.85
+## AGGREGATE TIMEOUT
+One aggregated command exceeded the session command window after GCC 3/3 and Clang 2/3; missing work was rerun separately and passed.

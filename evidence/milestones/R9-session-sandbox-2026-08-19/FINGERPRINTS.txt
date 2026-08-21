@@ -1,0 +1,16 @@
+Jonathan Therrien, Marieville, Québec.
+TEBDLC — milestone R9-session-sandbox-2026-08-19
+
+Git blob identifiers of C sources executed/reproduced from branch proof/r6-executable-invariants:
+- c_core/tebdlc_core.h       git_blob_sha=0c2d6baa1d26fec4400cfb0dc3bcf6c8747b47cd
+- c_core/tebdlc_core.c       git_blob_sha=d05f5fa3190c044003ec7db212518f9be1015d66
+- c_core/test_tebdlc_core.c  git_blob_sha=0c6f0059d03775f52e03239f0c5945a27c8afdc0
+
+Session archive produced after the independent sandbox run:
+- TEBDLC_session_runner_2026-08-19.tar.gz
+  sha256=14734e4a393a8b0457af557bc1049dde4ad67ef4e55f1d5b270b6214ef7f5766
+
+Notes:
+- Git blob SHA values identify repository blob content; they are not presented here as SHA-256.
+- The archive SHA-256 fingerprints the user-visible session bundle produced by the sandbox experiment.
+- A later milestone should persist per-file SHA-256 values generated directly from the reconstructed checkout/bundle as part of an automated evidence pack.

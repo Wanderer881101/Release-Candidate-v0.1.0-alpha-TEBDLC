@@ -1,0 +1,1 @@
+{"repeated_signature":{"count":100,"context":"C-loop","unit":"U2","outcome":"PROOF_REJECTED","proof":[1,1,0,1]},"new_signature":{"count":2,"context":"C-new","unit":"U4","outcome":"INTEGRABLE","proof":[1,1,1,1]},"expected":{"events":102,"factors":2,"productive":2,"repeated_nonproductive":100,"reconstructible":true}}

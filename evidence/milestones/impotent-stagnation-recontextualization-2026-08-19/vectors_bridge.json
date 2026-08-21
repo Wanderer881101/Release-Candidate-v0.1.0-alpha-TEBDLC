@@ -1,0 +1,7 @@
+{
+  "origin": {"members": ["300/361", "300/361"], "integration_model": "U1-model", "target_unit": "U1", "context": "C-origin", "expected_mass": "600/361", "expected_unitary": false},
+  "stagnation": {"compress_each_member": true, "verify_decompression": true},
+  "reactivation": {"call_integration_model": "U2-model", "call_target_unit": "U2", "call_context": "C-call-new", "automatic_unitary_forbidden": true},
+  "proof_rejected": {"coherent": true, "coverage_complete": true, "compatible": false, "completeness_proven": true, "expected_unitary": false},
+  "proof_accepted": {"coherent": true, "coverage_complete": true, "compatible": true, "completeness_proven": true, "expected_U2_unitary": true, "expected_U1_unitary_still": false}
+}

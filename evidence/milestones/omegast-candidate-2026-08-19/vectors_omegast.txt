@@ -1,0 +1,6 @@
+TEBDLC OmegaSt vectors — Jonathan Therrien, Marieville, Québec.
+repeat_1: factors=1 occurrences=1 expected_bits=184
+repeat_100: factors=1 occurrences=100 expected_bits=976
+distinct_10: factors=10 occurrences=10 expected_bits=1280
+distinct_20: factors=20 occurrences=20 expected_bits=2800
+invalid_sequence: 1,2,2 => REJECT

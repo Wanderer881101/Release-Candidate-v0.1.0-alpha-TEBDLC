@@ -1,0 +1,6 @@
+GCC RUNS: 3/3 identical
+canonical=325 compressed=137
+TEBDLC stagnation chain tests: PASS
+CLANG RUNS: 3/3 identical to GCC
+UBSAN STDERR BYTES=0
+ASAN STDERR BYTES=0

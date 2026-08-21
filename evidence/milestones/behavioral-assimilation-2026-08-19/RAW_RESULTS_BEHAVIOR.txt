@@ -1,0 +1,35 @@
+=== GCC RUN 1 ===
+observations=4 integrable=1 rejected=2 stagnated=1 origin_U1_impotent=1 identity_inference=0
+TEBDLC behavioral assimilation: PASS
+=== GCC RUN 2 ===
+observations=4 integrable=1 rejected=2 stagnated=1 origin_U1_impotent=1 identity_inference=0
+TEBDLC behavioral assimilation: PASS
+=== GCC RUN 3 ===
+observations=4 integrable=1 rejected=2 stagnated=1 origin_U1_impotent=1 identity_inference=0
+TEBDLC behavioral assimilation: PASS
+=== CLANG RUN 1 ===
+observations=4 integrable=1 rejected=2 stagnated=1 origin_U1_impotent=1 identity_inference=0
+TEBDLC behavioral assimilation: PASS
+=== CLANG RUN 2 ===
+observations=4 integrable=1 rejected=2 stagnated=1 origin_U1_impotent=1 identity_inference=0
+TEBDLC behavioral assimilation: PASS
+=== CLANG RUN 3 ===
+observations=4 integrable=1 rejected=2 stagnated=1 origin_U1_impotent=1 identity_inference=0
+TEBDLC behavioral assimilation: PASS
+=== CLANG UBSAN ===
+observations=4 integrable=1 rejected=2 stagnated=1 origin_U1_impotent=1 identity_inference=0
+TEBDLC behavioral assimilation: PASS
+UBSAN_STDERR_BYTES=0
+=== CLANG ASAN ===
+observations=4 integrable=1 rejected=2 stagnated=1 origin_U1_impotent=1 identity_inference=0
+TEBDLC behavioral assimilation: PASS
+ASAN_STDERR_BYTES=0
+=== PYTHON ORACLE RUN 1 ===
+observations=4 integrable=1 rejected=2 stagnated=1 origin_U1_impotent=1 identity_inference=0
+TEBDLC behavioral assimilation oracle: PASS
+=== PYTHON ORACLE RUN 2 ===
+observations=4 integrable=1 rejected=2 stagnated=1 origin_U1_impotent=1 identity_inference=0
+TEBDLC behavioral assimilation oracle: PASS
+=== PYTHON ORACLE RUN 3 ===
+observations=4 integrable=1 rejected=2 stagnated=1 origin_U1_impotent=1 identity_inference=0
+TEBDLC behavioral assimilation oracle: PASS

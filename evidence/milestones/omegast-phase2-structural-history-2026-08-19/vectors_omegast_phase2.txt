@@ -1,0 +1,7 @@
+Jonathan Therrien, Marieville, Québec.
+rep100: 100 occurrences, 1 signature, step=1 => 992 bits
+rep400: 400 occurrences, 1 signature, step=1 => 3400 bits
+gap100: 100 occurrences, 1 signature, step=128 => 1784 bits
+mix10x10: 100 occurrences, 10 signatures x10 => 2000 bits
+mix20x5: 100 occurrences, 20 signatures x5 => 3440 bits
+distinct64: 64 occurrences, 64 signatures => 9488 bits

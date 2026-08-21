@@ -1,0 +1,19 @@
+GCC RUN 1
+mass=200/361 relation=-1 unitary=0
+mass=1 relation=0 unitary=0
+mass=600/361 relation=1 unitary=0
+wide_mass=1999998/1000003
+TEBDLC impotent gain tests: PASS
+GCC RUN 2: identical to RUN 1
+GCC RUN 3: identical to RUN 1
+CLANG RUN 1: identical to GCC RUN 1
+CLANG RUN 2: identical to GCC RUN 1
+CLANG RUN 3: identical to GCC RUN 1
+PYTHON
+mass=200/361 relation=-1 unitary=0
+mass=1 relation=0 unitary=0
+mass=600/361 relation=1 unitary=0
+mass=1999998/1000003 relation=1 unitary=0
+python impotent oracle: PASS
+UBSAN STDERR BYTES=0
+ASAN STDERR BYTES=0

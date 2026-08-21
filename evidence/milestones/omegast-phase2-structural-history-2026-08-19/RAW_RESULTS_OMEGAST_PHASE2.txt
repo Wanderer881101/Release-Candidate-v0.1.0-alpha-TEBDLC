@@ -1,0 +1,39 @@
+[gcc run 1]
+rep100=992 rep400=3400 gap100=1784 mix10x10=2000 mix20x5=3440 distinct64=9488
+same_occurrence_count_100: rep1factor=992 mix10=2000 mix20=3440
+TEBDLC OmegaSt phase2 structural stress: PASS
+[gcc run 2]
+rep100=992 rep400=3400 gap100=1784 mix10x10=2000 mix20x5=3440 distinct64=9488
+same_occurrence_count_100: rep1factor=992 mix10=2000 mix20=3440
+TEBDLC OmegaSt phase2 structural stress: PASS
+[gcc run 3]
+rep100=992 rep400=3400 gap100=1784 mix10x10=2000 mix20x5=3440 distinct64=9488
+same_occurrence_count_100: rep1factor=992 mix10=2000 mix20=3440
+TEBDLC OmegaSt phase2 structural stress: PASS
+[clang run 1]
+rep100=992 rep400=3400 gap100=1784 mix10x10=2000 mix20x5=3440 distinct64=9488
+same_occurrence_count_100: rep1factor=992 mix10=2000 mix20=3440
+TEBDLC OmegaSt phase2 structural stress: PASS
+[clang run 2]
+rep100=992 rep400=3400 gap100=1784 mix10x10=2000 mix20x5=3440 distinct64=9488
+same_occurrence_count_100: rep1factor=992 mix10=2000 mix20=3440
+TEBDLC OmegaSt phase2 structural stress: PASS
+[clang run 3]
+rep100=992 rep400=3400 gap100=1784 mix10x10=2000 mix20x5=3440 distinct64=9488
+same_occurrence_count_100: rep1factor=992 mix10=2000 mix20x5=3440 distinct64=9488
+TEBDLC OmegaSt phase2 structural stress: PASS
+[python oracle run 1]
+rep100=992 rep400=3400 gap100=1784 mix10x10=2000 mix20x5=3440 distinct64=9488
+TEBDLC OmegaSt phase2 Python oracle: PASS
+[python oracle run 2]
+rep100=992 rep400=3400 gap100=1784 mix10x10=2000 mix20x5=3440 distinct64=9488
+TEBDLC OmegaSt phase2 Python oracle: PASS
+[python oracle run 3]
+rep100=992 rep400=3400 gap100=1784 mix10x10=2000 mix20x5=3440 distinct64=9488
+TEBDLC OmegaSt phase2 Python oracle: PASS
+[clang UBSan]
+rep100=992 rep400=3400 gap100=1784 mix10x10=2000 mix20x5=3440 distinct64=9488
+TEBDLC OmegaSt phase2 structural stress: PASS
+[clang ASan + leak]
+rep100=992 rep400=3400 gap100=1784 mix10x10=2000 mix20x5=3440 distinct64=9488
+TEBDLC OmegaSt phase2 structural stress: PASS

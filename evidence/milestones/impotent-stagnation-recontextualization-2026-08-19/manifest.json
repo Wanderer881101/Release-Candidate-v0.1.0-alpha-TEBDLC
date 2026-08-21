@@ -1,0 +1,21 @@
+{
+  "milestone_id": "impotent-stagnation-recontextualization-2026-08-19",
+  "status": "PERSISTED",
+  "material_continuity": true,
+  "scope": "Executable bridge preserving U1 impotence while allowing independently proven U2 integrability after stagnation/compression/reactivation.",
+  "evidence": {
+    "source_code": [{"ref":"c_core/exo/tebdlc_exo_bridge.h"},{"ref":"c_core/exo/tebdlc_exo_bridge.c"}],
+    "tests": [{"ref":"c_core/exo/test_exo_bridge.c"},{"ref":"c_core/exo/python_oracle_bridge.py"}],
+    "vectors": [{"ref":"evidence/milestones/impotent-stagnation-recontextualization-2026-08-19/vectors_bridge.json"}],
+    "logs": [{"ref":"evidence/milestones/impotent-stagnation-recontextualization-2026-08-19/RAW_RESULTS_BRIDGE.txt"}],
+    "fingerprints": [{"ref":"evidence/milestones/impotent-stagnation-recontextualization-2026-08-19/FINGERPRINTS_BRIDGE.txt"}],
+    "results": [{"ref":"docs/REPORT_IMPOTENT_STAGNATION_RECONTEXT_2026-08-19.md"}],
+    "documentation": [{"ref":"docs/THESE_ARITHMETIQUE_DES_GAINS_R6_2026-08-19.md"},{"ref":"docs/THESE_ARITHMETIQUE_DES_GAINS_R9_2026-08-19.md"},{"ref":"docs/RULE_JALON_CONTINUITE_MATERIELLE.md"}]
+  },
+  "limitations": [
+    "Member archives are compressed separately; the complete impotent set is not yet one canonical compressed aggregate.",
+    "U2 proof components are supplied by the test harness rather than autonomously derived.",
+    "Behavioral assimilation is not part of this milestone.",
+    "Constructed scenarios are not a universal proof over all integration models."
+  ]
+}

@@ -1,0 +1,12 @@
+milestone_id: omegast-candidate-2026-08-19
+status: PERSISTED
+material_continuity: true
+scope: First falsifiable, exactly reconstructible candidate measure for stagnation complexity after lossless factorization.
+source_code: c_core/omega/tebdlc_omega_st.h ; c_core/omega/tebdlc_omega_st.c
+tests: c_core/omega/test_omega_st.c ; c_core/omega/python_oracle_omega_st.py
+vectors: evidence/milestones/omegast-candidate-2026-08-19/vectors_omegast.txt
+logs: evidence/milestones/omegast-candidate-2026-08-19/RAW_RESULTS_OMEGAST.txt
+fingerprints: evidence/milestones/omegast-candidate-2026-08-19/FINGERPRINTS_OMEGAST.txt
+results: docs/REPORT_OMEGAST_CANDIDATE_2026-08-19.md
+documentation: docs/THESE_ARITHMETIQUE_DES_GAINS_R6_2026-08-19.md ; docs/RULE_JALON_CONTINUITE_MATERIELLE.md
+limitations: encoding-relative measure; no global minimality claim; not Kolmogorov complexity; no maliciousness or identity inference; upstream factor ledger remains bounded.

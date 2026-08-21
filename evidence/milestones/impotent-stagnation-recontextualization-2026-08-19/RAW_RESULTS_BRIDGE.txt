@@ -1,0 +1,19 @@
+# RAW RESULTS — impotent + stagnation + recontextualization
+## Initial strict build incident
+Rejected by -Werror before execution: misleading indentation + unused helper; flags were not relaxed.
+## GCC/Clang repeated output
+origin_mass=600/361 origin_U1_unitary=0 call_U2_unitary=1 preserved=1
+TEBDLC impotent-stagnation recontextualization: PASS
+GCC: 3/3 identical
+Clang: 3/3 identical
+Cross compiler: identical
+## UBSan
+origin_mass=600/361 origin_U1_unitary=0 call_U2_unitary=1 preserved=1
+TEBDLC impotent-stagnation recontextualization: PASS
+stderr bytes: 0
+## ASan/leaks
+origin_mass=600/361 origin_U1_unitary=0 call_U2_unitary=1 preserved=1
+TEBDLC impotent-stagnation recontextualization: PASS
+stderr bytes: 0
+## Python oracle 3/3
+{"call":{"context":"C-call-new","integrability":true,"unit":"U2","unitary":true},"origin":{"context":"C-origin","integrability":false,"mass":"600/361","unit":"U1","unitary":false},"origin_preserved":true}

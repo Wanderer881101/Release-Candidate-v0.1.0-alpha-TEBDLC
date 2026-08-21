@@ -1,0 +1,25 @@
+{
+  "schema": "TEBDLC-R8R9-vectors-1",
+  "capacity_resume": {
+    "left": {"n": 4294967295, "d": 4294967297, "provenance": ["A"], "node_id": 1},
+    "right": {"n": 4294967295, "d": 4294967297, "provenance": ["B"], "node_id": 2},
+    "expected_native_status": "CAPACITY_EXPANSION_REQUIRED",
+    "expected_required_num_bits_upper_bound": 64,
+    "expected_required_den_bits_upper_bound": 66,
+    "expected_resume": "exact-square"
+  },
+  "fracto_recursive": {
+    "base": {"n": 3, "d": 10},
+    "depths": [1, 2, 10, 100, 1000],
+    "expected_transition_depth_u64_to_big": 20
+  },
+  "same_value_distinct_genealogy": [
+    [{"n":1,"d":2,"provenance":["A"],"node_id":11},{"n":1,"d":3,"provenance":["B"],"node_id":12}],
+    [{"n":1,"d":3,"provenance":["C"],"node_id":21},{"n":1,"d":2,"provenance":["D"],"node_id":22}]
+  ],
+  "context_boundary": {
+    "left_context": "A",
+    "right_context": "B",
+    "expected_status": "INCOMPATIBLE_CONTEXT"
+  }
+}

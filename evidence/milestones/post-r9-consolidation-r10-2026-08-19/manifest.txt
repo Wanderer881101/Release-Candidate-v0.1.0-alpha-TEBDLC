@@ -1,0 +1,14 @@
+milestone_id: post-r9-consolidation-r10-2026-08-19
+status: PERSISTED
+material_continuity: true
+scope: Cumulative documentary consolidation of all persisted laboratory milestones from R8/R9 through the first falsifiable OmegaSt candidate, without overwriting prior revisions.
+source_code: c_core/r8r9 ; c_core/impotent ; c_core/stagnation ; c_core/exo ; c_core/behavior ; c_core/productivity ; c_core/omega
+tests: all tests and Python oracles referenced by the individual milestone manifests
+vectors: all vectors referenced by individual milestone manifests
+logs: all RAW_RESULTS files referenced by individual milestone manifests
+fingerprints: all FINGERPRINTS files referenced by individual milestone manifests
+results: docs/THESE_ARITHMETIQUE_DES_GAINS_R10_2026-08-19.md ; docs/CONSOLIDATION_POST_R9_2026-08-19.md ; individual experimental reports
+documentation: R4 through R10 lineage ; docs/RULE_JALON_CONTINUITE_MATERIELLE.md
+ancestry_head_before_consolidation: d27d2042fdfee954576a974cd5bc145a6e0162ab
+non_regression: no prior thesis or milestone file is deleted or replaced by this consolidation
+limitations: consolidation does not upgrade finite experimental evidence to universal proof; unresolved questions remain explicitly listed in R10 and the consolidation register.
