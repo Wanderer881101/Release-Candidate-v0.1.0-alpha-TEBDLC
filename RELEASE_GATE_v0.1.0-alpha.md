@@ -76,6 +76,7 @@ The clean-room record reports `source_tree_match: true`, `tests_ok: true`, expec
 - [x] Persist immutable final distribution proof in private evidence as `FINAL_DISTRIBUTION_PROOF.json`.
 - [x] Persist final audit checkpoint in private evidence as `FINAL_AUDIT_CHECKPOINT.json`, sequence `3`, checkpoint hash `64105fb03f89f28434bf565d55dd57302455a5eeccf1c7360ac65cf6e7221f00`.
 - [x] Final consolidation/freeze readiness gate completed successfully.
+- [x] Canonical Git tag `v0.1.0-alpha` frozen on the exact private source commit `677a28d87164379cb2a268e55cfc30302ebc44ab`; tag/source comparison is `identical` with `ahead_by=0`, `behind_by=0`.
 
 ## External legal status
 
@@ -92,7 +93,8 @@ The public repository may host intentionally global governance, policy, provenan
 ## Release identity
 
 Release identity: `v0.1.0-alpha`
-Freeze readiness: `PASS`
+Freeze status: `FROZEN`
+Canonical private tag target: `677a28d87164379cb2a268e55cfc30302ebc44ab`
 Private source commit: `677a28d87164379cb2a268e55cfc30302ebc44ab`
 Private source root tree: `63658d334ae8c3d280e9ef2c29845fffce2747e6`
 Real package SHA-256: `dd15a49e30a2419d504d315c29aa4f25d6c6590202bedbce8f78dc632f426ba3`
@@ -104,5 +106,6 @@ Cross-runtime normalized proof SHA-256: `4dc648dfe39adfbd35b2d76783e9525ad52b82c
 Clean-room status: `PASS`
 Final distribution proof: `SEALED_FREEZE_READY`
 Final audit checkpoint: `SEALED`
+Tag freeze evidence: private `TAG_FREEZE_RECORD.json`, status `FROZEN`
 
-All controlled-distribution blockers are closed for freeze readiness. The release identity may now be frozen/tagged at the exact private source commit above. Real external controlled delivery remains subject to the transaction-time mandatory-rule conditions documented in the legal checkpoint.
+All controlled-distribution blockers are closed for the frozen `v0.1.0-alpha` identity. Real external controlled delivery remains subject to the transaction-time mandatory-rule conditions documented in the legal checkpoint.
