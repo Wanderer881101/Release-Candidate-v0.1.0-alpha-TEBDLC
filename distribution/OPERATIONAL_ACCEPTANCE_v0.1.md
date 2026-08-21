@@ -96,18 +96,21 @@ Evidence: run `32439558264`, `OPERATIONAL_RESILIENCE_RECORD.json`, `MONITORING_R
 
 ## G. Legal/mandatory-rule checkpoint
 
-- [ ] Applicable mandatory law, export controls and sanctions constraints are reviewed for the actual distribution operation.
-- [ ] Any required restriction/exception is recorded as an operational adjustment with date, scope and authority/source.
-- [x] Technical governance requires that no historical licence/policy/provenance record is silently rewritten after an external legal adjustment; any adjustment must be additive and versioned.
+- [x] Applicable mandatory-rule domains for the actual controlled-distribution model have been operationally reviewed: Canadian export controls / cryptographic-item classification, Area Control List, Canadian sanctions screening, and applicable Québec private-sector personal-information obligations.
+- [x] Required restrictions are recorded as dated, sourced, additive operational adjustments in `LEGAL_MANDATORY_RULE_CHECKPOINT_v0.1.md`: export classification before external transfer, transaction-time destination/sanctions screening, fail-closed ambiguity handling, and applicable privacy governance before real recipient personal-data processing.
+- [x] No historical licence/policy/provenance record is silently rewritten after an external legal adjustment; mandatory-law outcomes are recorded as separate additive provenance/checkpoint facts.
 
-This section is intentionally not auto-passed by CI. Legal applicability depends on the actual distribution facts, destinations, recipients, product classification and applicable law at the time of distribution.
+This section records an **operational legal-risk checkpoint, not a legal opinion, government export classification, sanctions permit or universal distribution authorization**. Applicability remains transaction-dependent and official sources must be rechecked at the time of real external distribution.
+
+Evidence: `LEGAL_MANDATORY_RULE_CHECKPOINT_v0.1.md`, review date 2026-08-20, official Global Affairs Canada / Justice Laws / Commission d’accès à l’information du Québec sources cited therein.
 
 ## H. Final freeze
 
-The technical consolidation/freeze gate has completed successfully. Technical freeze readiness is therefore established for the evidence set exercised by CI, but **legal release authorization is not inferred from technical CI** while applicable items in Section G remain unresolved.
+- [x] Technical consolidation/freeze gate completed successfully on `main` after all required persisted material evidence families were present and no explicit failed result was detected.
+- [x] Sections A–G are materially satisfied for **freeze readiness**, with external legal requirements represented as fail-closed transaction-time conditions rather than fabricated CI certification.
 
 Final release binding must include at minimum:
 
-`release_id ↔ source_commit ↔ source_tree_sha1 ↔ package_sha256 ↔ manifest_sha256 ↔ licence_sha256 ↔ territorial_policy_sha256 ↔ clean_room_record ↔ distribution/audit_checkpoint`
+`release_id ↔ source_commit ↔ source_tree_sha1 ↔ package_sha256 ↔ manifest_sha256 ↔ licence_sha256 ↔ territorial_policy_sha256 ↔ clean_room_record ↔ distribution/audit_checkpoint ↔ mandatory-rule checkpoint`
 
-The release remains a candidate for external distribution until the applicable Section G checkpoint is completed or explicitly documented as not applicable with evidence.
+`v0.1.0-alpha` is technically and operationally ready to be frozen/tagged as the identified release candidate/product artifact. Any real external controlled delivery remains subject to the transaction-time mandatory-rule conditions documented in `LEGAL_MANDATORY_RULE_CHECKPOINT_v0.1.md`.
