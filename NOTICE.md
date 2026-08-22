@@ -12,7 +12,7 @@ Le contenu de ce dépôt, incluant notamment le code source, les modèles de don
 
 La présence publique du code source ou d'autres éléments TEBDLC ne constitue ni un abandon de droits, ni une mise dans le domaine public, ni l'octroi implicite d'une licence open source.
 
-Les permissions d'inspection, compilation, exécution, test, modification privée ou autres usages ne sont accordées que dans la mesure explicitement prévue par `LICENSE-SOURCE-AVAILABLE-DRAFT.md`, par la version applicable de `TERRITORIAL_DISTRIBUTION_POLICY.md`, et par toute autorisation écrite distincte applicable. Les restrictions de redistribution, sous-licence, commercialisation et autres restrictions prévues par ces textes demeurent applicables.
+Les permissions d'inspection, compilation, exécution, test, modification privée ou autres usages sont accordées uniquement dans la mesure explicitement prévue par `LICENSE-SOURCE-AVAILABLE-v0.1.1.md`, par `TERRITORIAL_RIGHTS_POLICY_v0.2.md` lorsque cette politique s'applique, et par toute autorisation écrite distincte applicable. Les anciens `LICENSE-SOURCE-AVAILABLE-DRAFT.md` et `TERRITORIAL_DISTRIBUTION_POLICY.md` sont conservés comme documents historiques du modèle de distribution contrôlée et ne définissent plus la frontière active de publication de ce Release Candidate.
 
 Le présent NOTICE établit la propriété, l'attribution et la réserve des droits. Il ne remplace pas la licence active et ne crée pas de restriction ou de permission contradictoire avec les droits explicitement accordés par celle-ci. Le README et la documentation descriptive ne créent aucun droit supplémentaire.
 
