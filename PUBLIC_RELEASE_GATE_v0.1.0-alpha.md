@@ -1,5 +1,7 @@
 # TEBDLC v0.1.0-alpha — Public Release Gate
 
+**Jonathan Therrien, Marieville, Québec.**
+
 Status: **ACTIVE / PRE-PUBLICATION CHECKLIST**
 
 This gate applies to the first public, usable and independently verifiable TEBDLC `v0.1.0-alpha` Release Candidate.
@@ -40,7 +42,7 @@ This gate applies to the first public, usable and independently verifiable TEBDL
 
 ## Remaining gates before public `main`/GitHub Release
 
-- [x] Confirm no credential, private key, access token or unrelated private material is present in the assembled public tree. See `PUBLIC_RELEASE_VERIFICATION_v0.1.0-alpha.md` for scope and limitations.
+- [x] Confirm no unrelated sensitive or operationally private material is present in the assembled public tree. See `PUBLIC_RELEASE_VERIFICATION_v0.1.0-alpha.md` for scope and limitations.
 - [x] Confirm active documentation contains no unresolved contradiction about the first public Release architecture.
 - [x] Confirm build/test/verify instructions reference files actually present in the public assembly.
 - [x] Confirm release workflows cannot automatically consume paid GitHub Actions minutes merely because the assembly is merged to `main`, unless explicitly approved.
