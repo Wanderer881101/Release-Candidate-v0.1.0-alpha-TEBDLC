@@ -1,5 +1,7 @@
 # TEBDLC v0.1.0-alpha — Public Release Notes
 
+**Jonathan Therrien, Marieville, Québec.**
+
 Status: **ASSEMBLED PUBLIC RELEASE CANDIDATE / NOT YET FINAL GITHUB RELEASE**
 
 ## Purpose
