@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Jonathan Therrien, Marieville, Québec.
 """Compatibility import surface for the TEBDLC v0.1 audit chain.
 
 Canonical implementation: audit_log.py
