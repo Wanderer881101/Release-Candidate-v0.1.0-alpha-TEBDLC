@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Jonathan Therrien, Marieville, Québec.
 """TEBDLC controlled-distribution record validator v0.1.
 
 Stdlib-only validator for the v0.1 licence-acceptance, distribution-event,
