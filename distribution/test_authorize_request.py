@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Jonathan Therrien, Marieville, Québec.
 from datetime import datetime, timezone
 import base64
 
