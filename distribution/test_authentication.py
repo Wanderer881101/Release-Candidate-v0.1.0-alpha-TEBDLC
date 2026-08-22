@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Jonathan Therrien, Marieville, Québec.
 from datetime import datetime, timezone, timedelta
 from authentication import authenticate, derive_verifier, rotate_credential
 import base64
