@@ -1,5 +1,7 @@
 # TEBDLC v0.1.0-alpha — Legal / Mandatory-Rule Operational Checkpoint
 
+**Jonathan Therrien, Marieville, Québec.**
+
 Status: **OPERATIONAL LEGAL SCREENING DEFINED — NOT A LEGAL OPINION OR GOVERNMENT CLASSIFICATION**
 
 Review date: 2026-08-20 (America/Toronto)
