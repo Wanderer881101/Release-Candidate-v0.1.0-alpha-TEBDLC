@@ -1,5 +1,7 @@
 # TEBDLC v0.1.0-alpha — Controlled Release Gate
 
+**Jonathan Therrien, Marieville, Québec.**
+
 This gate prevents accidental publication of the complete territorially controlled source through a globally public GitHub branch.
 
 ## Completed governance and reference-implementation prerequisites
