@@ -1,3 +1,4 @@
+# Jonathan Therrien, Marieville, Québec.
 import unittest
 from resolve_territory import resolve
 
