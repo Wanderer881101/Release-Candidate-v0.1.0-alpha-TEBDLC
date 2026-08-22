@@ -1,5 +1,7 @@
 # TEBDLC v0.1.0-alpha — Release Notes
 
+**Jonathan Therrien, Marieville, Québec.**
+
 Status: **PUBLISHED PRERELEASE / FROZEN / CONTROLLED DISTRIBUTION**
 
 This document intentionally contains no complete controlled TEBDLC source package and no recipient secret.
