@@ -1,5 +1,7 @@
 # TEBDLC Controlled Delivery v0.1
 
+**Jonathan Therrien, Marieville, Québec.**
+
 Status: REFERENCE IMPLEMENTATION / NOT A PUBLIC NETWORK SERVICE
 
 ## Purpose
