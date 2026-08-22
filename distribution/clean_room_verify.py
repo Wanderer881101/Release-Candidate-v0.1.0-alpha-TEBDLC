@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Jonathan Therrien, Marieville, Québec.
 """TEBDLC clean-room release verification harness v0.2.
 
 This tool validates an assembled controlled package against explicit expected hashes,
