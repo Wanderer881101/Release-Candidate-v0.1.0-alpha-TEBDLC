@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Jonathan Therrien, Marieville, Québec.
 """Adversarial end-to-end tests for TEBDLC controlled distribution v0.1."""
 from __future__ import annotations
 
