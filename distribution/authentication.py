@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Jonathan Therrien, Marieville, Québec.
 """TEBDLC controlled-distribution authentication primitives v0.1.
 
 Stdlib-only reference implementation. Stores/verifies password-equivalent secrets only
