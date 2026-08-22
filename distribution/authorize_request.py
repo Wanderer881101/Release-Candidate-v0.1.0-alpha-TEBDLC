@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Jonathan Therrien, Marieville, Québec.
 """Integrated TEBDLC controlled-distribution authorization decision v0.1."""
 from __future__ import annotations
 
