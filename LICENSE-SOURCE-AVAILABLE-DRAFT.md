@@ -1,5 +1,7 @@
 # TEBDLC Sovereign Source-Available Licence — v0.1
 
+**Jonathan Therrien, Marieville, Québec.**
+
 Status: **ACTIVE PROJECT LICENCE v0.1**
 
 Copyright and original TEBDLC intellectual property remain with their respective recorded owner(s). Nothing in this licence transfers authorship or ownership by implication.
