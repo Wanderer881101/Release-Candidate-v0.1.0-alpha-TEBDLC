@@ -1,5 +1,7 @@
 # TEBDLC Controlled Distribution — Threat Model v0.1
 
+**Jonathan Therrien, Marieville, Québec.**
+
 Status: PRE-RELEASE SECURITY MODEL
 
 ## Assets
