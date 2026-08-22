@@ -12,6 +12,12 @@ Version Python déclarée : `0.1.0`.
 
 TEBDLC est un produit de R&D utilisable et vérifiable. Certaines propriétés sont exécutées et reproduites dans les domaines testés; d'autres restent explicitement candidates. Le dépôt ne revendique ni preuve universelle, ni garantie cryptographique générale, ni conformité à un standard externe sans preuve dédiée.
 
+### Premier Release public
+
+Le modèle canonique du premier Release public `v0.1.0-alpha` est défini par `ACTIVE_RELEASE_MODEL_v0.1.0-alpha.md`.
+
+Le dépôt privé `TEBDLC` demeure le dépôt maître de développement. Le présent dépôt public distribue la copie figée intentionnellement sélectionnée du produit `v0.1.0-alpha`, avec les éléments nécessaires à son utilisation et à sa vérification indépendante. Les anciens mécanismes de distribution contrôlée sont conservés comme historique/R&D et ne définissent plus la frontière de publication de ce premier Release public.
+
 ## Composants
 
 - `src/tebdlc/` : bibliothèque Python et objets formels;
@@ -156,13 +162,16 @@ Les preuves et limites associées sont conservées sous `evidence/milestones/` e
 
 TEBDLC demeure une propriété intellectuelle protégée. La publication du code source ne constitue ni un abandon de droits ni une publication sous licence open source.
 
-Les droits effectivement accordés aux destinataires sont exclusivement ceux définis par la licence TEBDLC active et, lorsqu'elle s'applique, par sa politique territoriale versionnée. Le présent README est descriptif et ne crée aucun droit supplémentaire.
+Les droits effectivement accordés sont définis par la licence active du Release public. La disponibilité mondiale des fichiers publics et les droits juridiques/projet accordés sur ces fichiers sont deux choses distinctes. Le présent README est descriptif et ne crée aucun droit supplémentaire.
 
 Voir :
 
 - `NOTICE.md` pour la propriété, l'attribution et la réserve des droits;
-- `LICENSE-SOURCE-AVAILABLE-DRAFT.md` pour les permissions et restrictions accordées;
-- `TERRITORIAL_DISTRIBUTION_POLICY.md` pour les conditions territoriales applicables.
+- `LICENSE-SOURCE-AVAILABLE-v0.1.1.md` pour les permissions et restrictions actives du Release public;
+- `TERRITORIAL_RIGHTS_POLICY_v0.2.md` pour la portée actuelle des règles territoriales;
+- `ACTIVE_RELEASE_MODEL_v0.1.0-alpha.md` pour l'architecture canonique du premier Release public.
+
+Les anciens `LICENSE-SOURCE-AVAILABLE-DRAFT.md`, `TERRITORIAL_DISTRIBUTION_POLICY.md` et éléments de `distribution/` sont conservés pour la provenance de l'ancien modèle de distribution contrôlée; ils ne remplacent pas les documents actifs ci-dessus pour la frontière de publication de `v0.1.0-alpha`.
 
 ## Traçabilité
 
