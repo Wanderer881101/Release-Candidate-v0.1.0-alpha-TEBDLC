@@ -14,8 +14,9 @@ This index prevents historical controlled-distribution documents from being mist
 4. `LICENSE-SOURCE-AVAILABLE-v0.1.1.md` — active public-release permissions and restrictions.
 5. `TERRITORIAL_RIGHTS_POLICY_v0.2.md` — current relationship between public availability and territorial project-governance rights.
 6. `FALSIFICATION_POLICY.md` — falsification/provenance governance where compatible with the active licence and release model.
-7. `PUBLIC_RELEASE_GATE_v0.1.0-alpha.md` — active gate for publication of the public product.
-8. `PUBLIC_RELEASE_NOTES_v0.1.0-alpha.md` — active release notes for the public product.
+7. `PUBLIC_BUILD_AND_VERIFY_v0.1.0-alpha.md` — active clarification for public build/CI interpretation while preserving canonical `docs/` unchanged.
+8. `PUBLIC_RELEASE_GATE_v0.1.0-alpha.md` — active gate for publication of the public product.
+9. `PUBLIC_RELEASE_NOTES_v0.1.0-alpha.md` — active release notes for the public product.
 
 ## Historical / superseded publication model
 
