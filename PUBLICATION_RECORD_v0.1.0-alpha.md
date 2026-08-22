@@ -1,5 +1,7 @@
 # TEBDLC v0.1.0-alpha — Publication Record
 
+**Jonathan Therrien, Marieville, Québec.**
+
 Status: **PUBLISHED PRERELEASE / CONTROLLED DISTRIBUTION**
 
 Canonical private tag: `v0.1.0-alpha`
