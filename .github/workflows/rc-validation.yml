@@ -1,11 +1,6 @@
-name: RC Validation
+name: RC Validation (historical controlled-distribution)
 
 on:
-  push:
-    branches: [main]
-    paths-ignore:
-      - 'validation/LAST_EXECUTION.json'
-      - 'validation/CLEAN_ROOM_HARNESS_EXECUTION.json'
   workflow_dispatch:
 
 permissions:
