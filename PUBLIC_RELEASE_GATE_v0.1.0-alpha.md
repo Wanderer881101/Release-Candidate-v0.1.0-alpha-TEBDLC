@@ -40,11 +40,11 @@ This gate applies to the first public, usable and independently verifiable TEBDL
 
 ## Remaining gates before public `main`/GitHub Release
 
-- [ ] Confirm no credential, private key, access token or unrelated private material is present in the assembled public tree.
-- [ ] Confirm active documentation contains no unresolved contradiction about the first public Release architecture.
-- [ ] Confirm build/test/verify instructions reference files actually present in the public assembly.
-- [ ] Confirm release workflows cannot automatically consume paid GitHub Actions minutes merely because the assembly is merged to `main`, unless explicitly approved.
-- [ ] Re-run or reuse a suitable final verification of the **public product assembly**, distinguishing product verification from historical controlled-distribution tests.
+- [x] Confirm no credential, private key, access token or unrelated private material is present in the assembled public tree. See `PUBLIC_RELEASE_VERIFICATION_v0.1.0-alpha.md` for scope and limitations.
+- [x] Confirm active documentation contains no unresolved contradiction about the first public Release architecture.
+- [x] Confirm build/test/verify instructions reference files actually present in the public assembly.
+- [x] Confirm release workflows cannot automatically consume paid GitHub Actions minutes merely because the assembly is merged to `main`, unless explicitly approved.
+- [x] Re-run or reuse a suitable final verification of the **public product assembly**, distinguishing product verification from historical controlled-distribution tests. Verification is recorded in `PUBLIC_RELEASE_VERIFICATION_v0.1.0-alpha.md` using exact canonical Git-object identity for unchanged product material.
 - [ ] Freeze the exact public Release Candidate commit.
 - [ ] Record final public tree/package hashes for the public assembly itself.
 - [ ] Create the actual public GitHub Release `v0.1.0-alpha` only after the above gates pass.
