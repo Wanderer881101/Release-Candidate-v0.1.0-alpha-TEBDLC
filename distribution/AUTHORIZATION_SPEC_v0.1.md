@@ -1,5 +1,7 @@
 # TEBDLC Controlled Distribution — Authorization Specification v0.1
 
+**Jonathan Therrien, Marieville, Québec.**
+
 Status: PRE-IMPLEMENTATION SPECIFICATION
 Applies to: controlled TEBDLC source distribution
 
