@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Jonathan Therrien, Marieville, Québec.
 """Reference controlled-delivery primitive for TEBDLC v0.1.
 
 This module is intentionally storage/local-path oriented. It does not expose a public
