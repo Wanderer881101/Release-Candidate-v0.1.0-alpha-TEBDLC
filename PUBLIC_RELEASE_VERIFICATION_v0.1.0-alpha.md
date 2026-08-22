@@ -1,5 +1,7 @@
 # TEBDLC v0.1.0-alpha — Public Release Verification
 
+**Jonathan Therrien, Marieville, Québec.**
+
 Status: **PASS / PRE-FREEZE**
 
 ## Scope
