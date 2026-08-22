@@ -1,5 +1,7 @@
 # Controlled-distribution subsystem — historical/R&D status for v0.1.0-alpha public release
 
+**Jonathan Therrien, Marieville, Québec.**
+
 The files in this directory are preserved because they document and implement a substantial controlled-distribution experiment: authentication, authorization, territorial resolution, private package assembly, controlled delivery, audit logging, clean-room verification and adversarial validation.
 
 For the **first public TEBDLC `v0.1.0-alpha` Release Candidate**, this subsystem is **not the active publication boundary**.
