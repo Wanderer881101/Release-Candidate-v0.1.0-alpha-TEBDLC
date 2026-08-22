@@ -1,11 +1,7 @@
-name: RC Validation
+# Jonathan Therrien, Marieville, Québec.
+name: RC Validation (historical controlled-distribution)
 
 on:
-  push:
-    branches: [main]
-    paths-ignore:
-      - 'validation/LAST_EXECUTION.json'
-      - 'validation/CLEAN_ROOM_HARNESS_EXECUTION.json'
   workflow_dispatch:
 
 permissions:

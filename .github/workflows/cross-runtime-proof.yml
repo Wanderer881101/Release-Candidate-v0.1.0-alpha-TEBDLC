@@ -1,13 +1,7 @@
-name: Cross Runtime Proof
+# Jonathan Therrien, Marieville, Québec.
+name: Cross Runtime Proof (historical controlled-distribution)
 
 on:
-  push:
-    branches: [main]
-    paths-ignore:
-      - 'validation/GITHUB_RUNTIME_MATRIX.json'
-      - 'validation/GITHUB_RUNTIME_3.11.json'
-      - 'validation/GITHUB_RUNTIME_3.12.json'
-      - 'validation/GITHUB_RUNTIME_3.13.json'
   workflow_dispatch:
 
 permissions:
