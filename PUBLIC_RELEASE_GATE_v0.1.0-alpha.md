@@ -1,6 +1,6 @@
 # TEBDLC v0.1.0-alpha — Public Release Gate
 
-Status: **ACTIVE / PRE-PUBLICATION CHECKLIST**
+Status: **ACTIVE / READY FOR GITHUB RELEASE PUBLICATION**
 
 This gate applies to the first public, usable and independently verifiable TEBDLC `v0.1.0-alpha` Release Candidate.
 
@@ -38,16 +38,16 @@ This gate applies to the first public, usable and independently verifiable TEBDL
 - [x] `distribution/` remains preserved as historical/R&D gain.
 - [x] Historical proofs/hashes are not silently re-labelled as proof of the new publication boundary.
 
-## Remaining gates before public `main`/GitHub Release
+## Publication gates
 
 - [x] Confirm no credential, private key, access token or unrelated private material is present in the assembled public tree. See `PUBLIC_RELEASE_VERIFICATION_v0.1.0-alpha.md` for scope and limitations.
 - [x] Confirm active documentation contains no unresolved contradiction about the first public Release architecture.
 - [x] Confirm build/test/verify instructions reference files actually present in the public assembly.
 - [x] Confirm release workflows cannot automatically consume paid GitHub Actions minutes merely because the assembly is merged to `main`, unless explicitly approved.
 - [x] Re-run or reuse a suitable final verification of the **public product assembly**, distinguishing product verification from historical controlled-distribution tests. Verification is recorded in `PUBLIC_RELEASE_VERIFICATION_v0.1.0-alpha.md` using exact canonical Git-object identity for unchanged product material.
-- [ ] Freeze the exact public Release Candidate commit.
-- [ ] Record final public tree/package hashes for the public assembly itself.
-- [ ] Create the actual public GitHub Release `v0.1.0-alpha` only after the above gates pass.
+- [x] Freeze the exact public Release Candidate commit: `b05e4e415fa53996a1d06b045f1c5c4cba11f4cf` on `freeze/v0.1.0-alpha-public`.
+- [x] Record final canonical public Git identity: root tree `fcd2aaee7b66a134d41ee514e0a0223053ba5051`. See `PUBLIC_RELEASE_FREEZE_RECORD_v0.1.0-alpha.md`.
+- [ ] Create the actual public GitHub Release `v0.1.0-alpha` targeting frozen commit `b05e4e415fa53996a1d06b045f1c5c4cba11f4cf`.
 
 ## Publication invariant
 
