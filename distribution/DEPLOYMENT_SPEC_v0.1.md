@@ -1,5 +1,7 @@
 # TEBDLC Controlled Distribution — Private Deployment Specification v0.1
 
+**Jonathan Therrien, Marieville, Québec.**
+
 Status: REFERENCE DEPLOYMENT CONTRACT
 
 ## Objective
