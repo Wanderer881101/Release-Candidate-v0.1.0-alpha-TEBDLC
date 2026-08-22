@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Jonathan Therrien, Marieville, Québec.
 import copy
 import unittest
 from validate_records import ValidationError, validate_acceptance, validate_event, validate_manifest
