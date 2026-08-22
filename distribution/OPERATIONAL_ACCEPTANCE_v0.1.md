@@ -1,5 +1,7 @@
 # TEBDLC v0.1.0-alpha — Operational Acceptance Gate
 
+**Jonathan Therrien, Marieville, Québec.**
+
 This document is additive to `RELEASE_GATE_v0.1.0-alpha.md`, `DEPLOYMENT_SPEC_v0.1.md`, `THREAT_MODEL_v0.1.md`, `AUTHORIZATION_SPEC_v0.1.md`, and `CONTROLLED_DELIVERY_v0.1.md`.
 
 It defines the minimum material evidence required before a controlled TEBDLC package may be treated as operationally ready. A checkbox may be marked complete only from persisted evidence; intent, configuration text, or synthetic-only results are not substitutes.
