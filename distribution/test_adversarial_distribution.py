@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Jonathan Therrien, Marieville, Québec.
 """Adversarial tests for TEBDLC controlled distribution v0.1.
 
 Tests are confined to the TEBDLC reference authorization/delivery implementation.
