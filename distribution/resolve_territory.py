@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Jonathan Therrien, Marieville, Québec.
 """Deterministic TEBDLC territorial resolver v0.1.
 
 Fail-closed semantics: unresolved/unknown territories are RESTRICTED by policy default.
