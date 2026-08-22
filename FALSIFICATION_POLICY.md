@@ -1,5 +1,6 @@
 # TEBDLC — Politique de falsification et registre de provenance
 
+**Jonathan Therrien, Marieville, Québec.**
 **Auteur du projet TEBDLC : Jonathan Therrien, Marieville, Québec, Canada.**
 
 Cette politique définit comment les tentatives de falsification, contre-exemples, variantes expérimentales et reproductions adversariales peuvent être conservées sans effacer ni mélanger la propriété intellectuelle, la provenance ou l'historique des contributions.
