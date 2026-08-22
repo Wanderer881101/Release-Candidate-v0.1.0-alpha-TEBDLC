@@ -1,5 +1,7 @@
 # TEBDLC v0.1.0-alpha — Material Proof Status
 
+**Jonathan Therrien, Marieville, Québec.**
+
 Status date: 2026-08-20
 
 ## 1. Executed public reference proof
