@@ -1,5 +1,7 @@
 # TEBDLC v0.1.0-alpha — Active Policy and Release Index
 
+**Jonathan Therrien, Marieville, Québec.**
+
 Status: **ACTIVE**
 
 This index prevents historical controlled-distribution documents from being mistaken for the active architecture of the first public Release Candidate.
