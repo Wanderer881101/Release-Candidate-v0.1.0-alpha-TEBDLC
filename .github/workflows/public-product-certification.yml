@@ -1,0 +1,46 @@
+# Jonathan Therrien, Marieville, Québec.
+name: Public Product Certification
+
+on:
+  push:
+    branches:
+      - cert-fix/v0.1.0-alpha
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  certify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout exact candidate
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install system dependencies
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential clang libgmp-dev libssl-dev zlib1g-dev
+
+      - name: Install Python package and tests
+        shell: bash
+        run: make setup
+
+      - name: Execute product test contract
+        shell: bash
+        run: make test
+
+      - name: Execute product verification contract
+        shell: bash
+        run: make verify
+
+      - name: Execute release structure check
+        shell: bash
+        run: make release-check
