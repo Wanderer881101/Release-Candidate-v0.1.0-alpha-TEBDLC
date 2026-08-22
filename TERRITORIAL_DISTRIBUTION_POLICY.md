@@ -1,5 +1,7 @@
 # TEBDLC — Sovereign Territorial Distribution Policy v0.1
 
+**Jonathan Therrien, Marieville, Québec.**
+
 Status: DRAFT POLICY / PRE-RELEASE
 Policy version: 0.1
 Applies to: TEBDLC source-available distribution
