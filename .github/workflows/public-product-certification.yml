@@ -2,9 +2,6 @@
 name: Public Product Certification
 
 on:
-  push:
-    branches:
-      - cert-fix/v0.1.0-alpha
   workflow_dispatch:
 
 permissions:
