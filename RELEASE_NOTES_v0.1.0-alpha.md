@@ -1,78 +1,83 @@
 # TEBDLC v0.1.0-alpha — Release Notes
 
-Status: **PUBLISHED PRERELEASE / FROZEN / CONTROLLED DISTRIBUTION**
+**Jonathan Therrien, Marieville, Québec.**
 
-This document intentionally contains no complete controlled TEBDLC source package and no recipient secret.
+Status: **FROZEN / CONTROLLED DISTRIBUTION / PUBLIC GITHUB RELEASE PENDING**
 
-## Canonical product identity
+Ce document ne contient aucun package source TEBDLC complet contrôlé et aucun secret destinataire.
 
-- Release: `v0.1.0-alpha`
-- Canonical private Git tag: `v0.1.0-alpha`
-- Tag target / private source commit: `677a28d87164379cb2a268e55cfc30302ebc44ab`
-- Private source root tree SHA-1: `63658d334ae8c3d280e9ef2c29845fffce2747e6`
-- Canonical package SHA-256: `dd15a49e30a2419d504d315c29aa4f25d6c6590202bedbce8f78dc632f426ba3`
-- Package tracked files: `139`
-- Package size: `162053` bytes
-- Release manifest SHA-256: `ee8cff12529b190b7f9fcf7028a61a32af50f68dc3bfa6c39b24411f85521826`
-- Licence SHA-256: `86fddddedbd112c2c8b420d4b31802147a3bce702ff68db3683b816b39e69ac1`
-- Territorial policy SHA-256: `1e0a639c10ae2d124f4d535536788b19912903f310c9e494d57e6fbcba9b6090`
+## Identité canonique du produit
 
-## Material validation
+- Release : `v0.1.0-alpha`
+- Tag Git privé canonique : `v0.1.0-alpha`
+- Cible du tag / commit source privé : `677a28d87164379cb2a268e55cfc30302ebc44ab`
+- Arbre Git source privé SHA-1 : `63658d334ae8c3d280e9ef2c29845fffce2747e6`
+- Package canonique SHA-256 : `dd15a49e30a2419d504d315c29aa4f25d6c6590202bedbce8f78dc632f426ba3`
+- Fichiers suivis dans le package : `139`
+- Taille du package : `162053` octets
+- Manifest Release SHA-256 : `ee8cff12529b190b7f9fcf7028a61a32af50f68dc3bfa6c39b24411f85521826`
+- Licence SHA-256 : `86fddddedbd112c2c8b420d4b31802147a3bce702ff68db3683b816b39e69ac1`
+- Politique territoriale SHA-256 : `1e0a639c10ae2d124f4d535536788b19912903f310c9e494d57e6fbcba9b6090`
 
-- Python 3.11: `90/90 PASS`
-- Python 3.12: `90/90 PASS`
-- Python 3.13: `90/90 PASS`
-- Cross-runtime normalized SHA-256: `4dc648dfe39adfbd35b2d76783e9525ad52b82c9e82a1e0cad2cd1e141e90954`
-- Clean-room package/tree verification: `PASS`
-- Controlled private store/readback: `PASS`
-- Authorized delivery exact-byte verification: `PASS`
-- Authentication/policy/integrity fail-closed paths: `PASS`
-- Adversarial private-package environment: `PASS`
-- Recipient provenance and credential lifecycle: `PASS`
-- Backup/recovery and monitoring: `PASS`
-- Falsification provenance/registry isolation: `PASS`
-- HTTPS transport and least-privilege boundary: `PASS`
-- Final consolidation/freeze readiness gate: `PASS`
-- Canonical tag freeze: `PASS`
-- GitHub prerelease publication: `PASS`
+## Validation matérielle
 
-## GitHub Release publication
+- Python 3.11 : `90/90 PASS`
+- Python 3.12 : `90/90 PASS`
+- Python 3.13 : `90/90 PASS`
+- Concordance inter-runtime : `PASS`
+- SHA-256 normalisé inter-runtime : `4dc648dfe39adfbd35b2d76783e9525ad52b82c9e82a1e0cad2cd1e141e90954`
+- Clean-room package/arbre : `PASS`
+- Stockage privé contrôlé / readback : `PASS`
+- Livraison autorisée avec égalité SHA avant/après : `PASS`
+- Authentification/politique/intégrité fail-closed : `PASS`
+- Validation adversariale environnement package privé : `PASS`
+- Provenance destinataire et cycle de credentials : `PASS`
+- Backup/recovery et monitoring : `PASS`
+- Provenance de falsification / isolation registre : `PASS`
+- Transport HTTPS / least privilege : `PASS`
+- Final distribution proof : `SEALED_FREEZE_READY`
+- Final audit checkpoint : `SEALED`
+- Tag canonique : `FROZEN`
 
-- Private repository: `Wanderer881101/TEBDLC`
-- GitHub Release ID: `374280928`
-- Release name: `TEBDLC v0.1.0-alpha — Controlled prerelease`
-- Tag: `v0.1.0-alpha`
-- Draft: `false`
-- Prerelease: `true`
-- User-uploaded release assets: `0`
-- Controlled package attached to GitHub Release: `false`
-- Private publication URL: `https://github.com/Wanderer881101/TEBDLC/releases/tag/v0.1.0-alpha`
+## Preuves finales
 
-## Final evidence
+Les preuves privées scellées lient l’identité suivante :
 
-Private evidence branch: `release-evidence-v0.1.0-alpha`
+`release_id ↔ source_commit ↔ source_tree_sha1 ↔ package_sha256 ↔ manifest_sha256 ↔ licence_sha256 ↔ territorial_policy_sha256 ↔ clean_room ↔ distribution proof ↔ audit checkpoint`
 
-Final records:
+Checkpoint d’audit final :
 
-- `FINAL_DISTRIBUTION_PROOF.json` — `SEALED_FREEZE_READY`
-- `FINAL_AUDIT_CHECKPOINT.json` — `SEALED`
-- `TAG_FREEZE_RECORD.json` — `FROZEN`
-- `GITHUB_RELEASE_PUBLICATION_RECORD.json` — publication verified
-- Final audit checkpoint sequence: `3`
-- Final audit checkpoint hash: `64105fb03f89f28434bf565d55dd57302455a5eeccf1c7360ac65cf6e7221f00`
+- séquence : `3`
+- hash : `64105fb03f89f28434bf565d55dd57302455a5eeccf1c7360ac65cf6e7221f00`
 
-## Distribution boundary
+## Frontière de distribution
 
-The complete controlled TEBDLC source package is **not published on public `main`**. Public materials contain governance, policies, provenance formats, hashes and non-sensitive release metadata.
+Le package source TEBDLC complet contrôlé n’est **pas** publié sur le `main` public et ne doit pas être attaché comme asset public à la GitHub Release.
 
-The canonical GitHub Release is published in the private `TEBDLC` repository and tied to the canonical private tag. No controlled package asset is attached to that GitHub Release; controlled package delivery remains through the verified private delivery boundary.
+Le dépôt public expose les politiques, schémas, outils/références de distribution, validations, hashes et métadonnées non sensibles nécessaires à l’identification et à l’audit du Release.
 
-Real external controlled delivery remains fail-closed until applicable transaction-time requirements are satisfied, including export classification/authorization where required, destination and sanctions screening, and applicable privacy governance.
+Toute livraison réelle du package contrôlé demeure soumise aux règles d’autorisation, d’intégrité, de territoire et aux exigences impératives applicables au moment de la transaction.
 
-See:
+## Cible correcte de publication GitHub
+
+La fiche GitHub Release publique doit être créée dans :
+
+`Wanderer881101/Release-Candidate-v0.1.0-alpha-TEBDLC`
+
+avec :
+
+- tag/release public : `v0.1.0-alpha` ;
+- `prerelease=true` ;
+- aucun asset contenant le package source contrôlé ;
+- corps de Release reprenant l’identité canonique et les résultats ci-dessus.
+
+La publication précédemment effectuée dans le dépôt privé TEBDLC est conservée uniquement comme provenance historique de l’erreur de ciblage ; elle n’est pas l’endpoint public officiel de présentation de ce Release Candidate.
+
+## Références
 
 - `RELEASE_GATE_v0.1.0-alpha.md`
-- `distribution/OPERATIONAL_ACCEPTANCE_v0.1.md`
-- `distribution/LEGAL_MANDATORY_RULE_CHECKPOINT_v0.1.md`
+- `PUBLICATION_RECORD_v0.1.0-alpha.md`
+- `LICENSE-SOURCE-AVAILABLE-DRAFT.md`
+- `TERRITORIAL_DISTRIBUTION_POLICY.md`
 
-No claim is made that this release has governmental, judicial or specialist legal certification.
+Aucune certification gouvernementale, judiciaire ou juridique spécialisée n’est revendiquée.
