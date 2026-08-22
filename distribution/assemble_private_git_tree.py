@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Jonathan Therrien, Marieville, Québec.
 """Assemble a controlled TEBDLC source archive from authenticated GitHub Git objects.
 
 The tool never writes credentials to disk and never publishes source. It fetches the
